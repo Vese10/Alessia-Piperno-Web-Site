@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './modules/navbar'
+import Navbar from './include/navbar'
 
 function App() {
   const [count, setCount] = useState(0)
