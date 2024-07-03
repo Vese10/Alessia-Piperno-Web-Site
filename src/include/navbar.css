@@ -10,7 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Style Navbar: */
 .navbar {
   background: linear-gradient(to right, var(--gradient2), var(--main));
   min-height: 100px;
@@ -20,10 +19,20 @@
   z-index: 2;
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
 .navbar-nav .nav-link,
 .navbar-brand,
 .navbar-toggler-icon {
-  color: white !important;
+  color: white;
 }
 
 .nav-link {
@@ -31,22 +40,27 @@
   font-weight: 400;
 }
 
-.nav-link-home {
-  font-weight: 700 !important;
-  color: var(--bgCta) !important;
-  padding-left: 0 !important;
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-img {
+  width: 50%;
+}
+
+.logo {
+  font-size: 32px;
+}
+
+.travel-adventure {
+  color: var(--bgCta);
 }
 
 .btn-custom {
-  padding:10px 20px;
-  color: var(--main);
-  background-color: var(--bgCta);
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: white !important;
 }
 
 .navbar-toggler-icon {
@@ -54,83 +68,36 @@
 }
 
 .navbar-brand img {
-  width: 180px !important;
-  height: auto!important;
+  width: 180px;
+  height: auto;
 }
 
 @media (min-width: 993px) and (max-width: 1500px) {
-
   .navbar-brand img {
-    width: 127.8px !important;
-    height: 36.486px !important;
+    width: 127.8px;
+    height: 36.486px;
   }
 
   .navbar-brand {
-    margin-left: 20px !important;
-  }
-
-  .navbar-nav {
-    margin-left: 20px !important;
-  }
-
-  .nav-link {
-    padding-left: 80px !important;
-  }
-
-  .btn-custom {
-    width: 160px;
-    height: 80px;
-    margin-right: 20px !important;
+    margin-left: 20px;
   }
 }
 
 @media (min-width: 1500px) {
-
   .navbar-brand {
     margin-left: 133px;
-  }
-
-  .btn-custom {
-    margin-right: 125px;
-  }
-
-  .navbar-nav {
-    margin-left: 100px;
-  }
-
-  .nav-link {
-    padding-left: 110px !important;
-  }
-
-  .nav-link-home {
-    padding-left: 0 !important;
   }
 }
 
 @media (max-width: 992px) {
-
   .navbar-nav {
     height: 100vh;
   }
 
   .nav-link {
-    padding-left: 30px !important;
+    padding-left: 30px;
     text-align: center;
     height: 100px;
-  }
-
-  .nav-link-home {
-    margin-top: 50px;
-  }
-
-  .btn-custom {
-    width: 213px;
-    height: 38px;
-    margin-left: 20px;
-    padding-left: 10.46px !important;
-    padding-right: 10.46px !important;
-    font-size: 16px;
-    font-weight: 700;
   }
 
   .navbar-toggler-icon {
