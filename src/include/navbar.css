@@ -31,20 +31,34 @@
 
 .navbar-nav .nav-link,
 .navbar-brand,
-.navbar-toggler-icon {
+.navbar-toggler-icon,
+.freedom {
   color: white;
 }
 
 .nav-link {
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 0;
+}
+
+.nav-link:hover,
+.freedom:hover {
+  color: var(--bgCta) !important;
+}
+
+.nav-link:active,
+.freedom:active {
+  color: white !important;
 }
 
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  text-decoration: none;
 }
 
 .nav-img {
@@ -57,7 +71,7 @@
 }
 
 .travel-adventure {
-  color: var(--bgCta);
+  color: var(--bgCta) !important;
 }
 
 .btn-custom {
@@ -65,7 +79,7 @@
 }
 
 .navbar-toggler-icon {
-  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E') !important;
 }
 
 .navbar-brand img {
@@ -91,18 +105,48 @@
 }
 
 @media (max-width: 992px) {
+
   .navbar-nav {
     height: 100vh;
+    background: linear-gradient(to right, var(--gradient2), var(--main));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; /* Aggiungi spazio per il logo */
+  }
+
+  .nav-img {
+    display: none;
   }
 
   .nav-link {
     padding-left: 30px;
     text-align: center;
     height: 100px;
+    color: white;
   }
 
   .navbar-toggler-icon {
     width: 35px;
     height: 35px;
+  }
+
+  .collapse.show {
+    display: flex;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .logo {
+    display: flex !important;
   }
 }

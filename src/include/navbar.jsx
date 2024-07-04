@@ -10,7 +10,10 @@ import Login from "../assets/img/login.png";
 import Lingua from "../assets/img/lingua.png";
 
 function Navbar() {
-  const [count, setCount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
@@ -20,71 +23,51 @@ function Navbar() {
             <button
               className="navbar-toggler ml-auto"
               type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
               aria-controls="navbarNav"
-              aria-expanded="false"
+              aria-expanded={menuOpen}
               aria-label="Toggle navigation"
+              onClick={toggleMenu}
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon">{menuOpen ? "X" : ""}</span>
             </button>
             <a className="btn btn-custom d-lg-none d-flex flex-column">
               <span className="travel-adventure">TRAVEL.</span><span className="travel-adventure">ADVENTURE.</span>FREEDOM
             </a>
-            <div className="collapse navbar-collapse navbar-nav" id="navbarNav">
-              <div className="d-flex left-section">
-                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item">
-                    <img src={Home} className="nav-img"></img>
-                    <a className="nav-link" href="/">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <img src={Azadì} className="nav-img"></img>
-                    <a className="nav-link" href="<?=$path?>#azadì">
-                      Azadì!
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <img src={Freelancer} className="nav-img"></img>
-                    <a className="nav-link" href="<?=$path?>#freelancer">
-                      Freelancer
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <img src={Viaggi} className="nav-img"></img>
-                    <a className="nav-link" href="<?=$path?>#viaggi">
-                      Viaggi
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <img src={Contatti} className="nav-img"></img>
-                    <a className="nav-link" href="<?=$path?>#contatti">
-                      Contatti
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="logo">
-                <a className="nav-link" href="<?=$path?>#logo">
-                  <span className="travel-adventure">TRAVEL.ADVENTURE.</span>
-                  FREEDOM
+            <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
+              <div className="navbar-nav mr-auto w-100">
+                <a className="nav-item" href="/" onClick={closeMenu}>
+                  <img src={Home} className="nav-img"></img>
+                  <p className="nav-link">Home</p>
                 </a>
-              </div>
-              <div className="d-flex right-section">
-                <li className="nav-item">
+                <a className="nav-item" href="<?=$path?>#azadì" onClick={closeMenu}>
+                  <img src={Azadì} className="nav-img"></img>
+                  <p className="nav-link">Azadì!</p>
+                </a>
+                <a className="nav-item" href="<?=$path?>#freelancer" onClick={closeMenu}>
+                  <img src={Freelancer} className="nav-img"></img>
+                  <p className="nav-link">Freelancer</p>
+                </a>
+                <a className="nav-item" href="<?=$path?>#viaggi" onClick={closeMenu}>
+                  <img src={Viaggi} className="nav-img"></img>
+                  <p className="nav-link">Viaggi</p>
+                </a>
+                <a className="nav-item" href="<?=$path?>#contatti" onClick={closeMenu}>
+                  <img src={Contatti} className="nav-img"></img>
+                  <p className="nav-link">Contatti</p>
+                </a>
+                <div className="logo d-none d-lg-flex justify-content-center align-items-center w-100">
+                  <a className="nav-link travel-adventure" href="<?=$path?>#logo">
+                    TRAVEL.ADVENTURE.<span className="freedom">FREEDOM</span>
+                  </a>
+                </div>
+                <a className="nav-item" href="<?=$path?>#login" onClick={closeMenu}>
                   <img src={Login} className="nav-img"></img>
-                  <a className="nav-link" href="<?=$path?>#login">
-                    Login
-                  </a>
-                </li>
-                <li className="nav-item">
+                  <p className="nav-link">Login</p>
+                </a>
+                <a className="nav-item" href="<?=$path?>#lingua" onClick={closeMenu}>
                   <img src={Lingua} className="nav-img"></img>
-                  <a className="nav-link" href="<?=$path?>#lingua">
-                    Lingua
-                  </a>
-                </li>
+                  <p className="nav-link">Lingua</p>
+                </a>
               </div>
             </div>
           </div>
