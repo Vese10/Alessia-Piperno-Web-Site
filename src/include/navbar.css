@@ -27,11 +27,11 @@
 
 .navbar-toggler {
   border: none !important;
+  outline: none !important;
 }
 
 .navbar-nav .nav-link,
 .navbar-brand,
-.navbar-toggler-icon,
 .freedom {
   color: white;
 }
@@ -82,6 +82,10 @@
   background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E') !important;
 }
 
+.navbar-toggler-icon.open {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 4l22 22M4 26l22-22"/%3E%3C/svg%3E') !important;
+}
+
 .navbar-brand img {
   width: 180px;
   height: auto;
@@ -107,17 +111,21 @@
 @media (max-width: 992px) {
 
   .navbar-nav {
-    height: 100vh;
+    height: calc(100vh - 100px); /* Adatta l'altezza per non coprire la navbar */
     background: linear-gradient(to right, var(--gradient2), var(--main));
     position: fixed;
-    top: 0;
+    top: 100px; /* Sposta il menu sotto la navbar */
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 100px; /* Aggiungi spazio per il logo */
+    justify-content: start;
+  }
+
+  .btn-custom {
+    right: 0 !important;
+    position: absolute;
   }
 
   .nav-img {
@@ -129,15 +137,6 @@
     text-align: center;
     height: 100px;
     color: white;
-  }
-
-  .navbar-toggler-icon {
-    width: 35px;
-    height: 35px;
-  }
-
-  .collapse.show {
-    display: flex;
   }
 
   .logo {

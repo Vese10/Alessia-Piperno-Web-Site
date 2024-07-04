@@ -28,7 +28,7 @@ function Navbar() {
               aria-label="Toggle navigation"
               onClick={toggleMenu}
             >
-              <span className="navbar-toggler-icon">{menuOpen ? "X" : ""}</span>
+              <span className={`navbar-toggler-icon ${menuOpen ? 'open' : ''}`}></span>
             </button>
             <a className="btn btn-custom d-lg-none d-flex flex-column">
               <span className="travel-adventure">TRAVEL.</span><span className="travel-adventure">ADVENTURE.</span>FREEDOM
