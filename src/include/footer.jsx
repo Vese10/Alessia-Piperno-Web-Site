@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./footer.css";
+import "../assets/css/footer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InstaLogo from "../assets/img/instagram-logo.webp";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./navbar.css";
+import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../assets/img/home.png";
 import Azadì from "../assets/img/azadì.png";

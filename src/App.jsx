@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './include/navbar'
+import Home from './components/Home'
+import Azadì from './components/Azadì'
+import Freelancer from './components/Freelancer'
+import Viaggi from './components/Viaggi'
+import Contatti from './components/Contatti'
 import Footer from './include/footer'
 
 function App() {
@@ -9,6 +14,8 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
+      <Home></Home>
+      <Azadì></Azadì>
       <Footer></Footer>
     </>
   )

@@ -1,0 +1,25 @@
+:root {
+  --bgCta: #EEE3AB;
+  --main: #656B9F;
+  --gradient2: #97D6FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {min-height: 100vh;}
+
+.home {
+  background-image: url(../img/home-backgraound-desktop.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.azadi {
+  background-image: url(../img/azadì-background-desktop.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
