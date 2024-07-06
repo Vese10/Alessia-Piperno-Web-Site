@@ -31,6 +31,7 @@ function Contatti() {
                     className="form-control"
                     id="nome"
                     placeholder="Inserisci il nome"
+                    required
                   />
                 </div>
                 <div className="form-group p-2">
@@ -40,6 +41,7 @@ function Contatti() {
                     className="form-control"
                     id="cognome"
                     placeholder="Inserisci il cognome"
+                    required
                   />
                 </div>
                 <div className="form-group p-2">
@@ -49,6 +51,7 @@ function Contatti() {
                     className="form-control"
                     id="email"
                     placeholder="Inserisci l'email"
+                    required
                   />
                 </div>
                 <div className="form-group p-2">
@@ -58,6 +61,17 @@ function Contatti() {
                     className="form-control"
                     id="telefono"
                     placeholder="Inserisci il telefono"
+                    required
+                  />
+                </div>
+                <div className="form-group p-2">
+                  <label htmlFor="messagge" className="label-text">Messaggio*</label>
+                  <textarea
+                    type="message"
+                    className="form-control"
+                    id="messaggio"
+                    placeholder="Scrivi il tuo messaggio"
+                    required
                   />
                 </div>
                 <div className="text-center">
