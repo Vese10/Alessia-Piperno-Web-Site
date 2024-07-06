@@ -17,6 +17,8 @@ function App() {
       <Home></Home>
       <Azadì></Azadì>
       <Freelancer></Freelancer>
+      <Viaggi></Viaggi>
+      <Contatti></Contatti>
       <Footer></Footer>
     </>
   )
