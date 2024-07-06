@@ -9,7 +9,7 @@ function Azadì() {
     <>
       <img
         src={AzadìBackgroundDesktop}
-        className="img-fluid home-background-image"
+        className="img-fluid azadì-background-image"
         alt="Paesaggio Montagna"
       />
       <div className="container-fluid d-flex azadì">

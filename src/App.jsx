@@ -16,6 +16,7 @@ function App() {
       <Navbar></Navbar>
       <Home></Home>
       <Azadì></Azadì>
+      <Freelancer></Freelancer>
       <Footer></Footer>
     </>
   )

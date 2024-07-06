@@ -10,11 +10,13 @@
   box-sizing: border-box;
 }
 
-.home-background-image {
+.home-background-image,
+.azadì-background-image {
   position: absolute;
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  opacity: 0.5;
 }
 
 .home, 
@@ -51,7 +53,8 @@
 
 @media (max-width: 992px) {
 
-  .home-background-image {
+  .home-background-image,
+  .azadì-background-image {
     display: none;
   }
 
