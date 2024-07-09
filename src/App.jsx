@@ -6,19 +6,33 @@ import Azadì from './components/Azadì'
 import Freelancer from './components/Freelancer'
 import Viaggi from './components/Viaggi'
 import Contatti from './components/Contatti'
+import Login from './components/Login'
 import Footer from './include/footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'azadì':
+        return <Azadì />
+      case 'freelancer':
+        return <Freelancer />
+      case 'viaggi':
+        return <Viaggi />
+      case 'contatti':
+        return <Contatti />
+      case 'login':
+        return <Login />
+      default:
+        return <Home setCurrentPage={setCurrentPage} />
+    }
+  }
 
   return (
     <>
-      <Navbar></Navbar>
-      <Home></Home>
-      <Azadì></Azadì>
-      <Freelancer></Freelancer>
-      <Viaggi></Viaggi>
-      <Contatti></Contatti>
+      <Navbar setCurrentPage={setCurrentPage}></Navbar>
+      {renderPage()}
       <Footer></Footer>
     </>
   )

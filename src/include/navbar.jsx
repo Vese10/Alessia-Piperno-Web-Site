@@ -9,11 +9,16 @@ import Contatti from "../assets/img/contatti.png";
 import Login from "../assets/img/login.png";
 import Lingua from "../assets/img/lingua.png";
 
-function Navbar() {
+function Navbar({setCurrentPage}) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
+    closeMenu();
+  }
 
   return (
     <>
@@ -30,37 +35,37 @@ function Navbar() {
             >
               <span className={`navbar-toggler-icon ${menuOpen ? 'open' : ''}`}></span>
             </button>
-            <a className="btn btn-custom d-lg-none d-flex flex-column">
+            <a className="btn btn-custom d-lg-none d-flex flex-column" onClick={() => handleNavClick('home')}>
               <span className="travel-adventure">TRAVEL.</span><span className="travel-adventure">ADVENTURE.</span>FREEDOM
             </a>
             <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
               <div className="navbar-nav mr-auto w-100">
-                <a className="nav-item" href="/" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('home')}>
                   <img src={Home} className="nav-img"></img>
                   <p className="nav-link">Home</p>
                 </a>
-                <a className="nav-item" href="<?=$path?>#azadì" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('azadì')}>
                   <img src={Azadì} className="nav-img"></img>
                   <p className="nav-link">Azadì!</p>
                 </a>
-                <a className="nav-item" href="<?=$path?>#freelancer" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('freelancer')}>
                   <img src={Freelancer} className="nav-img"></img>
                   <p className="nav-link">Freelancer</p>
                 </a>
-                <a className="nav-item" href="<?=$path?>#viaggi" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('viaggi')}>
                   <img src={Viaggi} className="nav-img"></img>
                   <p className="nav-link">Viaggi</p>
                 </a>
-                <a className="nav-item" href="<?=$path?>#contatti" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('contatti')}>
                   <img src={Contatti} className="nav-img"></img>
                   <p className="nav-link">Contatti</p>
                 </a>
                 <div className="logo d-none d-lg-flex justify-content-center align-items-center w-100">
-                  <a className="nav-link travel-adventure" href="<?=$path?>#logo">
+                  <a className="nav-link travel-adventure" onClick={() => handleNavClick('home')}>
                     TRAVEL.ADVENTURE.<span className="freedom">FREEDOM</span>
                   </a>
                 </div>
-                <a className="nav-item" href="<?=$path?>#login" onClick={closeMenu}>
+                <a className="nav-item" onClick={() => handleNavClick('login')}>
                   <img src={Login} className="nav-img"></img>
                   <p className="nav-link">Login</p>
                 </a>
