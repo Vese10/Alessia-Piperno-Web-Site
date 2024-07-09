@@ -7,6 +7,7 @@ import Freelancer from './components/Freelancer'
 import Viaggi from './components/Viaggi'
 import Contatti from './components/Contatti'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
 import Footer from './include/footer'
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
       case 'contatti':
         return <Contatti />
       case 'login':
-        return <Login />
+        return <Login setCurrentPage={setCurrentPage}/>
+      case 'signup':
+        return <SignUp />
       default:
         return <Home setCurrentPage={setCurrentPage} />
     }

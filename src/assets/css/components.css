@@ -18,15 +18,28 @@
   opacity: 0.5;
 }
 
+.background-image-desktop {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
 .main-container-1,
 .main-container-2,
-.contacts-container {
+.contacts-container,
+.standard-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
+}
+
+.signup-container {
+  background: linear-gradient(to right, var(--gradient2), var(--main));;
 }
 
 .inside-image {
@@ -59,6 +72,20 @@
   font-size: 15px;
 }
 
+.signup-page-btn {
+  background: var(--bgCta);
+  color: black;
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+  font-size: 15px;
+}
+
+.signup-page-btn:hover {
+  background: var(--bgCta);
+  color: var(--main);
+}
+
 .form-left,
 .form-right {
   border-radius: 20px;
@@ -69,13 +96,35 @@
   font-weight: 400;
 }
 
+.login-old {
+  border-bottom-left-radius: 20px;
+}
+
+.login-new {
+  border-bottom-right-radius: 20px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.privacy {
+  text-decoration: none;
+  color: black !important;
+}
+
+.privacy:hover {
+  color: var(--bgCta) !important;
+}
+
 @media (max-width: 992px) {
 
   .background-image-desktop {
     display: none;
   }
 
-  .main-container-1 {
+  .main-container-1,
+  .standard-container {
     background-image: url(../img/background-mobile-1.png);
     background-position: center;
   }
@@ -112,5 +161,9 @@
   .label-text {
     font-size: 15px;
     font-weight: 400;
+  }
+
+  .signup-form {
+    flex-direction: column;
   }
 }
