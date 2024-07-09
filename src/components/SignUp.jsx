@@ -115,7 +115,7 @@ function SignUp() {
                         className="form-check-label ms-2 text-white"
                       >
                         Accetto le condizioni della{" "}
-                        <a href="#" target="_blank" className="privacy">
+                        <a href="#" target="_blank" className="privacy-check">
                           Privacy
                         </a>
                       </label>

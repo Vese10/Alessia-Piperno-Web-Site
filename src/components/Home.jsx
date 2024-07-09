@@ -26,7 +26,7 @@ function Home({setCurrentPage}) {
           alt="Paesaggio Montagna"
         />
         <div className="container-fluid d-flex main-container-1">
-          <div className="container mt-5">
+          <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex justify-content-center align-items-center">
                 <img
@@ -57,7 +57,7 @@ function Home({setCurrentPage}) {
           alt="Paesaggio Montagna"
         />
         <div className="container-fluid d-flex main-container-2">
-          <div className="container mt-5">
+          <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex justify-content-center align-items-center">
                 <img
@@ -92,7 +92,7 @@ function Home({setCurrentPage}) {
           alt="Paesaggio Montagna"
         />
         <div className="container-fluid d-flex main-container-1">
-          <div className="container mt-5">
+          <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center bg-white p-4 container-text">
                 <p className="container-title">FREELANCER</p>
@@ -122,7 +122,7 @@ function Home({setCurrentPage}) {
           alt="Paesaggio Montagna"
         />
         <div className="container-fluid d-flex main-container-2">
-          <div className="container mt-5">
+          <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex justify-content-center align-items-center">
                 <img
@@ -161,7 +161,7 @@ function Home({setCurrentPage}) {
           alt="Paesaggio Montagna"
         />
         <div className="container-fluid d-flex contacts-container">
-          <div className="container mt-5">
+          <div className="container-fluid mt-5">
             <div className="row">
               <div className="col-lg-1"></div>
               <div className="col-lg-4 d-flex flex-column justify-content-center bg-white p-4 form-left">

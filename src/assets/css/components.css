@@ -13,7 +13,7 @@
 .background-image-desktop {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   object-fit: cover;
   opacity: 0.5;
 }
@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
 }
 
 .signup-container {
@@ -100,12 +100,12 @@
   cursor: pointer;
 }
 
-.privacy {
+.privacy-check {
   text-decoration: none;
   color: black !important;
 }
 
-.privacy:hover {
+.privacy-check:hover {
   color: var(--bgCta) !important;
 }
 
@@ -119,16 +119,22 @@
   .standard-container {
     background-image: url(../img/background-mobile-1.png);
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .main-container-2 {
     background-image: url(../img/background-mobile-2.png);
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .contacts-container {
     background-image: url(../img/background-mobile-1.png);
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .inside-image {
