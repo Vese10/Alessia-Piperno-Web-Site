@@ -1,0 +1,17 @@
+:root {
+  --bgCta: #EEE3AB;
+  --main: #656B9F;
+  --gradient2: #97D6FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.azadì-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
