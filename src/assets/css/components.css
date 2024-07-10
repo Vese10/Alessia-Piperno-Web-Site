@@ -61,7 +61,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 .signup-page-btn {
@@ -107,6 +107,35 @@
 
 .privacy-check:hover {
   color: var(--bgCta) !important;
+}
+
+/* Azadì style */
+
+.azadì {
+  min-height: 100vh;
+}
+
+.azadì-row {
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.left-azadì {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+}
+
+.right-azadì {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+}
+
+.azadì-image {
+  width: 80%;
+  overflow: hidden;
+}
+
+.store-image {
+  cursor: pointer;
+  width: 80%;
 }
 
 @media (max-width: 992px) {
@@ -163,5 +192,27 @@
 
   .signup-form {
     flex-direction: column;
+  }
+
+  /* Azadì style */
+
+  .azadì-row {
+    padding: 0;
+  }
+
+  .center-azadì {
+    background: linear-gradient(to right, var(--gradient2), var(--main));
+  }
+
+  .azadì-image {
+    padding: 20px;
+  }
+
+  .azadì-title {
+    color: white;
+  }
+
+  .azadì-description {
+    color: white;
   }
 }

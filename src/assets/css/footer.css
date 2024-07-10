@@ -12,9 +12,11 @@
 
 /* Style Footer Container */
 .footer {
+  position: relative;
   font-size: 16px;
   height: 100px;
   background: linear-gradient(to right, var(--gradient2), var(--main));
+  z-index: 1 !important;
 }
 
 .left-footer {
