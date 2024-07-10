@@ -135,6 +135,10 @@
 
 .store-image {
   cursor: pointer;
+  width: 100%;
+}
+
+.store-link {
   width: 80%;
 }
 

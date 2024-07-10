@@ -36,34 +36,69 @@ function Azadì() {
               <p className="container-title text-white">
                 Acquista il libro qui:
               </p>
-              <img
-                src={MondadoriLogo}
-                alt="Mondadori Logo"
-                className="img-fluid store-image"
-              ></img>
+              <a
+                className="store-link"
+                href="https://www.mondadoristore.it/Azadi-diario-viaggio-Alessia-Piperno/eai978880477763/?sessionToken=2lyrzP0JQW6tkxuW9dh5OvvVBUSYz6ym"
+                target="_blank"
+                rel="nooper"
+              >
+                <img
+                  src={MondadoriLogo}
+                  alt="Mondadori Logo"
+                  className="img-fluid store-image"
+                ></img>
+              </a>
               <div className="d-flex p-4 align-items-center justify-content-center">
-                <img
-                  src={CoopLogo}
-                  alt="Coop Logo"
-                  className="col-lg-6 p-4 img-fluid store-image"
-                ></img>
-                <img
-                  src={AmazonLogo}
-                  alt="Amazon Logo"
-                  className="col-lg-6 p-4 img-fluid store-image"
-                ></img>
+                <a
+                  className="col-lg-6 p-5 store-link"
+                  href="https://www.librerie.coop/libri/9788804777632-azadi-alessia-piperno-libri-mondadori/?tduid=b22274c379e5bf793924ca57d883049d"
+                  target="_blank"
+                  rel="nooper"
+                >
+                  <img
+                    src={CoopLogo}
+                    alt="Coop Logo"
+                    className="img-fluid store-image"
+                  ></img>
+                </a>
+                <a
+                  className="col-lg-6 p-5 store-link"
+                  href="https://www.amazon.it/azadi-alessia-piperno/dp/880477763X/?tag=librimondadori-21"
+                  target="_blank"
+                  rel="nooper"
+                >
+                  <img
+                    src={AmazonLogo}
+                    alt="Amazon Logo"
+                    className="img-fluid store-image"
+                  ></img>
+                </a>
               </div>
               <div className="d-flex p-4 align-items-center justify-content-center">
-                <img
-                  src={IBSLogo}
-                  alt="IBS Logo"
-                  className="col-lg-6 p-4 img-fluid store-image"
-                ></img>
-                <img
-                  src={FeltrinelliLogo}
-                  alt="Feltrinelli Logo"
-                  className="col-lg-6 p-4 img-fluid store-image"
-                ></img>
+                <a
+                  className="col-lg-6 p-5 store-link"
+                  href="https://www.ibs.it/azadi-libro-alessia-piperno/e/9788804777632?gad_source=1&gclid=CjwKCAjw4ri0BhAvEiwA8oo6F7bKPAV8C5pJXWnILjipRG9g2jiDjIQIWicwWzknPH-sZzz1W8pXQRoCy3MQAvD_BwE"
+                  target="_blank"
+                  rel="nooper"
+                >
+                  <img
+                    src={IBSLogo}
+                    alt="IBS Logo"
+                    className="img-fluid store-image"
+                  ></img>
+                </a>
+                <a
+                  className="col-lg-6 p-5 store-link"
+                  href="https://www.lafeltrinelli.it/azadi-libro-alessia-piperno/e/9788804777632?utm_source=tradedoubler&utm_medium=cpa&utm_campaign=2993006&utm_content=affiliazione&tduid=b22274c379e5bf793924ca57d883049d"
+                  target="_blank"
+                  rel="nooper"
+                >
+                  <img
+                    src={FeltrinelliLogo}
+                    alt="Feltrinelli Logo"
+                    className="img-fluid store-image"
+                  ></img>
+                </a>
               </div>
             </div>
           </div>
