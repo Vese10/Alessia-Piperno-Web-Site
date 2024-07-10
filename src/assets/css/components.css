@@ -142,6 +142,26 @@
   width: 80%;
 }
 
+/* Freelancer style */
+
+.freelancer {
+  min-height: 100vh;
+}
+
+.freelancer-image-pc {
+  position: relative;
+  z-index: -1;
+}
+
+.freelancer-image-mobile {
+  display: none;
+}
+
+.freelancer-title-top {
+  position: absolute;
+  font-size: 50px;
+}
+
 @media (max-width: 992px) {
 
   .background-image-desktop {
@@ -218,5 +238,19 @@
 
   .azadì-description {
     color: white;
+  }
+}
+
+@media (max-width: 550px) {
+  /* Freelancer style */
+
+  .freelancer-image-pc {
+    display: none;
+  }
+
+  .freelancer-image-mobile {
+    display: unset;
+    position: relative;
+    z-index: -1;
   }
 }
