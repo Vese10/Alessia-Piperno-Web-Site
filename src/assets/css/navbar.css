@@ -11,6 +11,7 @@
 }
 
 .navbar {
+  position: sticky !important;
   background: linear-gradient(to right, var(--gradient2), var(--main));
   min-height: 100px;
   position: fixed;
