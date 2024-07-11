@@ -25,7 +25,7 @@ function Home({setCurrentPage}) {
           className="img-fluid background-image-desktop"
           alt="Paesaggio Montagna"
         />
-        <div className="container-fluid d-flex main-container-1">
+        <div className="container-fluid d-flex main-container-1 landing-page">
           <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex justify-content-center align-items-center">
@@ -160,7 +160,7 @@ function Home({setCurrentPage}) {
           className="img-fluid background-image-desktop"
           alt="Paesaggio Montagna"
         />
-        <div className="container-fluid d-flex contacts-container">
+        <div className="container-fluid d-flex main-container-1">
           <div className="container-fluid mt-5">
             <div className="row">
               <div className="col-lg-1"></div>

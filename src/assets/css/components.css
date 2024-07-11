@@ -20,7 +20,6 @@
 
 .main-container-1,
 .main-container-2,
-.contacts-container,
 .standard-container {
   position: relative;
   display: flex;
@@ -30,8 +29,13 @@
   height: 100vh;
 }
 
+.landing-page {
+  justify-content: unset;
+}
+
 .signup-container {
-  background: linear-gradient(to right, var(--gradient2), var(--main));;
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  ;
 }
 
 .inside-image {
@@ -62,6 +66,7 @@
   width: 100%;
   border: none;
   font-size: 30px;
+  z-index: 1;
 }
 
 .signup-page-btn {
@@ -162,6 +167,49 @@
   font-size: 50px;
 }
 
+/* Contacts Style*/
+
+.contacts-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Viaggi Style*/
+
+.viaggi {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  min-height: 100vh;
+}
+
+/* Trip Card Style*/
+
+.trip-card {
+  width: 49%;
+  background-image: url(../img/trip-card-image.png);
+  background-size: cover;
+  border-radius: 30px;
+}
+
+.single-card {
+  position: relative;
+}
+
+.trip-destination {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  width: fit-content;
+  font-size: 35px;
+  border-radius: 30px;
+}
+
+.trip-info {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  font-size: 25px;
+  border-radius: 30px;
+}
+
 @media (max-width: 992px) {
 
   .background-image-desktop {
@@ -183,13 +231,6 @@
     background-repeat: no-repeat;
   }
 
-  .contacts-container {
-    background-image: url(../img/background-mobile-1.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
   .inside-image {
     width: 100%;
     padding: 50px 0 0 0;
@@ -203,7 +244,7 @@
     font-size: 30px;
     font-weight: 700;
   }
-  
+
   .container-description {
     font-size: 15px;
     font-weight: 400;
@@ -239,6 +280,46 @@
   .azadì-description {
     color: white;
   }
+
+  /* Contacts Style*/
+  .contacts-container {
+    background-image: url(../img/background-mobile-1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: unset;
+  }
+
+  .form-left {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .form-right {
+    padding-bottom: 0 !important;
+  }
+
+  /* Viaggi Style*/
+
+  .viaggi {
+    align-items: center;
+  }
+
+  .trips {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* Trip Card Style*/
+
+  .trip-card {
+    width: 100%;
+  }
+
+  .trip-info {
+    flex-direction: column;
+  }
+
 }
 
 @media (max-width: 550px) {

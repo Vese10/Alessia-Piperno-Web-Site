@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ContattiBackgroundDesktop from "../assets/img/contatti-background-desktop.png";
+import ContattiPageBackgroundDesktop from "../assets/img/contatti-page-background-desktop.png";
 
 function Contatti() {
   return (
     <>
       <section className="contatti">
         <img
-          src={ContattiBackgroundDesktop}
+          src={ContattiPageBackgroundDesktop}
           className="img-fluid background-image-desktop"
           alt="Paesaggio Montagna"
         />
