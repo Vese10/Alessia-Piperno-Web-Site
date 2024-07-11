@@ -1,9 +1,5 @@
 {
   "projects": {
-<<<<<<< HEAD
-    "default": "alessia-piperno-web-site"
-=======
-    "default": "alessia-piperno"
->>>>>>> develop
+    "default": "alessiapipernotravel"
   }
 }
