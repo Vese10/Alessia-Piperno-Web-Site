@@ -78,6 +78,21 @@ app.delete('/users/:id', async (req, res) => {
   }
 });
 
+// Rotta per il login
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email, password });
+    if (user) {
+      res.status(200).send({ message: 'Login effettuato con successo' });
+    } else {
+      res.status(401).send({ message: 'Utente non presente oppure email o password errati' });
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

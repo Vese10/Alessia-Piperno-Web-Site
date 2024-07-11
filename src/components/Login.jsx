@@ -4,9 +4,34 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginBackgroundDesktop from "../assets/img/login-background-desktop.png";
 
 function Login({ setCurrentPage }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage(""); // Resetta il messaggio di errore
+    try {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      if (response.ok) {
+        setCurrentPage("signup"); // Naviga al componente signup in caso di successo
+      } else {
+        const errorData = await response.json();
+        setErrorMessage(errorData.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -33,7 +58,10 @@ function Login({ setCurrentPage }) {
                 <p className="container-description">
                   Se ti sei già registrato, accedi con le tue credenziali.
                 </p>
-                <form className="d-flex flex-column">
+                {errorMessage && (
+                  <p className="error-message text-danger">{errorMessage}</p>
+                )}
+                <form className="d-flex flex-column" onSubmit={handleSubmit}>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="email" className="form-label">
                       Email*:
@@ -43,6 +71,8 @@ function Login({ setCurrentPage }) {
                       className="form-control"
                       id="email"
                       placeholder="Inserisci email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
                   </div>
@@ -55,6 +85,8 @@ function Login({ setCurrentPage }) {
                       className="form-control"
                       id="password"
                       placeholder="Inserisci password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       required
                     />
                   </div>
