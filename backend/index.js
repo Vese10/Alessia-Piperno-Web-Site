@@ -2,11 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const User = require('./models/User');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
 // Middleware per parsing JSON
 app.use(express.json());
+
+// Abilita CORS per tutte le rotte
+app.use(cors());
 
 // Connessione a MongoDB
 mongoose.connect('mongodb://localhost:27017/AlessiaPipernoDatabase', {
@@ -30,7 +34,11 @@ app.post('/users', async (req, res) => {
     await user.save();
     res.status(201).send(user);
   } catch (error) {
-    res.status(400).send(error);
+    if (error.code === 11000) { // Codice errore per duplicazione chiave
+      res.status(409).send({ message: 'Utente già registrato' }); // Codice 409 per conflitto
+    } else {
+      res.status(400).send(error);
+    }
   }
 });
 
