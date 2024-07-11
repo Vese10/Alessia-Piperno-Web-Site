@@ -6,7 +6,7 @@ import TripCard from "../include/trip-card";
 function Viaggi() {
   return (
     <>
-      <section className="d-flex flex-column viaggi">
+      <section className="d-flex flex-column viaggi-page">
         <div className="d-flex justify-content-between m-4 trips">
           <TripCard></TripCard>
           <TripCard></TripCard>
