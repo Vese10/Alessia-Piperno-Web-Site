@@ -179,7 +179,7 @@
 
 /* Viaggi Style*/
 
-.viaggi {
+.viaggi-page {
   background: linear-gradient(to right, var(--gradient2), var(--main));
   min-height: 100vh;
 }
@@ -301,7 +301,7 @@
 
   /* Viaggi Style*/
 
-  .viaggi {
+  .viaggi-page {
     align-items: center;
   }
 
