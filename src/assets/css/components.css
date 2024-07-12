@@ -341,7 +341,16 @@
   /* Lingua Style*/
 
   .dropdown-menu {
+    top: 0;
+    right: unset;
+  }
+
+  .dropdown-item {
     
+  }
+
+  .nav-lang {
+    display: none;
   }
 }
 
