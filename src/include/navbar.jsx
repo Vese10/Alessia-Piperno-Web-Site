@@ -9,15 +9,39 @@ import Contatti from "../assets/img/contatti.png";
 import Login from "../assets/img/login.png";
 import Lingua from "../assets/img/lingua.png";
 
-function Navbar({setCurrentPage}) {
+import itFlag from "../assets/img/it.png";
+import ukFlag from "../assets/img/uk.png";
+import esFlag from "../assets/img/es.png";
+import frFlag from "../assets/img/fr.png";
+import deFlag from "../assets/img/de.png";
+import ptFlag from "../assets/img/pt.png";
+
+const languages = [
+  { code: 'it', name: 'Italiano', flag: itFlag },
+  { code: 'en', name: 'English', flag: ukFlag },
+  { code: 'es', name: 'Español', flag: esFlag },
+  { code: 'fr', name: 'Français', flag: frFlag },
+  { code: 'de', name: 'Deutsch', flag: deFlag },
+  { code: 'pt', name: 'Português', flag: ptFlag },
+];
+
+function Navbar({ setCurrentPage, setLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+  const toggleLanguageMenu = () => setLanguageMenuOpen(!languageMenuOpen);
+  const closeLanguageMenu = () => setLanguageMenuOpen(false);
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
     closeMenu();
+  }
+
+  const handleLanguageChange = (language) => {
+    setLanguage(language);
+    closeLanguageMenu();
   }
 
   return (
@@ -69,10 +93,23 @@ function Navbar({setCurrentPage}) {
                   <img src={Login} className="nav-img"></img>
                   <p className="nav-link">Login</p>
                 </a>
-                <a className="nav-item" href="<?=$path?>#lingua" onClick={closeMenu}>
+                <div className="nav-item dropdown" onClick={toggleLanguageMenu}>
                   <img src={Lingua} className="nav-img"></img>
                   <p className="nav-link">Lingua</p>
-                </a>
+                  {languageMenuOpen && (
+                    <div className="dropdown-menu show">
+                      {languages.map((lang) => (
+                        <a
+                          key={lang.code}
+                          className="dropdown-item"
+                          onClick={() => handleLanguageChange(lang.code)}
+                        >
+                          <img src={lang.flag} className="flag-img" alt={`${lang.name} flag`} /> {lang.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

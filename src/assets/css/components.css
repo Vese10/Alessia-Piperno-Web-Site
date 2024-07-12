@@ -210,6 +210,24 @@
   border-radius: 30px;
 }
 
+/* Lingua Style*/
+
+.dropdown-menu {
+  top: 120%;
+  right: -2vh;
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  border: none;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.flag-img {
+  width: 100px;
+}
+
+
 @media (max-width: 992px) {
 
   .background-image-desktop {
@@ -320,6 +338,11 @@
     flex-direction: column;
   }
 
+  /* Lingua Style*/
+
+  .dropdown-menu {
+    
+  }
 }
 
 @media (max-width: 550px) {
