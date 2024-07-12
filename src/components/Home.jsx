@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomeBackgroundDesktop from "../assets/img/home-backgraound-desktop.png";
@@ -10,7 +11,9 @@ import ViaggiBackgroundDesktop from "../assets/img/viaggi-background-desktop.png
 import ViaggiImage from "../assets/img/viaggi-image.png";
 import ContattiBackgroundDesktop from "../assets/img/contatti-background-desktop.png";
 
-function Home({setCurrentPage}) {
+function Home({setCurrentPage, setLanguage }) {
+  const { t, i18n } = useTranslation();
+
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
@@ -36,13 +39,9 @@ function Home({setCurrentPage}) {
                 />
               </div>
               <div className="col-lg-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center bg-white p-4 container-text">
-                <p className="container-title">Alessia Piperno</p>
+                <p className="container-title">{t('home.title')}</p>
                 <p className="container-description">
-                  Presentazione Personale Presentazione Personale Presentazione
-                  Personale Presentazione Personale Presentazione Personale
-                  Presentazione Personale Presentazione Personale Presentazione
-                  Personale Presentazione Personale Presentazione Personale
-                  Presentazione Personale Presentazione Personale
+                {t('home.description')}
                 </p>
               </div>
             </div>
@@ -67,17 +66,11 @@ function Home({setCurrentPage}) {
                 />
               </div>
               <div className="col-lg-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center bg-white p-4 container-text">
-                <p className="container-title">Azadi!</p>
-                <p className="container-description">
-                  Descrizione breve libro Descrizione breve libro Descrizione
-                  breve libro Descrizione breve libro Descrizione breve libro
-                  Descrizione breve libro Descrizione breve libro Descrizione
-                  breve libro Descrizione breve libro Descrizione breve libro
-                  Descrizione breve libro Descrizione breve libro Descrizione
-                  breve libro Descrizione breve libro
+                <p className="container-title">{t('home.title-azadì')}</p>
+                <p className="container-description">{t('home.description-azadì')}
                 </p>
                 <button type="button" className="btn btn-primary single-page-btn" onClick={() => handleNavClick('azadì')}>
-                  ACQUISTA
+                {t('home.btn-azadì')}
                 </button>
               </div>
             </div>
@@ -95,18 +88,11 @@ function Home({setCurrentPage}) {
           <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center bg-white p-4 container-text">
-                <p className="container-title">FREELANCER</p>
-                <p className="container-description">
-                  Presentazione attività Presentazione attività Presentazione
-                  attività Presentazione attività Presentazione attività
-                  Presentazione attività Presentazione attività Presentazione
-                  attività Presentazione attività Presentazione attività
-                  Presentazione attività Presentazione attività Presentazione
-                  attività Presentazione attività Presentazione attività
-                  Presentazione attività
+                <p className="container-title">{t('home.title-freelancer')}</p>
+                <p className="container-description">{t('home.description-freelancer')}
                 </p>
                 <button type="button" className="btn btn-primary single-page-btn" onClick={() => handleNavClick('freelancer')}>
-                  APPROFONDISCI
+                {t('home.btn-freelancer')}
                 </button>
               </div>
               <div className="col-lg-4"></div>
@@ -132,21 +118,14 @@ function Home({setCurrentPage}) {
                 />
               </div>
               <div className="col-lg-6 col-12 p-4 d-flex flex-column justify-content-center align-items-center bg-white p-4 container-text">
-                <p className="container-title">Viaggi Di Gruppo</p>
-                <p className="container-description">
-                  Introduzione ai viaggi di gruppo Introduzione ai viaggi di
-                  gruppo Introduzione ai viaggi di gruppo Introduzione ai viaggi
-                  di gruppo Introduzione ai viaggi di gruppo Introduzione ai
-                  viaggi di gruppo Introduzione ai viaggi di gruppo Introduzione
-                  ai viaggi di gruppo Introduzione ai viaggi di gruppo
-                  Introduzione ai viaggi di gruppo Introduzione ai viaggi di
-                  gruppo Introduzione ai viaggi di gruppo
+                <p className="container-title">{t('home.title-travel')}</p>
+                <p className="container-description">{t('home.description-travel')}
                 </p>
                 <button
                   type="button"
                   className="btn btn-primary single-page-btn" onClick={() => handleNavClick('viaggi')}
                 >
-                  SCOPRI
+                  {t('home.btn-travel')}
                 </button>
               </div>
             </div>
@@ -166,12 +145,10 @@ function Home({setCurrentPage}) {
               <div className="col-lg-1"></div>
               <div className="col-lg-4 d-flex flex-column justify-content-center bg-white p-4 form-left">
                 <h1 className="text-center text-md-left container-title">
-                  Contattami
+                {t('home.title-contacts')}
                 </h1>
                 <p className="text-center text-md-left container-description">
-                  Per informazioni, proposte o per qualsiasi cosa ti venga in
-                  mente, puoi contattarmi qui. Ti risponderò nel più breve tempo
-                  possibile. Grazie!
+                {t('home.description-contacts')}
                 </p>
               </div>
               <div className="col-lg-2"></div>
@@ -179,61 +156,61 @@ function Home({setCurrentPage}) {
                 <form>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
-                      Nome*
+                    {t('home.name-label')}
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="nome"
-                      placeholder="Inserisci il nome"
+                      placeholder={t('home.name-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="cognome" className="label-text">
-                      Cognome*
+                    {t('home.surname-label')}
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="cognome"
-                      placeholder="Inserisci il cognome"
+                      placeholder={t('home.surname-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="email" className="label-text">
-                      Email*
+                    {t('home.email-label')}
                     </label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
-                      placeholder="Inserisci l'email"
+                      placeholder={t('home.email-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="telefono" className="label-text">
-                      Telefono*
+                    {t('home.tel-label')}
                     </label>
                     <input
                       type="tel"
                       className="form-control"
                       id="telefono"
-                      placeholder="Inserisci il telefono"
+                      placeholder={t('home.tel-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="messagge" className="label-text">
-                      Messaggio*
+                    {t('home.message-label')}
                     </label>
                     <textarea
                       type="message"
                       className="form-control"
                       id="messaggio"
-                      placeholder="Scrivi il tuo messaggio"
+                      placeholder={t('home.message-input')}
                       required
                     />
                   </div>
@@ -242,7 +219,7 @@ function Home({setCurrentPage}) {
                       type="submit"
                       className="btn btn-primary mt-3 single-page-btn"
                     >
-                      INVIA
+                      {t('home.btn-contacts')}
                     </button>
                   </div>
                 </form>

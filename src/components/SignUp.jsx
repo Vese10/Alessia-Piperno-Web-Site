@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpBackgroundDesktop from "../assets/img/signup-background-desktop.png";
 
-function SignUp() {
+function SignUp({ setLanguage }) {
+  const { t, i18n } = useTranslation();
+  
   const [formData, setFormData] = useState({
     name: '',
     surname: '',
@@ -31,13 +34,13 @@ function SignUp() {
 
     // Controlla se le password corrispondono
     if (formData.password !== formData.repeatPassword) {
-      setErrorMessage("Le password non corrispondono");
+      setErrorMessage(t('signup.different-pass'));
       return;
     }
 
-    // Controlla se la password è lunga almeno 6 caratteri
+    // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
     if (formData.password.length < 6) {
-      setErrorMessage("La password deve essere lunga almeno 6 caratteri");
+      setErrorMessage(t('signup.short-pass'));
       return;
     }
 
@@ -50,7 +53,7 @@ function SignUp() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        setSuccessMessage("Registrazione avvenuta con successo, effettua il login");
+        setSuccessMessage(t('signup.signup-ok'));
         setFormData({
           name: '',
           surname: '',
@@ -64,7 +67,7 @@ function SignUp() {
           setSuccessMessage("");
         }, 3000); // Mostra il messaggio per 3 secondi
       } else if (response.status === 409) {
-        setErrorMessage("Utente già registrato");
+        setErrorMessage(t('signup.user-exists'));
       } else {
         console.error('Error creating user:', response.statusText);
       }
@@ -100,7 +103,7 @@ function SignUp() {
         <div className="container mt-5">
           <div className="row d-flex align-items-center justify-content-center">
             <div className="col-12 text-center bg-white p-4 rounded-top-4 pb-5 signup-container">
-              <p className="container-title mb-0 text-white">Registrati come nuovo cliente</p>
+              <p className="container-title mb-0 text-white">{t('signup.title')}</p>
             </div>
           </div>
           <div className="row">
@@ -110,54 +113,54 @@ function SignUp() {
               )}
               <form className="d-flex justify-content-around signup-form" onSubmit={handleSubmit}>
                 <div className="signup-form-left">
-                  <p className="container-title text-white">Informazioni personali:</p>
+                  <p className="container-title text-white">{t('signup.title-1')}</p>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="nome" className="form-label m-2 text-white">Nome*:</label>
+                    <label htmlFor="nome" className="form-label m-2 text-white">{t('signup.name-label')}</label>
                     <input
                       type="text"
                       className="form-control"
                       id="nome"
                       name="name"
-                      placeholder="Inserisci nome"
+                      placeholder={t('signup.name-input')}
                       value={formData.name}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="cognome" className="form-label m-2 text-white">Cognome*:</label>
+                    <label htmlFor="cognome" className="form-label m-2 text-white">{t('signup.surname-label')}</label>
                     <input
                       type="text"
                       className="form-control"
                       id="cognome"
                       name="surname"
-                      placeholder="Inserisci cognome"
+                      placeholder={t('signup.surname-input')}
                       value={formData.surname}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="email" className="form-label m-2 text-white">Email*:</label>
+                    <label htmlFor="email" className="form-label m-2 text-white">{t('signup.email-label')}</label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder="Inserisci email"
+                      placeholder={t('signup.email-input')}
                       value={formData.email}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="telefono" className="form-label m-2 text-white">Telefono:</label>
+                    <label htmlFor="telefono" className="form-label m-2 text-white">{t('signup.tel-label')}</label>
                     <input
                       type="tel"
                       className="form-control"
                       id="telefono"
                       name="phone"
-                      placeholder="Inserisci telefono"
+                      placeholder={t('signup.tel-input')}
                       value={formData.phone}
                       onChange={handleChange}
                     />
@@ -165,28 +168,28 @@ function SignUp() {
                 </div>
 
                 <div className="signup-form-right">
-                  <p className="container-title text-white">Credenziali:</p>
+                  <p className="container-title text-white">{t('signup.title-2')}</p>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="password" className="form-label m-2 text-white">Password*:</label>
+                    <label htmlFor="password" className="form-label m-2 text-white">{t('signup.password-label')}</label>
                     <input
                       type="password"
                       className="form-control"
                       id="password"
                       name="password"
-                      placeholder="Inserisci password"
+                      placeholder={t('signup.password-input')}
                       value={formData.password}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="repeat-password" className="form-label m-2 text-white">Ripeti Password*:</label>
+                    <label htmlFor="repeat-password" className="form-label m-2 text-white">{t('signup.repeat-pass-label')}</label>
                     <input
                       type="password"
                       className="form-control"
                       id="repeatPassword"
                       name="repeatPassword"
-                      placeholder="Ripeti password"
+                      placeholder={t('signup.repeat-pass-input')}
                       value={formData.repeatPassword}
                       onChange={handleChange}
                       required
@@ -203,11 +206,11 @@ function SignUp() {
                       required
                     />
                     <label htmlFor="privacy" className="form-check-label ms-2 text-white">
-                      Accetto le condizioni della{" "}
-                      <a href="#" target="_blank" className="privacy-check">Privacy</a>
+                    {t('signup.checkbox-text')}
+                      <a href="#" target="_blank" className="privacy-check">{t('signup.checkbox-privacy')}</a>
                     </label>
                   </div>
-                  <button type="submit" className="btn signup-page-btn">Crea Account</button>
+                  <button type="submit" className="btn signup-page-btn">{t('signup.btn')}</button>
                 </div>
               </form>
             </div>

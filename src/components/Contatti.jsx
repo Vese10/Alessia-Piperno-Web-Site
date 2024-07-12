@@ -1,15 +1,17 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "emailjs-com";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContattiPageBackgroundDesktop from "../assets/img/contatti-page-background-desktop.png";
 
-function Contatti() {
-  const [buttonText, setButtonText] = useState("INVIA");
+function Contatti({ setLanguage }) {
+  const { t, i18n } = useTranslation();
+  const [buttonText, setButtonText] = useState(t('home.btn-contacts'));
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setButtonText("Invio in corso...");
+    setButtonText(t('home.btn-contacts-try'));
 
     emailjs
       .sendForm(
@@ -21,14 +23,14 @@ function Contatti() {
       .then(
         (result) => {
           console.log(result.text);
-          setButtonText("Inviato con successo!");
+          setButtonText(t('home.btn-contacts-ok'));
           e.target.reset();
-          setTimeout(() => setButtonText("INVIA"), 3000);
+          setTimeout(() => setButtonText(t('home.btn-contacts')), 3000);
         },
         (error) => {
           console.log(error.text);
-          setButtonText("Errore nell'invio!");
-          setTimeout(() => setButtonText("INVIA"), 3000);
+          setButtonText(t('home.btn-contacts-ko'));
+          setTimeout(() => setButtonText(t('home.btn-contacts')), 3000);
         }
       );
   };
@@ -47,12 +49,10 @@ function Contatti() {
               <div className="col-lg-1"></div>
               <div className="col-lg-4 d-flex flex-column justify-content-center bg-white p-4 form-left">
                 <h1 className="text-center text-md-left container-title">
-                  Contattami
+                {t('home.title-contacts')}
                 </h1>
                 <p className="text-center text-md-left container-description">
-                  Per informazioni, proposte o per qualsiasi cosa ti venga in
-                  mente, puoi contattarmi qui. Ti risponderò nel più breve tempo
-                  possibile. Grazie!
+                {t('home.description-contacts')}
                 </p>
               </div>
               <div className="col-lg-2"></div>
@@ -60,66 +60,66 @@ function Contatti() {
                 <form onSubmit={sendEmail}>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
-                      Nome*
+                    {t('home.name-label')}
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="nome"
                       name="user_name"
-                      placeholder="Inserisci il nome"
+                      placeholder={t('home.name-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="cognome" className="label-text">
-                      Cognome*
+                    {t('home.surname-label')}
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="cognome"
                       name="user_surname"
-                      placeholder="Inserisci il cognome"
+                      placeholder={t('home.surname-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="email" className="label-text">
-                      Email*
+                    {t('home.email-label')}
                     </label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
                       name="user_email"
-                      placeholder="Inserisci l'email"
+                      placeholder={t('home.email-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="telefono" className="label-text">
-                      Telefono*
+                    {t('home.tel-label')}
                     </label>
                     <input
                       type="tel"
                       className="form-control"
                       id="telefono"
                       name="user_phone"
-                      placeholder="Inserisci il telefono"
+                      placeholder={t('home.tel-input')}
                       required
                     />
                   </div>
                   <div className="form-group p-2">
                     <label htmlFor="messagge" className="label-text">
-                      Messaggio*
+                    {t('home.message-label')}
                     </label>
                     <textarea
                       type="message"
                       className="form-control"
                       id="messaggio"
                       name="user_message"
-                      placeholder="Scrivi il tuo messaggio"
+                      placeholder={t('home.message-input')}
                       required
                     />
                   </div>

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TripCard from "../include/trip-card";
 
-function Viaggi() {
+function Viaggi({ setLanguage }) {
+  const { t, i18n } = useTranslation();
+  
   return (
     <>
       <section className="d-flex flex-column viaggi-page">

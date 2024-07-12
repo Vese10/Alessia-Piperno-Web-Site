@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginBackgroundDesktop from "../assets/img/login-background-desktop.png";
 
-function Login({ setCurrentPage }) {
+function Login({ setCurrentPage, setLanguage }) {
+  const { t, i18n } = useTranslation();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -46,17 +49,17 @@ function Login({ setCurrentPage }) {
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-12 bg-white p-4 rounded-top-4 pb-5">
-                <p className="container-title mb-0">Accesso Clienti:</p>
+                <p className="container-title mb-0">{t('login.title-1')}</p>
                 <p className="container-description">
-                  Accedi al tuo account oppure creane uno nuovo.
+                {t('login.text-1')}
                 </p>
               </div>
             </div>
             <div className="row">
               <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-old pb-5">
-                <p className="container-title">Clienti Registrati</p>
+                <p className="container-title">{t('login.title-2')}</p>
                 <p className="container-description">
-                  Se ti sei già registrato, accedi con le tue credenziali.
+                {t('login.text-2')}
                 </p>
                 {errorMessage && (
                   <p className="error-message text-danger">{errorMessage}</p>
@@ -64,13 +67,13 @@ function Login({ setCurrentPage }) {
                 <form className="d-flex flex-column" onSubmit={handleSubmit}>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="email" className="form-label">
-                      Email*:
+                    {t('login.username-label')}
                     </label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
-                      placeholder="Inserisci email"
+                      placeholder={t('login.username-input')}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -78,13 +81,13 @@ function Login({ setCurrentPage }) {
                   </div>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="password" className="form-label">
-                      Password*:
+                    {t('login.password-label')}
                     </label>
                     <input
                       type="password"
                       className="form-control"
                       id="password"
-                      placeholder="Inserisci password"
+                      placeholder={t('login.password-input')}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
@@ -94,22 +97,21 @@ function Login({ setCurrentPage }) {
                     type="submit"
                     className="btn btn-primary single-page-btn"
                   >
-                    Login
+                    {t('login.btn-1')}
                   </button>
                 </form>
               </div>
               <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-new">
-                <p className="container-title">Nuovi Clienti</p>
+                <p className="container-title">{t('login.title-3')}</p>
                 <p className="container-description">
-                  Se non hai ancora un account, clicca sul pulsante sottostante
-                  per registrarti.
+                {t('login.text-3')}
                 </p>
                 <button
                   type="button"
                   className="btn btn-primary single-page-btn"
                   onClick={() => handleNavClick("signup")}
                 >
-                  Registrati
+                  {t('login.btn-2')}
                 </button>
               </div>
             </div>

@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function TripCard() {
+function TripCard({ setLanguage }) {
+  const { t, i18n } = useTranslation();
+  
   return (
     <>
       <section className="trip-card">

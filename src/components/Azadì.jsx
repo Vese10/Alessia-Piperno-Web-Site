@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BookImage from "../assets/img/book-cover.jpg";
@@ -8,7 +9,9 @@ import AmazonLogo from "../assets/img/amazon-logo.png";
 import IBSLogo from "../assets/img/ibs-logo.png";
 import FeltrinelliLogo from "../assets/img/feltrinelli-logo.png";
 
-function Azadì() {
+function Azadì({ setLanguage }) {
+  const { t, i18n } = useTranslation();
+  
   return (
     <>
       <section className="azadì">
@@ -18,23 +21,13 @@ function Azadì() {
               <img src={BookImage} alt="Home" className="azadì-image"></img>
             </div>
             <div className="col-lg-4 d-flex flex-column align-items-center justify-content-center p-5 center-azadì">
-              <p className="container-title azadì-title">AZADI'</p>
-              <p className="container-description azadì-description">
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro Descrizione approfondita libro
-                Descrizione approfondita libro{" "}
+              <p className="container-title azadì-title">{t('azadì.title-azadì')}</p>
+              <p className="container-description azadì-description">{t('azadì.description-azadì')}
               </p>
             </div>
             <div className="col-lg-4 d-flex flex-column align-items-center justify-content-center right-azadì">
               <p className="container-title text-white">
-                Acquista il libro qui:
+              {t('azadì.buy-azadì')}
               </p>
               <a
                 className="store-link"

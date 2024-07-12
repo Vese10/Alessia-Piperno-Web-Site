@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './i18n';
 import Navbar from './include/navbar'
 import Home from './components/Home'
 import Azadì from './components/Azadì'
@@ -12,29 +13,30 @@ import Footer from './include/footer'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [language, setLanguage] = useState('it');
 
   const renderPage = () => {
     switch(currentPage) {
       case 'azadì':
-        return <Azadì />
+        return <Azadì setLanguage={setLanguage}/>
       case 'freelancer':
-        return <Freelancer />
+        return <Freelancer setLanguage={setLanguage}/>
       case 'viaggi':
-        return <Viaggi />
+        return <Viaggi setLanguage={setLanguage}/>
       case 'contatti':
-        return <Contatti />
+        return <Contatti setLanguage={setLanguage}/>
       case 'login':
-        return <Login setCurrentPage={setCurrentPage}/>
+        return <Login setCurrentPage={setCurrentPage} setLanguage={setLanguage}/>
       case 'signup':
         return <SignUp />
       default:
-        return <Home setCurrentPage={setCurrentPage} />
+        return <Home setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
     }
   }
 
   return (
     <>
-      <Navbar setCurrentPage={setCurrentPage}></Navbar>
+      <Navbar setCurrentPage={setCurrentPage} setLanguage={setLanguage}></Navbar>
       {renderPage()}
       <Footer></Footer>
     </>

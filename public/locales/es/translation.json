@@ -1,0 +1,19 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "azadi": "¡Azadì!",
+    "freelancer": "Freelancer",
+    "viaggi": "Viajes",
+    "contatti": "Contactos",
+    "login": "Iniciar sesión",
+    "lingua": "Idioma"
+  },
+  "home": {
+    "alessia": "Alessia Piperno"
+  },
+  "footer": {
+    "diritti": "© 2024 Alessia Piperno. Todos los derechos reservados",
+    "privacy": "Política de privacidad",
+    "cookie": "Política de cookies"
+  }
+}
