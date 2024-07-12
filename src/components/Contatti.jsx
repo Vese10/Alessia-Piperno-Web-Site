@@ -1,9 +1,32 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContattiPageBackgroundDesktop from "../assets/img/contatti-page-background-desktop.png";
 
 function Contatti() {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_likb8ht",
+        "template_0m6aymw",
+        e.target,
+        "tMJ6iLYRPLiPo_2pi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Messaggio inviato con successo!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Errore nell'invio del messaggio. Riprovare.");
+        }
+      );
+  };
+
   return (
     <>
       <section className="contatti">
@@ -28,7 +51,7 @@ function Contatti() {
               </div>
               <div className="col-lg-2"></div>
               <div className="col-lg-4 bg-white p-4 form-right">
-                <form>
+                <form onSubmit={sendEmail}>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
                       Nome*
@@ -37,6 +60,7 @@ function Contatti() {
                       type="text"
                       className="form-control"
                       id="nome"
+                      name="user_name"
                       placeholder="Inserisci il nome"
                       required
                     />
@@ -49,6 +73,7 @@ function Contatti() {
                       type="text"
                       className="form-control"
                       id="cognome"
+                      name="user_surname"
                       placeholder="Inserisci il cognome"
                       required
                     />
@@ -61,6 +86,7 @@ function Contatti() {
                       type="email"
                       className="form-control"
                       id="email"
+                      name="user_email"
                       placeholder="Inserisci l'email"
                       required
                     />
@@ -73,6 +99,7 @@ function Contatti() {
                       type="tel"
                       className="form-control"
                       id="telefono"
+                      name="user_phone"
                       placeholder="Inserisci il telefono"
                       required
                     />
@@ -85,6 +112,7 @@ function Contatti() {
                       type="message"
                       className="form-control"
                       id="messaggio"
+                      name="user_message"
                       placeholder="Scrivi il tuo messaggio"
                       required
                     />
