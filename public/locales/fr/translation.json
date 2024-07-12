@@ -1,19 +1,95 @@
 {
   "navbar": {
     "home": "Accueil",
-    "azadi": "Azadì!",
-    "freelancer": "Freelance",
-    "viaggi": "Voyages",
-    "contatti": "Contacts",
+    "azadì": "Azadì!",
+    "freelancer": "Freelancer",
+    "travel": "Voyages",
+    "contacts": "Contacts",
     "login": "Connexion",
-    "lingua": "Langue"
+    "languages": "Langue"
   },
   "home": {
-    "alessia": "Alessia Piperno"
+    "title": "Alessia Piperno",
+    "description": "Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle",
+    "title-azadì": "Azadi!",
+    "description-azadì": "Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre",
+    "btn-azadì": "ACHETER",
+    "title-freelancer": "FREELANCER",
+    "description-freelancer": "Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité Présentation de l'activité",
+    "btn-freelancer": "EN SAVOIR PLUS",
+    "title-travel": "VOYAGES EN GROUPE",
+    "description-travel": "Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe",
+    "btn-travel": "DÉCOUVRIR",
+    "title-contacts": "CONTACTEZ-MOI",
+    "description-contacts": "Pour des informations, des propositions ou toute autre chose qui vous vient à l'esprit, vous pouvez me contacter ici. Je répondrai dans les plus brefs délais. Merci!",
+    "name-label": "Nom*:",
+    "name-input": "Entrez votre nom",
+    "surname-label": "Prénom*:",
+    "surname-input": "Entrez votre prénom",
+    "email-label": "Email*:",
+    "email-input": "Entrez votre email",
+    "tel-label": "Téléphone*:",
+    "tel-input": "Entrez votre téléphone",
+    "message-label": "Message*:",
+    "message-input": "Écrivez votre message",
+    "btn-contacts": "ENVOYER",
+    "btn-contacts-ok": "Envoyé avec succès!",
+    "btn-contacts-ko": "Erreur lors de l'envoi!",
+    "btn-contacts-try": "Envoi en cours..."
+  },
+  "azadì": {
+    "title-azadì": "AZADI'",
+    "description-azadì": "Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre",
+    "buy-azadì": "Achetez le livre ici:"
+  },
+  "freelancer": {
+    "title": "Mon activité de freelancer",
+    "title-freelancer-1": "Titre 1",
+    "description-freelancer-1": "Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer",
+    "title-freelancer-2": "Titre 2",
+    "description-freelancer-2": "Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer Détails de l'activité de freelancer"
+  },
+  "login": {
+    "title-1": "Accès client:",
+    "text-1": "Connectez-vous à votre compte ou créez-en un nouveau.",
+    "title-2": "Clients enregistrés",
+    "text-2": "Si vous êtes déjà enregistré, connectez-vous avec vos identifiants.",
+    "title-3": "Nouveaux clients",
+    "text-3": "Si vous n'avez pas encore de compte, cliquez sur le bouton ci-dessous pour vous inscrire.",
+    "username-label": "Email*:",
+    "username-input": "Entrez votre email",
+    "password-label": "Mot de passe*:",
+    "password-input": "Entrez votre mot de passe",
+    "btn-1": "Connexion",
+    "btn-2": "Inscription"
+  },
+  "signup": {
+    "title": "Inscrivez-vous en tant que nouveau client",
+    "title-1": "Informations personnelles:",
+    "title-2": "Identifiants:",
+    "name-label": "Nom*:",
+    "name-input": "Entrez votre nom",
+    "surname-label": "Prénom*:",
+    "surname-input": "Entrez votre prénom",
+    "email-label": "Email*:",
+    "email-input": "Entrez votre email",
+    "tel-label": "Téléphone*:",
+    "tel-input": "Entrez votre téléphone",
+    "password-label": "Mot de passe*:",
+    "password-input": "Entrez votre mot de passe",
+    "repeat-pass-label": "Répétez le mot de passe*:",
+    "repeat-pass-input": "Répétez votre mot de passe",
+    "checkbox-text": "J'accepte les conditions de la ",
+    "checkbox-privacy": "Politique de confidentialité",
+    "btn": "Créer un compte",
+    "different-pass": "Les mots de passe ne correspondent pas",
+    "short-pass": "Le mot de passe doit comporter au moins 6 caractères",
+    "signup-ok": "Inscription réussie, veuillez vous connecter",
+    "user-exists": "Utilisateur déjà enregistré"
   },
   "footer": {
-    "diritti": "© 2024 Alessia Piperno. Tous droits réservés",
+    "rights": "© 2024 Alessia Piperno. Tous droits réservés",
     "privacy": "Politique de confidentialité",
-    "cookie": "Politique de cookies"
+    "cookie": "Politique des cookies"
   }
 }

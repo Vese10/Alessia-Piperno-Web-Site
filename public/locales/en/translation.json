@@ -1,19 +1,95 @@
 {
   "navbar": {
     "home": "Home",
-    "azadi": "Azadì!",
+    "azadì": "Azadì!",
     "freelancer": "Freelancer",
-    "viaggi": "Travel",
-    "contatti": "Contacts",
+    "travel": "Travel",
+    "contacts": "Contacts",
     "login": "Login",
-    "lingua": "Language"
+    "languages": "Language"
   },
   "home": {
-    "alessia": "Alessia Piperno"
+    "title": "Alessia Piperno",
+    "description": "Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation Personal Presentation",
+    "title-azadì": "Azadi!",
+    "description-azadì": "Short book description Short book description Short book description Short book description Short book description Short book description Short book description Short book description Short book description Short book description Short book description",
+    "btn-azadì": "BUY",
+    "title-freelancer": "FREELANCER",
+    "description-freelancer": "Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation Activity presentation",
+    "btn-freelancer": "LEARN MORE",
+    "title-travel": "GROUP TRAVELS",
+    "description-travel": "Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels",
+    "btn-travel": "DISCOVER",
+    "title-contacts": "CONTACT ME",
+    "description-contacts": "For information, proposals, or anything that comes to mind, you can contact me here. I will respond as soon as possible. Thank you!",
+    "name-label": "Name*:",
+    "name-input": "Enter your name",
+    "surname-label": "Surname*:",
+    "surname-input": "Enter your surname",
+    "email-label": "Email*:",
+    "email-input": "Enter your email",
+    "tel-label": "Phone*:",
+    "tel-input": "Enter your phone",
+    "message-label": "Message*:",
+    "message-input": "Write your message",
+    "btn-contacts": "SEND",
+    "btn-contacts-ok": "Sent successfully!",
+    "btn-contacts-ko": "Sending error!",
+    "btn-contacts-try": "Sending..."
+  },
+  "azadì": {
+    "title-azadì": "AZADI'",
+    "description-azadì": "Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description Detailed book description",
+    "buy-azadì": "Buy the book here:"
+  },
+  "freelancer": {
+    "title": "My freelance activity",
+    "title-freelancer-1": "Title 1",
+    "description-freelancer-1": "Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details",
+    "title-freelancer-2": "Title 2",
+    "description-freelancer-2": "Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details"
+  },
+  "login": {
+    "title-1": "Customer Access:",
+    "text-1": "Log in to your account or create a new one.",
+    "title-2": "Registered Customers",
+    "text-2": "If you have already registered, log in with your credentials.",
+    "title-3": "New Customers",
+    "text-3": "If you do not have an account, click the button below to register.",
+    "username-label": "Email*:",
+    "username-input": "Enter email",
+    "password-label": "Password*:",
+    "password-input": "Enter password",
+    "btn-1": "Login",
+    "btn-2": "Register"
+  },
+  "signup": {
+    "title": "Register as a new customer",
+    "title-1": "Personal Information:",
+    "title-2": "Credentials:",
+    "name-label": "Name*:",
+    "name-input": "Enter name",
+    "surname-label": "Surname*:",
+    "surname-input": "Enter surname",
+    "email-label": "Email*:",
+    "email-input": "Enter email",
+    "tel-label": "Phone*:",
+    "tel-input": "Enter phone",
+    "password-label": "Password*:",
+    "password-input": "Enter password",
+    "repeat-pass-label": "Repeat password*:",
+    "repeat-pass-input": "Repeat password",
+    "checkbox-text": "I accept the ",
+    "checkbox-privacy": "Privacy policy",
+    "btn": "Create Account",
+    "different-pass": "Passwords do not match",
+    "short-pass": "Password must be at least 6 characters long",
+    "signup-ok": "Registration successful, please log in",
+    "user-exists": "User already registered"
   },
   "footer": {
-    "diritti": "© 2024 Alessia Piperno. All rights reserved",
-    "privacy": "Privacy Policy",
-    "cookie": "Cookie Policy"
+    "rights": "© 2024 Alessia Piperno. All rights reserved",
+    "privacy": "Privacy policy",
+    "cookie": "Cookie policy"
   }
 }
