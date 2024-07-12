@@ -107,7 +107,7 @@ function Login({ setCurrentPage }) {
                 <button
                   type="button"
                   className="btn btn-primary single-page-btn"
-                  onClick={() => handleNavClick("home")}
+                  onClick={() => handleNavClick("signup")}
                 >
                   Registrati
                 </button>
