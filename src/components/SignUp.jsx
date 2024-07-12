@@ -28,6 +28,19 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Resetta il messaggio di errore
+
+    // Controlla se le password corrispondono
+    if (formData.password !== formData.repeatPassword) {
+      setErrorMessage("Le password non corrispondono");
+      return;
+    }
+
+    // Controlla se la password è lunga almeno 6 caratteri
+    if (formData.password.length < 6) {
+      setErrorMessage("La password deve essere lunga almeno 6 caratteri");
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:3000/users', {
         method: 'POST',

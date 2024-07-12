@@ -24,7 +24,7 @@ function Login({ setCurrentPage }) {
         body: JSON.stringify({ email, password }),
       });
       if (response.ok) {
-        setCurrentPage("signup"); // Naviga al componente signup in caso di successo
+        setCurrentPage("home"); // Naviga al componente home in caso di successo
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message);
@@ -107,7 +107,7 @@ function Login({ setCurrentPage }) {
                 <button
                   type="button"
                   className="btn btn-primary single-page-btn"
-                  onClick={() => handleNavClick("signup")}
+                  onClick={() => handleNavClick("home")}
                 >
                   Registrati
                 </button>
