@@ -5,8 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ContattiPageBackgroundDesktop from "../assets/img/contatti-page-background-desktop.png";
 
 function Contatti() {
+  const [buttonText, setButtonText] = useState("INVIA");
+
   const sendEmail = (e) => {
     e.preventDefault();
+    setButtonText("Invio in corso...");
 
     emailjs
       .sendForm(
@@ -18,11 +21,14 @@ function Contatti() {
       .then(
         (result) => {
           console.log(result.text);
-          alert("Messaggio inviato con successo!");
+          setButtonText("Inviato con successo!");
+          e.target.reset();
+          setTimeout(() => setButtonText("INVIA"), 3000);
         },
         (error) => {
           console.log(error.text);
-          alert("Errore nell'invio del messaggio. Riprovare.");
+          setButtonText("Errore nell'invio!");
+          setTimeout(() => setButtonText("INVIA"), 3000);
         }
       );
   };
@@ -122,7 +128,7 @@ function Contatti() {
                       type="submit"
                       className="btn btn-primary mt-3 single-page-btn"
                     >
-                      INVIA
+                      {buttonText}
                     </button>
                   </div>
                 </form>
