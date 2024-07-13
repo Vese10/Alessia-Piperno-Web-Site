@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -30,6 +30,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const languageMenuRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -46,6 +47,19 @@ function Navbar({ setCurrentPage, setLanguage }) {
     i18n.changeLanguage(language);
     closeLanguageMenu();
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target)) {
+        closeLanguageMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [languageMenuRef]);
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -70,7 +84,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
             <span className="travel-adventure">TRAVEL.</span>
             <span className="travel-adventure">ADVENTURE.</span>FREEDOM
           </a>
-          <div className="central-item" onClick={toggleLanguageMenu}>
+          <div className="central-item" onClick={toggleLanguageMenu} ref={languageMenuRef}>
             <img src={Lingua} className="nav-img-lang" alt="Language selector"></img>
             {languageMenuOpen && (
               <div className="dropdown-menu show">
@@ -140,6 +154,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
               <div
                 className="nav-item dropdown nav-lang"
                 onClick={toggleLanguageMenu}
+                ref={languageMenuRef}
               >
                 <img src={Lingua} className="nav-img" alt="Language"></img>
                 <p className="nav-link">{t('navbar.languages')}</p>

@@ -10,6 +10,7 @@
   box-sizing: border-box;
 }
 
+
 .background-image-desktop {
   position: absolute;
   width: 100%;
@@ -40,7 +41,6 @@
 
 .inside-image {
   width: 100%;
-  padding: 50px 0;
 }
 
 .container-text {
@@ -247,11 +247,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
-
-  .inside-image {
-    width: 100%;
-    padding: 50px 0 0 0;
   }
 
   .container-text {
