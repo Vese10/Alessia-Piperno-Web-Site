@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import sendEmail from "../modules/SendMail";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomeBackgroundDesktop from "../assets/img/home-background-desktop.png";
@@ -13,7 +14,11 @@ import ContattiBackgroundDesktop from "../assets/img/contatti-background-desktop
 
 function Home({setCurrentPage, setLanguage }) {
   const { t, i18n } = useTranslation();
+  const [buttonText, setButtonText] = useState(t('home.btn-contacts'));
 
+  const handleSendEmail = (e) => {
+    sendEmail(e, setButtonText, t);
+  };
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
@@ -153,7 +158,7 @@ function Home({setCurrentPage, setLanguage }) {
               </div>
               <div className="col-lg-2"></div>
               <div className="col-lg-4 bg-white p-4 form-right">
-                <form>
+                <form onSubmit={handleSendEmail}>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
                     {t('home.name-label')}
@@ -219,7 +224,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="submit"
                       className="btn btn-primary mt-3 single-page-btn"
                     >
-                      {t('home.btn-contacts')}
+                      {buttonText}
                     </button>
                   </div>
                 </form>
