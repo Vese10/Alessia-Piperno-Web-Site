@@ -26,7 +26,7 @@ function Login({ setCurrentPage, setLanguage }) {
         body: JSON.stringify({ email, password }),
       });
       if (response.ok) {
-        setCurrentPage("home"); // Naviga al componente home in caso di successo
+        setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message);

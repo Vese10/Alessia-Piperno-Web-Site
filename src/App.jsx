@@ -9,6 +9,7 @@ import Viaggi from './components/Viaggi'
 import Contatti from './components/Contatti'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
+import UserAccount from './components/UserAccount'
 import Footer from './include/footer'
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         return <Login setCurrentPage={setCurrentPage} setLanguage={setLanguage}/>
       case 'signup':
         return <SignUp />
+      case 'useraccount':
+        return <UserAccount />
       default:
         return <Home setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
     }
