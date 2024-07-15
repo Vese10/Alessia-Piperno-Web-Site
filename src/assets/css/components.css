@@ -212,8 +212,8 @@
 /* SignUp Style */
 
 .signup {
-  bottom: 100px;
   min-height: 100vh;
+  margin-bottom: 60px;
 }
 
 .signup-container {
@@ -359,6 +359,7 @@
 
   .login {
     background-image: none;
+    margin-bottom: 60px;
   }
 
   .login-new,
