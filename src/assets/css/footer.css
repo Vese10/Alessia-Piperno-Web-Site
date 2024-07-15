@@ -12,11 +12,13 @@
 
 /* Style Footer Container */
 .footer {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   font-size: 16px;
   height: 100px;
   background: linear-gradient(to right, var(--gradient2), var(--main));
-  z-index: 1 !important;
+  z-index: 1;
 }
 
 .left-footer {
