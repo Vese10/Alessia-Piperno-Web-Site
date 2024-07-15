@@ -165,7 +165,6 @@ function Navbar({ setCurrentPage, setLanguage }) {
               <div
                 className="nav-item dropdown nav-lang"
                 onClick={toggleLanguageMenu}
-                ref={languageMenuRef}
               >
                 <img src={Lingua} className="nav-img" alt="Language"></img>
                 <p className="nav-link">{t("navbar.languages")}</p>
