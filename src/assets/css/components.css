@@ -353,13 +353,14 @@
 
   .contatti {
     background-image: none;
+    margin-bottom: 100px;
   }
 
   /* Login Style */
 
   .login {
     background-image: none;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 
   .login-new,
@@ -368,6 +369,11 @@
   }
 
   /* SignUp Style */
+
+  .signup {
+    margin-bottom: 100px;
+  }
+
   .signup-form {
     flex-direction: column;
   }
