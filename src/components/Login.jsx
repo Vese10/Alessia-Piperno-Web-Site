@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginBackgroundDesktop from "../assets/img/login-background-desktop.png";
 
 function Login({ setCurrentPage, setLanguage }) {
   const { t, i18n } = useTranslation();
@@ -40,11 +39,6 @@ function Login({ setCurrentPage, setLanguage }) {
   return (
     <>
       <section className="login">
-        <img
-          src={LoginBackgroundDesktop}
-          className="img-fluid background-image-desktop"
-          alt="Paesaggio Machu Pichu"
-        />
         <div className="container-fluid standard-container justify-content-start">
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">

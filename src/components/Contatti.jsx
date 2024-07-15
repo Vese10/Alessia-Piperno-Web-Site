@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import emailjs from "emailjs-com";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ContattiPageBackgroundDesktop from "../assets/img/contatti-page-background-desktop.png";
 
 function Contatti({ setLanguage }) {
   const { t, i18n } = useTranslation();
@@ -38,12 +37,7 @@ function Contatti({ setLanguage }) {
   return (
     <>
       <section className="contatti">
-        <img
-          src={ContattiPageBackgroundDesktop}
-          className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
-        />
-        <div className="container-fluid d-flex contacts-container">
+        <div className="container-fluid d-flex">
           <div className="container mt-5">
             <div className="row">
               <div className="col-lg-1"></div>

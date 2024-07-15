@@ -135,6 +135,7 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 50px !important;
+    z-index: -1;
   }
 
   .btn-custom {

@@ -49,7 +49,7 @@ function Home({setCurrentPage, setLanguage }) {
         </div>
       </section>
 
-      <section className="azadì">
+      <section className="azadì-home">
         <img
           src={AzadìBackgroundDesktop}
           className="img-fluid background-image-desktop"
@@ -78,7 +78,7 @@ function Home({setCurrentPage, setLanguage }) {
         </div>
       </section>
 
-      <section className="freelancer">
+      <section className="freelancer-home">
         <img
           src={FreelancerBackgroundDesktop}
           className="img-fluid background-image-desktop"
@@ -101,7 +101,7 @@ function Home({setCurrentPage, setLanguage }) {
         </div>
       </section>
 
-      <section className="viaggi">
+      <section className="viaggi-home">
         <img
           src={ViaggiBackgroundDesktop}
           className="img-fluid background-image-desktop"
@@ -133,7 +133,7 @@ function Home({setCurrentPage, setLanguage }) {
         </div>
       </section>
 
-      <section className="contatti">
+      <section className="contatti-home">
         <img
           src={ContattiBackgroundDesktop}
           className="img-fluid background-image-desktop"
