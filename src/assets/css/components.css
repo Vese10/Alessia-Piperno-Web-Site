@@ -145,7 +145,7 @@
   background-image: url(../img/contatti-page-background-desktop.png);
   position: relative;
   padding-bottom: 20px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Viaggi Style*/
@@ -201,7 +201,7 @@
 .login {
   background-image: url(../img/login-background-desktop.png);
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .login-old {
@@ -216,7 +216,7 @@
 
 .signup {
   bottom: 100px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .signup-container {
