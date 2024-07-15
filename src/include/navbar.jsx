@@ -50,7 +50,10 @@ function Navbar({ setCurrentPage, setLanguage }) {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target)) {
+      if (
+        languageMenuRef.current &&
+        !languageMenuRef.current.contains(event.target)
+      ) {
         closeLanguageMenu();
       }
     };
@@ -84,8 +87,15 @@ function Navbar({ setCurrentPage, setLanguage }) {
             <span className="travel-adventure">TRAVEL.</span>
             <span className="travel-adventure">ADVENTURE.</span>FREEDOM
           </a>
-          <div className="central-item" onClick={toggleLanguageMenu} ref={languageMenuRef}>
-            <img src={Lingua} className="nav-img-lang" alt="Language selector"></img>
+          <div
+            className="central-item"
+            onClick={toggleLanguageMenu}
+          >
+            <img
+              src={Lingua}
+              className="nav-img-lang"
+              alt="Language selector"
+            ></img>
             {languageMenuOpen && (
               <div className="dropdown-menu show">
                 {languages.map((lang) => (
@@ -112,32 +122,33 @@ function Navbar({ setCurrentPage, setLanguage }) {
             <div className="navbar-nav mr-auto w-100">
               <a className="nav-item" onClick={() => handleNavClick("home")}>
                 <img src={Home} className="nav-img" alt="Home"></img>
-                <p className="nav-link">{t('navbar.home')}</p>
+                <p className="nav-link">{t("navbar.home")}</p>
               </a>
               <a className="nav-item" onClick={() => handleNavClick("azadì")}>
                 <img src={Azadì} className="nav-img" alt="Azadì"></img>
-                <p className="nav-link">{t('navbar.azadì')}</p>
+                <p className="nav-link">{t("navbar.azadì")}</p>
               </a>
               <a
                 className="nav-item"
                 onClick={() => handleNavClick("freelancer")}
               >
-                <img src={Freelancer} className="nav-img" alt="Freelancer"></img>
-                <p className="nav-link">{t('navbar.freelancer')}</p>
+                <img
+                  src={Freelancer}
+                  className="nav-img"
+                  alt="Freelancer"
+                ></img>
+                <p className="nav-link">{t("navbar.freelancer")}</p>
               </a>
-              <a
-                className="nav-item"
-                onClick={() => handleNavClick("viaggi")}
-              >
+              <a className="nav-item" onClick={() => handleNavClick("viaggi")}>
                 <img src={Viaggi} className="nav-img" alt="Viaggi"></img>
-                <p className="nav-link">{t('navbar.travel')}</p>
+                <p className="nav-link">{t("navbar.travel")}</p>
               </a>
               <a
                 className="nav-item"
                 onClick={() => handleNavClick("contatti")}
               >
                 <img src={Contatti} className="nav-img" alt="Contatti"></img>
-                <p className="nav-link">{t('navbar.contacts')}</p>
+                <p className="nav-link">{t("navbar.contacts")}</p>
               </a>
               <div className="logo d-none d-lg-flex justify-content-center align-items-center w-100">
                 <a
@@ -149,7 +160,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
               </div>
               <a className="nav-item" onClick={() => handleNavClick("login")}>
                 <img src={Login} className="nav-img" alt="Login"></img>
-                <p className="nav-link">{t('navbar.login')}</p>
+                <p className="nav-link">{t("navbar.login")}</p>
               </a>
               <div
                 className="nav-item dropdown nav-lang"
@@ -157,7 +168,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
                 ref={languageMenuRef}
               >
                 <img src={Lingua} className="nav-img" alt="Language"></img>
-                <p className="nav-link">{t('navbar.languages')}</p>
+                <p className="nav-link">{t("navbar.languages")}</p>
                 {languageMenuOpen && (
                   <div className="dropdown-menu show">
                     {languages.map((lang) => (
