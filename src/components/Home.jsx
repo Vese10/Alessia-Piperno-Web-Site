@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HomeBackgroundDesktop from "../assets/img/home-backgraound-desktop.png";
+import HomeBackgroundDesktop from "../assets/img/home-background-desktop.png";
 import HomeImage from "../assets/img/home-image.png";
 import AzadìBackgroundDesktop from "../assets/img/azadì-background-desktop.png";
 import AzadìImage from "../assets/img/azadì-image.png";
