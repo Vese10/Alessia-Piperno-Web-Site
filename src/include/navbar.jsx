@@ -161,7 +161,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
                   TRAVEL.ADVENTURE.<span className="freedom">FREEDOM</span>
                 </a>
               </div>
-              <a className="nav-item" onClick={() => handleNavClick(isAuthenticated ? "account" : "login")}>
+              <a className="nav-item" onClick={() => handleNavClick(isAuthenticated ? "useraccount" : "login")}>
                 <img src={Login} className="nav-img" alt="Login"></img>
                 <p className="nav-link">{isAuthenticated ? t("navbar.account") : t("navbar.login")}</p>
               </a>
