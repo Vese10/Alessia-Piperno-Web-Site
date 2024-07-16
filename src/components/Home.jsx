@@ -167,6 +167,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="text"
                       className="form-control"
                       id="nome"
+                      name="user_name"
                       placeholder={t('home.name-input')}
                       required
                     />
@@ -179,6 +180,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="text"
                       className="form-control"
                       id="cognome"
+                      name="user_surname"
                       placeholder={t('home.surname-input')}
                       required
                     />
@@ -191,6 +193,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="email"
                       className="form-control"
                       id="email"
+                      name="user_email"
                       placeholder={t('home.email-input')}
                       required
                     />
@@ -203,6 +206,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="tel"
                       className="form-control"
                       id="telefono"
+                      name="user_phone"
                       placeholder={t('home.tel-input')}
                       required
                     />
@@ -215,6 +219,7 @@ function Home({setCurrentPage, setLanguage }) {
                       type="message"
                       className="form-control"
                       id="messaggio"
+                      name="user_message"
                       placeholder={t('home.message-input')}
                       required
                     />

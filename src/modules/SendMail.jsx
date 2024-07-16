@@ -1,6 +1,8 @@
 import emailjs from "emailjs-com";
+import { useTranslation } from "react-i18next";
 
 function sendEmail(e, setButtonText, t) {
+  
   e.preventDefault();
   setButtonText(t('home.btn-contacts-try'));
 
