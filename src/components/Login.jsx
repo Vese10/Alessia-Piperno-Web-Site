@@ -1,11 +1,14 @@
-import { useState } from "react";
+// src/components/Login.js
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from '../modules/AuthContext';
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Login({ setCurrentPage, setLanguage }) {
+function Login({ setCurrentPage }) {
   const { t, i18n } = useTranslation();
-  
+  const { login } = useAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -26,6 +29,7 @@ function Login({ setCurrentPage, setLanguage }) {
         body: JSON.stringify({ email, password }),
       });
       if (response.ok) {
+        login();
         setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
       } else {
         const errorData = await response.json();
