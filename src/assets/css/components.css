@@ -241,6 +241,11 @@
   background: linear-gradient(to right, var(--gradient2), var(--main));
 }
 
+.selected {
+  font-weight: bold !important;
+  color: var(--bgCta) !important;
+}
+
 
 @media (max-width: 992px) {
 

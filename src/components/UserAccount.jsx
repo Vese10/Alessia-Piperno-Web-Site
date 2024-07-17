@@ -38,19 +38,19 @@ function UserAccount({ setCurrentPage }) {
         </div>
         <nav className="nav nav-pills nav-fill bg-dark-subtle p-4">
           <button
-            className="nav-link nav-link-account  text-black"
+            className={`nav-link nav-link-account text-black ${section === "personalInfo" ? "selected" : ""}`}
             onClick={() => setSection("personalInfo")}
           >
             Informazioni Personali
           </button>
           <button
-            className="nav-link nav-link-account text-black"
+            className={`nav-link nav-link-account text-black ${section === "changePassword" ? "selected" : ""}`}
             onClick={() => setSection("changePassword")}
           >
             Modifica Password
           </button>
           <button
-            className="nav-link nav-link-account text-black"
+            className={`nav-link nav-link-account text-black ${section === "myTrips" ? "selected" : ""}`}
             onClick={() => setSection("myTrips")}
           >
             I miei viaggi
