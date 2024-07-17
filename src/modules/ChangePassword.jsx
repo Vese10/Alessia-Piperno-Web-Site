@@ -17,7 +17,7 @@ function ChangePassword() {
                 <div className="mb-3 d-flex align-items-center">
                   <label
                     htmlFor="password"
-                    className="form-label m-2 text-white"
+                    className="form-label m-2"
                   >
                     Vecchia Password*:
                   </label>
@@ -33,14 +33,14 @@ function ChangePassword() {
                 <div className="mb-3 d-flex align-items-center">
                   <label
                     htmlFor="password"
-                    className="form-label m-2 text-white"
+                    className="form-label m-2"
                   >
                     Nuova Password*:
                   </label>
                   <input
                     type="password"
                     className="form-control"
-                    id="password"
+                    id="newPassword"
                     name="password"
                     placeholder="Scegli nuova password"
                     required
@@ -49,7 +49,7 @@ function ChangePassword() {
                 <div className="mb-3 d-flex align-items-center">
                   <label
                     htmlFor="repeat-password"
-                    className="form-label m-2 text-white"
+                    className="form-label m-2"
                   >
                     Ripeti Nuova Password*:
                   </label>
