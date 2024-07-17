@@ -42,7 +42,7 @@
 }
 
 .nav-link {
-  font-size: 18px;
+  font-size: 18px !important;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -167,6 +167,13 @@
     height: auto;
     color: white;
     font-size: 40px !important;
+  }
+
+  .nav-link-account {
+    text-align: center;
+    height: auto;
+    color: white;
+    font-size: 18px !important;
   }
 
   .logo {
