@@ -123,6 +123,35 @@ app.put('/change-password', auth, async (req, res) => { // Usa il middleware aut
   }
 });
 
+// Rotta per aggiornare le informazioni dell'utente loggato
+app.put('/me', auth, async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ['name', 'surname', 'email', 'phone'];
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+
+  if (!isValidOperation) {
+    return res.status(400).send({ message: 'Aggiornamento non valido' });
+  }
+
+  try {
+    updates.forEach((update) => (req.user[update] = req.body[update]));
+    await req.user.save();
+    res.send(req.user);
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+});
+
+// Rotta per ottenere le informazioni dell'utente loggato
+app.get('/me', auth, async (req, res) => {
+  try {
+    const user = req.user;
+    res.send(user);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

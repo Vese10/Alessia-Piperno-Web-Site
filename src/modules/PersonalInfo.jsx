@@ -1,57 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function PersonalInfo() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: '',
     surname: '',
     email: '',
     phone: '',
-    password: '',
-    repeatPassword: '',
-    privacyAccepted: false,
   });
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get('http://localhost:3000/me', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const { name, surname, email, phone } = response.data;
+        setFormData({ name, surname, email, phone });
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Resetta il messaggio di errore
 
+    // Filtra solo i campi necessari
+    const filteredData = {
+      name: formData.name,
+      surname: formData.surname,
+      email: formData.email,
+      phone: formData.phone
+    };
+
     try {
-      const response = await fetch('http://localhost:3000/users', {
-        method: 'POST',
+      const token = localStorage.getItem("token");
+      const response = await axios.put('http://localhost:3000/me', filteredData, {
         headers: {
-          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(formData),
       });
-      if (response.ok) {
-        setSuccessMessage("Informazioni personali aggiornate con successo");
-        setFormData({
-          name: '',
-          surname: '',
-          email: '',
-          phone: '',
-          password: '',
-          repeatPassword: '',
-          privacyAccepted: false,
-        });
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000); // Mostra il messaggio per 3 secondi
-      } else if (response.status === 409) {
-        setErrorMessage("L'email inserita è già presente sui nostri sistemi");
-      } else {
-        console.error('Error creating user:', response.statusText);
-      }
+      setSuccessMessage("Informazioni personali aggiornate con successo");
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000); // Mostra il messaggio per 3 secondi
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error updating user info:', error);
+      setErrorMessage("Errore nell'aggiornamento delle informazioni");
     }
   };
 
@@ -86,20 +104,22 @@ function PersonalInfo() {
               >
                 <div className="signup-form-left">
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="nome" className="form-label m-2 text-black">
+                    <label htmlFor="name" className="form-label m-2 text-black">
                       Nome:
                     </label>
                     <input
                       type="text"
                       className="form-control"
-                      id="nome"
+                      id="name"
                       name="name"
-                      placeholder={t("signup.name-input")}
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
                     <label
-                      htmlFor="cognome"
+                      htmlFor="surname"
                       className="form-label m-2 text-black"
                     >
                       Cognome:
@@ -107,9 +127,11 @@ function PersonalInfo() {
                     <input
                       type="text"
                       className="form-control"
-                      id="cognome"
+                      id="surname"
                       name="surname"
-                      placeholder={t("signup.surname-input")}
+                      value={formData.surname}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
@@ -124,12 +146,14 @@ function PersonalInfo() {
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder={t("signup.email-input")}
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
                     <label
-                      htmlFor="telefono"
+                      htmlFor="phone"
                       className="form-label m-2 text-black"
                     >
                       Telefono:
@@ -137,16 +161,20 @@ function PersonalInfo() {
                     <input
                       type="tel"
                       className="form-control"
-                      id="telefono"
+                      id="phone"
                       name="phone"
-                      placeholder={t("signup.tel-input")}
+                      value={formData.phone}
+                      onChange={handleChange}
                     />
                   </div>
                   <button type="submit" className="btn signup-page-btn">
-                  Aggiorna Informazioni
-                </button>
+                    Aggiorna Informazioni
+                  </button>
                 </div>
               </form>
+              {errorMessage && (
+                <p className="error-message text-danger mt-3">{errorMessage}</p>
+              )}
             </div>
           </div>
         </div>
