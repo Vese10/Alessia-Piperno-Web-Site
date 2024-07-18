@@ -32,7 +32,7 @@ function App() {
           <Login setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
         );
       case "signup":
-        return <SignUp />;
+        return <SignUp setCurrentPage={setCurrentPage}/>;
       case "useraccount":
         return <UserAccount setCurrentPage={setCurrentPage} setLanguage={setLanguage}/>;
       default:

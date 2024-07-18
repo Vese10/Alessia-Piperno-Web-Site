@@ -4,8 +4,8 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpBackgroundDesktop from "../assets/img/signup-background-desktop.png";
 
-function SignUp({ setLanguage }) {
-  const { t, i18n } = useTranslation();
+function SignUp({ setCurrentPage }) {
+  const { t } = useTranslation();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -65,6 +65,7 @@ function SignUp({ setLanguage }) {
         });
         setTimeout(() => {
           setSuccessMessage("");
+          setCurrentPage("login"); // Cambia la pagina corrente a Login dopo il successo
         }, 3000); // Mostra il messaggio per 3 secondi
       } else if (response.status === 409) {
         setErrorMessage(t('signup.user-exists'));
@@ -82,7 +83,7 @@ function SignUp({ setLanguage }) {
         <div className="container-fluid standard-container justify-content-start">
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
-              <div className="col-12 text-center bg-white p-4 rounded-top-4 pb-5 signup-container">
+              <div className="col-12 text-center bg-white p-4 rounded-4 pb-5 signup-container">
                 <p className="container-title mb-0 text-white">{successMessage}</p>
               </div>
             </div>
@@ -163,6 +164,7 @@ function SignUp({ setLanguage }) {
                       placeholder={t('signup.tel-input')}
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
@@ -206,7 +208,7 @@ function SignUp({ setLanguage }) {
                       required
                     />
                     <label htmlFor="privacy" className="form-check-label ms-2 text-white">
-                    {t('signup.checkbox-text')}
+                      {t('signup.checkbox-text')}
                       <a href="#" target="_blank" className="privacy-check">{t('signup.checkbox-privacy')}</a>
                     </label>
                   </div>

@@ -17,6 +17,12 @@ function ChangePassword() {
       return;
     }
 
+    // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
+    if (newPassword.length < 6) {
+      setMessage("La nuova password deve essere lunga almeno 6 caratteri");
+      return;
+    }
+
     try {
       const token = localStorage.getItem("token"); // Assumi che il token sia salvato in localStorage
       const response = await axios.put(
@@ -98,7 +104,7 @@ function ChangePassword() {
                   Conferma
                 </button>
               </form>
-              {message && <p className="mt-3">{message}</p>}
+              {message && <p className="mt-3 text-center text-danger">{message}</p>}
             </div>
           </div>
         </div>
