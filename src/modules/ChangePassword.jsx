@@ -9,17 +9,19 @@ function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   const handleChangePassword = async () => {
     if (newPassword !== repeatPassword) {
-      setMessage("Le nuove password non coincidono");
+      setErrorMessage("Le nuove password non coincidono");
       return;
     }
 
     // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
     if (newPassword.length < 6) {
-      setMessage("La nuova password deve essere lunga almeno 6 caratteri");
+      setErrorMessage("La nuova password deve essere lunga almeno 6 caratteri");
       return;
     }
 
@@ -37,11 +39,34 @@ function ChangePassword() {
           },
         }
       );
-      setMessage(response.data.message);
+      setErrorMessage(response.data.message);
+      setSuccessMessage("Password aggiornata con successo");
+      setOldPassword("");
+      setNewPassword("");
+      setRepeatPassword("");
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000); // Mostra il messaggio per 3 secondi
     } catch (error) {
-      setMessage(error.response.data.message);
+      setErrorMessage(error.response.data.message);
     }
   };
+
+  if (successMessage) {
+    return (
+      <section className="signup">
+        <div className="container-fluid standard-container justify-content-start">
+          <div className="container mt-5">
+            <div className="row d-flex align-items-center justify-content-center">
+              <div className="col-12 text-center bg-white p-4 rounded-4 pb-5 signup-container">
+                <p className="container-title mb-0 text-white">{successMessage}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className="container-fluid">
@@ -104,7 +129,7 @@ function ChangePassword() {
                   Conferma
                 </button>
               </form>
-              {message && <p className="mt-3 text-center text-danger">{message}</p>}
+              {errorMessage && <p className="mt-3 text-center text-danger">{errorMessage}</p>}
             </div>
           </div>
         </div>

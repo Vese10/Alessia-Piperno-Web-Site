@@ -117,7 +117,7 @@ app.put('/change-password', auth, async (req, res) => { // Usa il middleware aut
     user.password = newPassword;
     await user.save();
 
-    res.status(200).send({ message: 'Password cambiata con successo' });
+    res.status(200).send({ message: '' });
   } catch (error) {
     res.status(500).send({ message: 'Errore del server' });
   }
