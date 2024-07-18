@@ -1,8 +1,12 @@
+// index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const User = require('./models/User');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const auth = require('./models/auth'); // Importa il middleware di autenticazione
 const app = express();
 const port = 3000;
 
@@ -82,14 +86,40 @@ app.delete('/users/:id', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findOne({ email, password });
-    if (user) {
-      res.status(200).send({ message: 'Login effettuato con successo' });
+    const user = await User.findOne({ email });
+    if (user && await bcrypt.compare(password, user.password)) {
+      const token = jwt.sign({ _id: user._id.toString() }, 'your_jwt_secret');
+      res.status(200).send({ token, message: 'Login effettuato con successo' });
     } else {
       res.status(401).send({ message: 'Utente non presente oppure email o password errati' });
     }
   } catch (error) {
     res.status(500).send(error);
+  }
+});
+
+// Rotta per il cambio password
+app.put('/change-password', auth, async (req, res) => { // Usa il middleware auth
+  const { oldPassword, newPassword } = req.body;
+  const userId = req.userId;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).send({ message: 'Utente non trovato' });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return res.status(401).send({ message: 'Vecchia password errata' });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    res.status(200).send({ message: 'Password cambiata con successo' });
+  } catch (error) {
+    res.status(500).send({ message: 'Errore del server' });
   }
 });
 

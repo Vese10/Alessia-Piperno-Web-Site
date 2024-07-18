@@ -6,7 +6,7 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login({ setCurrentPage }) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { login } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -29,6 +29,8 @@ function Login({ setCurrentPage }) {
         body: JSON.stringify({ email, password }),
       });
       if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("token", data.token); // Salva il token JWT
         login();
         setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
       } else {
@@ -49,7 +51,7 @@ function Login({ setCurrentPage }) {
               <div className="col-12 bg-white p-4 rounded-top-4 pb-5">
                 <p className="container-title mb-0">{t('login.title-1')}</p>
                 <p className="container-description">
-                {t('login.text-1')}
+                  {t('login.text-1')}
                 </p>
               </div>
             </div>
@@ -57,7 +59,7 @@ function Login({ setCurrentPage }) {
               <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-old pb-5">
                 <p className="container-title">{t('login.title-2')}</p>
                 <p className="container-description">
-                {t('login.text-2')}
+                  {t('login.text-2')}
                 </p>
                 {errorMessage && (
                   <p className="error-message text-danger">{errorMessage}</p>
@@ -65,7 +67,7 @@ function Login({ setCurrentPage }) {
                 <form className="d-flex flex-column" onSubmit={handleSubmit}>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="email" className="form-label">
-                    {t('login.username-label')}
+                      {t('login.username-label')}
                     </label>
                     <input
                       type="email"
@@ -79,7 +81,7 @@ function Login({ setCurrentPage }) {
                   </div>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="password" className="form-label">
-                    {t('login.password-label')}
+                      {t('login.password-label')}
                     </label>
                     <input
                       type="password"
@@ -102,7 +104,7 @@ function Login({ setCurrentPage }) {
               <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-new">
                 <p className="container-title">{t('login.title-3')}</p>
                 <p className="container-description">
-                {t('login.text-3')}
+                  {t('login.text-3')}
                 </p>
                 <button
                   type="button"
