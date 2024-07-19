@@ -20,12 +20,17 @@
 
 .main-container-1,
 .main-container-2,
-.standard-container {
+.standard-container{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.useraccount {
+  position: relative;
   min-height: 100vh;
 }
 
@@ -227,7 +232,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 .signup-page-btn:hover {

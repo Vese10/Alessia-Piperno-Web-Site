@@ -99,7 +99,7 @@ function PersonalInfo() {
                 {t('personalInfo.title')}
               </h5>
               <form
-                className="d-flex justify-content-around signup-form"
+                className="signup-form"
                 onSubmit={handleSubmit}
               >
                 <div className="signup-form-left">
@@ -167,7 +167,7 @@ function PersonalInfo() {
                       onChange={handleChange}
                     />
                   </div>
-                  <button type="submit" className="btn signup-page-btn">
+                  <button type="submit" className="btn btn-primary single-page-btn">
                   {t('personalInfo.btn')}
                   </button>
                 </div>
