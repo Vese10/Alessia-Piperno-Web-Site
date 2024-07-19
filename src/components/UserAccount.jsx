@@ -34,7 +34,7 @@ function UserAccount({ setCurrentPage }) {
     <section className="useraccount">
       <div className="container-fluid p-0">
         <div className="text-white text-center py-3 private-area">
-          <h1>{t('useraccount.title')}</h1>
+          <h1>AREA PRIVATA</h1>
         </div>
         <nav className="nav nav-pills nav-fill bg-dark-subtle p-4">
           <button
