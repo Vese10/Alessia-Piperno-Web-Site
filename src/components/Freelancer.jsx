@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FreelancerTopPc from "../assets/img/freelancer-top-pc.png";
 import FreelancerTopMobile from "../assets/img/freelancer-top-mobile.png";
 
-function Freelancer({ setLanguage }) {
-  const { t, i18n } = useTranslation();
+function Freelancer() {
+  const { t } = useTranslation();
   
   return (
     <>
