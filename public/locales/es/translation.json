@@ -88,6 +88,9 @@
     "signup-ok": "Registro exitoso, por favor inicie sesión",
     "user-exists": "Usuario ya registrado"
   },
+  "useraccount": {
+    "title": "ÁREA PRIVADA"
+  },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Todos los derechos reservados",
     "privacy": "Política de privacidad",

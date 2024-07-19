@@ -34,29 +34,29 @@ function UserAccount({ setCurrentPage }) {
     <section className="useraccount">
       <div className="container-fluid p-0">
         <div className="text-white text-center py-3 private-area">
-          <h1>AREA PRIVATA</h1>
+          <h1>{t('useraccount.title')}</h1>
         </div>
         <nav className="nav nav-pills nav-fill bg-dark-subtle p-4">
           <button
             className={`nav-link nav-link-account text-black ${section === "personalInfo" ? "selected" : ""}`}
             onClick={() => setSection("personalInfo")}
           >
-            Informazioni Personali
+            {t('useraccount.info')}
           </button>
           <button
             className={`nav-link nav-link-account text-black ${section === "changePassword" ? "selected" : ""}`}
             onClick={() => setSection("changePassword")}
           >
-            Modifica Password
+            {t('useraccount.password')}
           </button>
           <button
             className={`nav-link nav-link-account text-black ${section === "myTrips" ? "selected" : ""}`}
             onClick={() => setSection("myTrips")}
           >
-            I miei viaggi
+            {t('useraccount.trips')}
           </button>
           <button className="nav-link nav-link-account text-black" onClick={handleLogout}>
-            Logout
+          {t('useraccount.logout')}
           </button>
         </nav>
         <div className="mt-4">{renderSection()}</div>

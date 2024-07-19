@@ -5,7 +5,7 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function ChangePassword() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -15,13 +15,13 @@ function ChangePassword() {
 
   const handleChangePassword = async () => {
     if (newPassword !== repeatPassword) {
-      setErrorMessage("Le nuove password non coincidono");
+      setErrorMessage(t('changePassword.error-1'));
       return;
     }
 
     // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
     if (newPassword.length < 6) {
-      setErrorMessage("La nuova password deve essere lunga almeno 6 caratteri");
+      setErrorMessage(t('changePassword.error-2'));
       return;
     }
 
@@ -40,7 +40,7 @@ function ChangePassword() {
         }
       );
       setErrorMessage(response.data.message);
-      setSuccessMessage("Password aggiornata con successo");
+      setSuccessMessage(t('changePassword.success'));
       setOldPassword("");
       setNewPassword("");
       setRepeatPassword("");
@@ -74,18 +74,18 @@ function ChangePassword() {
         <div className="col-md-6 offset-md-3">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title text-center m-4">Modifica Password</h5>
+              <h5 className="card-title text-center m-4">{t('changePassword.title')}</h5>
               <form className="signup-form-right">
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="oldPassword" className="form-label m-2">
-                    Vecchia Password*:
+                  {t('changePassword.old-password-label')}
                   </label>
                   <input
                     type="password"
                     className="form-control"
                     id="oldPassword"
                     name="oldPassword"
-                    placeholder="Inserisci vecchia password"
+                    placeholder={t('changePassword.old-password-input')}
                     value={oldPassword}
                     onChange={(e) => setOldPassword(e.target.value)}
                     required
@@ -93,14 +93,14 @@ function ChangePassword() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="newPassword" className="form-label m-2">
-                    Nuova Password*:
+                  {t('changePassword.new-password-label')}
                   </label>
                   <input
                     type="password"
                     className="form-control"
                     id="newPassword"
                     name="newPassword"
-                    placeholder="Scegli nuova password"
+                    placeholder={t('changePassword.new-password-input')}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     required
@@ -108,14 +108,14 @@ function ChangePassword() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="repeatPassword" className="form-label m-2">
-                    Ripeti Nuova Password*:
+                  {t('changePassword.repeat-password-label')}
                   </label>
                   <input
                     type="password"
                     className="form-control"
                     id="repeatPassword"
                     name="repeatPassword"
-                    placeholder="Ripeti nuova password"
+                    placeholder={t('changePassword.repeat-password-input')}
                     value={repeatPassword}
                     onChange={(e) => setRepeatPassword(e.target.value)}
                     required
@@ -126,7 +126,7 @@ function ChangePassword() {
                   className="btn btn-primary single-page-btn"
                   onClick={handleChangePassword}
                 >
-                  Conferma
+                  {t('changePassword.btn')}
                 </button>
               </form>
               {errorMessage && <p className="mt-3 text-center text-danger">{errorMessage}</p>}

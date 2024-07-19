@@ -4,7 +4,7 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyTrips() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="container-fluid">
@@ -12,10 +12,9 @@ function MyTrips() {
         <div className="col-md-6 offset-md-3">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">I miei viaggi</h5>
+              <h5 className="card-title">{t('usertrips.title')}</h5>
               <p>
-                Non hai ancora vissuto un'esperienza di viaggio con Alessia,
-                cosa aspetti?
+              {t('usertrips.text')}
               </p>
             </div>
           </div>

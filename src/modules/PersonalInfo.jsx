@@ -63,13 +63,13 @@ function PersonalInfo() {
           Authorization: `Bearer ${token}`,
         },
       });
-      setSuccessMessage("Informazioni personali aggiornate con successo");
+      setSuccessMessage(t('personalInfo.success'));
       setTimeout(() => {
         setSuccessMessage("");
       }, 3000); // Mostra il messaggio per 3 secondi
     } catch (error) {
       console.error('Error updating user info:', error);
-      setErrorMessage("Errore nell'aggiornamento delle informazioni");
+      setErrorMessage(t('personalInfo.error'));
     }
   };
 
@@ -96,7 +96,7 @@ function PersonalInfo() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-                Informazioni Personali
+                {t('personalInfo.title')}
               </h5>
               <form
                 className="d-flex justify-content-around signup-form"
@@ -105,7 +105,7 @@ function PersonalInfo() {
                 <div className="signup-form-left">
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="name" className="form-label m-2 text-black">
-                      Nome:
+                    {t('personalInfo.name-label')}
                     </label>
                     <input
                       type="text"
@@ -122,7 +122,7 @@ function PersonalInfo() {
                       htmlFor="surname"
                       className="form-label m-2 text-black"
                     >
-                      Cognome:
+                      {t('personalInfo.surname-label')}
                     </label>
                     <input
                       type="text"
@@ -139,7 +139,7 @@ function PersonalInfo() {
                       htmlFor="email"
                       className="form-label m-2 text-black"
                     >
-                      Email:
+                      {t('personalInfo.email-label')}
                     </label>
                     <input
                       type="email"
@@ -156,7 +156,7 @@ function PersonalInfo() {
                       htmlFor="phone"
                       className="form-label m-2 text-black"
                     >
-                      Telefono:
+                      {t('personalInfo.tel-label')}
                     </label>
                     <input
                       type="tel"
@@ -168,7 +168,7 @@ function PersonalInfo() {
                     />
                   </div>
                   <button type="submit" className="btn signup-page-btn">
-                    Aggiorna Informazioni
+                  {t('personalInfo.btn')}
                   </button>
                 </div>
               </form>

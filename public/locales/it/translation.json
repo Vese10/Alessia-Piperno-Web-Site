@@ -62,7 +62,8 @@
     "password-label": "Password*:",
     "password-input": "Inserisci password",
     "btn-1": "Login",
-    "btn-2": "Registrati"
+    "btn-2": "Registrati",
+    "errore": "Utente non presente oppure email o password errati boghè"
   },
   "signup": {
     "title": "Registrati come nuovo cliente",
@@ -87,6 +88,40 @@
     "short-pass": "La password deve essere lunga almeno 6 caratteri",
     "signup-ok": "Registrazione avvenuta con successo, effettua il login",
     "user-exists": "Utente già registrato"
+  },
+  "useraccount": {
+    "title": "AREA PRIVATA",
+    "info": "Informazioni personali",
+    "password": "Modifica password",
+    "trips": "I miei viaggi",
+    "logout": "Logout"
+  },
+  "personalInfo": {
+    "title": "Informazioni personali",
+    "name-label": "Nome:",
+    "surname-label": "Cognome:",
+    "email-label": "Email:",
+    "tel-label": "Telefono:",
+    "btn": "Aggiorna informazioni",
+    "success": "Informazioni personali aggiornate con successo",
+    "error": "Errore nell'aggiornamento delle informazioni"
+  },
+  "changePassword": {
+    "title": "Modifica Password",
+    "old-password-label": "Vecchia Password*:",
+    "old-password-input": "Inserisci vecchia password",
+    "new-password-label": "Nuova Password*:",
+    "new-password-input": "Scegli nuova password",
+    "repeat-password-label": "Ripeti nuova password*:",
+    "repeat-password-input": "Ripeti nuova password",
+    "btn": "Conferma",
+    "error-1": "Le nuove password non coincidono",
+    "error-2": "La nuova password deve essere lunga almeno 6 caratteri",
+    "success": "Password aggiornata con successo"
+  },
+  "usertrips": {
+    "title": "I miei viaggi",
+    "text": "Non hai ancora vissuto un'esperienza di viaggio con Alessia, cosa aspetti?"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Tutti i diritti riservati",
