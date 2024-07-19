@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Inicio",
-    "azadì": "Azadì!",
+    "azadì": "¡Azadì!",
     "freelancer": "Freelancer",
     "travel": "Viajes",
     "contacts": "Contactos",
@@ -11,18 +11,18 @@
   },
   "home": {
     "title": "Alessia Piperno",
-    "description": "Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal",
-    "title-azadì": "Azadi!",
+    "description": "Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal Presentación Personal",
+    "title-azadì": "¡Azadi!",
     "description-azadì": "Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro Descripción breve del libro",
     "btn-azadì": "COMPRAR",
     "title-freelancer": "FREELANCER",
-    "description-freelancer": "Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad",
-    "btn-freelancer": "APRENDER MÁS",
+    "description-freelancer": "Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad Presentación de la actividad",
+    "btn-freelancer": "MÁS INFORMACIÓN",
     "title-travel": "VIAJES EN GRUPO",
     "description-travel": "Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo Introducción a los viajes en grupo",
     "btn-travel": "DESCUBRIR",
     "title-contacts": "CONTÁCTAME",
-    "description-contacts": "Para información, propuestas o cualquier cosa que se te ocurra, puedes contactarme aquí. Responderé lo antes posible. ¡Gracias!",
+    "description-contacts": "Para obtener información, propuestas o cualquier otra cosa, puedes contactarme aquí. Te responderé lo antes posible. ¡Gracias!",
     "name-label": "Nombre*:",
     "name-input": "Ingrese su nombre",
     "surname-label": "Apellido*:",
@@ -30,13 +30,13 @@
     "email-label": "Correo electrónico*:",
     "email-input": "Ingrese su correo electrónico",
     "tel-label": "Teléfono*:",
-    "tel-input": "Ingrese su teléfono",
+    "tel-input": "Ingrese su número de teléfono",
     "message-label": "Mensaje*:",
     "message-input": "Escribe tu mensaje",
     "btn-contacts": "ENVIAR",
     "btn-contacts-ok": "¡Enviado con éxito!",
     "btn-contacts-ko": "¡Error al enviar!",
-    "btn-contacts-try": "Enviando..."
+    "btn-contacts-try": "Envío en progreso..."
   },
   "azadì": {
     "title-azadì": "AZADI'",
@@ -44,44 +44,45 @@
     "buy-azadì": "Compra el libro aquí:"
   },
   "freelancer": {
-    "title": "Mi actividad como freelancer",
+    "title": "Mi actividad freelance",
     "title-freelancer-1": "Título 1",
-    "description-freelancer-1": "Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer",
+    "description-freelancer-1": "Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance",
     "title-freelancer-2": "Título 2",
-    "description-freelancer-2": "Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer Detalles de la actividad como freelancer"
+    "description-freelancer-2": "Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance Detalles de la actividad freelance"
   },
   "login": {
-    "title-1": "Acceso de Clientes:",
+    "title-1": "Inicio de sesión para clientes:",
     "text-1": "Inicia sesión en tu cuenta o crea una nueva.",
     "title-2": "Clientes Registrados",
-    "text-2": "Si ya estás registrado, inicia sesión con tus credenciales.",
+    "text-2": "Si ya te has registrado, inicia sesión con tus credenciales.",
     "title-3": "Nuevos Clientes",
-    "text-3": "Si no tienes una cuenta, haz clic en el botón de abajo para registrarte.",
+    "text-3": "Si aún no tienes una cuenta, haz clic en el botón de abajo para registrarte.",
     "username-label": "Correo electrónico*:",
-    "username-input": "Ingrese correo electrónico",
+    "username-input": "Ingrese su correo electrónico",
     "password-label": "Contraseña*:",
-    "password-input": "Ingrese contraseña",
+    "password-input": "Ingrese su contraseña",
     "btn-1": "Iniciar sesión",
-    "btn-2": "Registrarse"
+    "btn-2": "Registrarse",
+    "error": "Usuario no encontrado o correo electrónico o contraseña incorrectos"
   },
   "signup": {
     "title": "Regístrate como nuevo cliente",
     "title-1": "Información personal:",
     "title-2": "Credenciales:",
     "name-label": "Nombre*:",
-    "name-input": "Ingrese nombre",
+    "name-input": "Ingrese su nombre",
     "surname-label": "Apellido*:",
-    "surname-input": "Ingrese apellido",
+    "surname-input": "Ingrese su apellido",
     "email-label": "Correo electrónico*:",
-    "email-input": "Ingrese correo electrónico",
+    "email-input": "Ingrese su correo electrónico",
     "tel-label": "Teléfono*:",
-    "tel-input": "Ingrese teléfono",
+    "tel-input": "Ingrese su número de teléfono",
     "password-label": "Contraseña*:",
-    "password-input": "Ingrese contraseña",
-    "repeat-pass-label": "Repita la contraseña*:",
-    "repeat-pass-input": "Repita la contraseña",
-    "checkbox-text": "Acepto las condiciones de la ",
-    "checkbox-privacy": "Política de privacidad",
+    "password-input": "Ingrese su contraseña",
+    "repeat-pass-label": "Repetir contraseña*:",
+    "repeat-pass-input": "Repita su contraseña",
+    "checkbox-text": "Acepto los términos de la ",
+    "checkbox-privacy": "Política de Privacidad",
     "btn": "Crear Cuenta",
     "different-pass": "Las contraseñas no coinciden",
     "short-pass": "La contraseña debe tener al menos 6 caracteres",
@@ -89,11 +90,42 @@
     "user-exists": "Usuario ya registrado"
   },
   "useraccount": {
-    "title": "ÁREA PRIVADA"
+    "title": "ÁREA PRIVADA",
+    "info": "Información personal",
+    "password": "Cambiar contraseña",
+    "trips": "Mis viajes",
+    "logout": "Cerrar sesión"
+  },
+  "personalInfo": {
+    "title": "Información personal",
+    "name-label": "Nombre:",
+    "surname-label": "Apellido:",
+    "email-label": "Correo electrónico:",
+    "tel-label": "Teléfono:",
+    "btn": "Actualizar información",
+    "success": "Información personal actualizada con éxito",
+    "error": "Error al actualizar la información"
+  },
+  "changePassword": {
+    "title": "Cambiar Contraseña",
+    "old-password-label": "Contraseña Antigua*:",
+    "old-password-input": "Ingrese su contraseña antigua",
+    "new-password-label": "Nueva Contraseña*:",
+    "new-password-input": "Elija una nueva contraseña",
+    "repeat-password-label": "Repetir nueva contraseña*:",
+    "repeat-password-input": "Repita su nueva contraseña",
+    "btn": "Confirmar",
+    "error-1": "Las nuevas contraseñas no coinciden",
+    "error-2": "La nueva contraseña debe tener al menos 6 caracteres",
+    "success": "Contraseña actualizada con éxito"
+  },
+  "usertrips": {
+    "title": "Mis viajes",
+    "text": "Aún no has tenido una experiencia de viaje con Alessia, ¿qué esperas?"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Todos los derechos reservados",
-    "privacy": "Política de privacidad",
-    "cookie": "Política de cookies"
+    "privacy": "Política de Privacidad",
+    "cookie": "Política de Cookies"
   }
 }

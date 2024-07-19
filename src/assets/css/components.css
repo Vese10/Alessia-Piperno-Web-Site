@@ -181,7 +181,7 @@
 
 .dropdown-menu {
   top: 120%;
-  right: -2vh;
+  right: 0;
   background: linear-gradient(to right, var(--gradient2), var(--main));
   border: none;
 }

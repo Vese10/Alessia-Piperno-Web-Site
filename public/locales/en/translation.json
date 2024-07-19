@@ -22,7 +22,7 @@
     "description-travel": "Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels Introduction to group travels",
     "btn-travel": "DISCOVER",
     "title-contacts": "CONTACT ME",
-    "description-contacts": "For information, proposals, or anything that comes to mind, you can contact me here. I will respond as soon as possible. Thank you!",
+    "description-contacts": "For information, proposals, or anything else, you can contact me here. I will reply as soon as possible. Thanks!",
     "name-label": "Name*:",
     "name-input": "Enter your name",
     "surname-label": "Surname*:",
@@ -30,13 +30,13 @@
     "email-label": "Email*:",
     "email-input": "Enter your email",
     "tel-label": "Phone*:",
-    "tel-input": "Enter your phone",
+    "tel-input": "Enter your phone number",
     "message-label": "Message*:",
     "message-input": "Write your message",
     "btn-contacts": "SEND",
-    "btn-contacts-ok": "Sent successfully!",
-    "btn-contacts-ko": "Sending error!",
-    "btn-contacts-try": "Sending..."
+    "btn-contacts-ok": "Successfully sent!",
+    "btn-contacts-ko": "Error sending!",
+    "btn-contacts-try": "Sending in progress..."
   },
   "azadì": {
     "title-azadì": "AZADI'",
@@ -51,37 +51,38 @@
     "description-freelancer-2": "Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details Freelance activity details"
   },
   "login": {
-    "title-1": "Customer Access:",
+    "title-1": "Customer Login:",
     "text-1": "Log in to your account or create a new one.",
     "title-2": "Registered Customers",
     "text-2": "If you have already registered, log in with your credentials.",
     "title-3": "New Customers",
-    "text-3": "If you do not have an account, click the button below to register.",
+    "text-3": "If you don't have an account yet, click the button below to register.",
     "username-label": "Email*:",
-    "username-input": "Enter email",
+    "username-input": "Enter your email",
     "password-label": "Password*:",
-    "password-input": "Enter password",
+    "password-input": "Enter your password",
     "btn-1": "Login",
-    "btn-2": "Register"
+    "btn-2": "Register",
+    "error": "User not found or incorrect email or password"
   },
   "signup": {
     "title": "Register as a new customer",
     "title-1": "Personal Information:",
     "title-2": "Credentials:",
     "name-label": "Name*:",
-    "name-input": "Enter name",
+    "name-input": "Enter your name",
     "surname-label": "Surname*:",
-    "surname-input": "Enter surname",
+    "surname-input": "Enter your surname",
     "email-label": "Email*:",
-    "email-input": "Enter email",
+    "email-input": "Enter your email",
     "tel-label": "Phone*:",
-    "tel-input": "Enter phone",
+    "tel-input": "Enter your phone number",
     "password-label": "Password*:",
-    "password-input": "Enter password",
+    "password-input": "Enter your password",
     "repeat-pass-label": "Repeat password*:",
-    "repeat-pass-input": "Repeat password",
-    "checkbox-text": "I accept the ",
-    "checkbox-privacy": "Privacy policy",
+    "repeat-pass-input": "Repeat your password",
+    "checkbox-text": "I accept the terms of the ",
+    "checkbox-privacy": "Privacy Policy",
     "btn": "Create Account",
     "different-pass": "Passwords do not match",
     "short-pass": "Password must be at least 6 characters long",
@@ -89,11 +90,42 @@
     "user-exists": "User already registered"
   },
   "useraccount": {
-    "title": "PRIVATE AREA"
+    "title": "PRIVATE AREA",
+    "info": "Personal information",
+    "password": "Change password",
+    "trips": "My trips",
+    "logout": "Logout"
+  },
+  "personalInfo": {
+    "title": "Personal information",
+    "name-label": "Name:",
+    "surname-label": "Surname:",
+    "email-label": "Email:",
+    "tel-label": "Phone:",
+    "btn": "Update information",
+    "success": "Personal information updated successfully",
+    "error": "Error updating information"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "old-password-label": "Old Password*:",
+    "old-password-input": "Enter your old password",
+    "new-password-label": "New Password*:",
+    "new-password-input": "Choose a new password",
+    "repeat-password-label": "Repeat new password*:",
+    "repeat-password-input": "Repeat your new password",
+    "btn": "Confirm",
+    "error-1": "New passwords do not match",
+    "error-2": "New password must be at least 6 characters long",
+    "success": "Password updated successfully"
+  },
+  "usertrips": {
+    "title": "My trips",
+    "text": "You haven't had a travel experience with Alessia yet, what are you waiting for?"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. All rights reserved",
-    "privacy": "Privacy policy",
-    "cookie": "Cookie policy"
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy"
   }
 }

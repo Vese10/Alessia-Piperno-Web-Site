@@ -34,8 +34,7 @@ function Login({ setCurrentPage }) {
         login();
         setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
       } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.message);
+        setErrorMessage(t('login.error'));
       }
     } catch (error) {
       console.error('Error:', error);

@@ -63,7 +63,7 @@
     "password-input": "Inserisci password",
     "btn-1": "Login",
     "btn-2": "Registrati",
-    "errore": "Utente non presente oppure email o password errati boghè"
+    "error": "Utente non presente oppure email o password errati"
   },
   "signup": {
     "title": "Registrati come nuovo cliente",
