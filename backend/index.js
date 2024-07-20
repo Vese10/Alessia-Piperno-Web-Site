@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connessione a MongoDB
-mongoose.connect('mongodb://localhost:27017/AlessiaPipernoDatabase', {
+mongoose.connect('mongodb+srv://veselinhristov10:serveralessiapiperno@pipernositeserver.x4hgaza.mongodb.net/?retryWrites=true&w=majority&appName=PipernoSiteServer', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
