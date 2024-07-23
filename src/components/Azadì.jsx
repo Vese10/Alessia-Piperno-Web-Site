@@ -14,7 +14,7 @@ function Azadì({ setLanguage }) {
   
   return (
     <>
-      <section className="azadì">
+      <section className="azadì mb-4">
         <div className="container-fluid d-flex align-intems-center justify-content-center">
           <div className="row azadì-row">
             <div className="col-lg-4 d-flex align-items-center justify-content-center left-azadì">

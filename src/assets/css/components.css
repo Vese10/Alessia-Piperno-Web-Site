@@ -68,13 +68,23 @@
   z-index: 1;
 }
 
+.single-page-btn-contatti {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  z-index: 1;
+}
+
 .form-left,
 .form-right {
   border-radius: 20px;
+  max-height: 70vh;
 }
 
 .label-text {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -97,7 +107,7 @@
 }
 
 .azadì-row {
-  padding: 50px;
+  overflow: hidden;
 }
 
 .left-azadì {
@@ -304,6 +314,7 @@
 
   .azadì-image {
     padding: 20px;
+    max-width: 50%;
   }
 
   .azadì-title {

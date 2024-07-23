@@ -28,7 +28,7 @@ function Contatti({ setLanguage }) {
                 </p>
               </div>
               <div className="col-lg-2"></div>
-              <div className="col-lg-4 bg-white p-4 form-right">
+              <div className="col-lg-4 bg-white p-2 form-right">
                 <form onSubmit={handleSendEmail}>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
@@ -98,7 +98,7 @@ function Contatti({ setLanguage }) {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="btn btn-primary mt-3 single-page-btn"
+                      className="btn btn-primary single-page-btn-contatti"
                     >
                       {buttonText}
                     </button>

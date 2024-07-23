@@ -157,7 +157,7 @@ function Home({setCurrentPage, setLanguage }) {
                 </p>
               </div>
               <div className="col-lg-2"></div>
-              <div className="col-lg-4 bg-white p-4 form-right">
+              <div className="col-lg-4 bg-white p-2 form-right">
                 <form onSubmit={handleSendEmail}>
                   <div className="form-group p-2">
                     <label htmlFor="nome" className="label-text">
@@ -227,7 +227,7 @@ function Home({setCurrentPage, setLanguage }) {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="btn btn-primary mt-3 single-page-btn"
+                      className="btn btn-primary mt-1 single-page-btn-contatti"
                     >
                       {buttonText}
                     </button>
