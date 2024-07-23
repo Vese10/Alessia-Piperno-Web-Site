@@ -43,7 +43,7 @@ function Azadì({ setLanguage }) {
               </a>
               <div className="d-flex p-4 align-items-center justify-content-center">
                 <a
-                  className="col-lg-6 p-5 store-link"
+                  className="col-lg-6 p-2 store-link"
                   href="https://www.librerie.coop/libri/9788804777632-azadi-alessia-piperno-libri-mondadori/?tduid=b22274c379e5bf793924ca57d883049d"
                   target="_blank"
                   rel="nooper"
@@ -55,7 +55,7 @@ function Azadì({ setLanguage }) {
                   ></img>
                 </a>
                 <a
-                  className="col-lg-6 p-5 store-link"
+                  className="col-lg-6 p-2 store-link"
                   href="https://www.amazon.it/azadi-alessia-piperno/dp/880477763X/?tag=librimondadori-21"
                   target="_blank"
                   rel="nooper"
@@ -69,7 +69,7 @@ function Azadì({ setLanguage }) {
               </div>
               <div className="d-flex p-4 align-items-center justify-content-center">
                 <a
-                  className="col-lg-6 p-5 store-link"
+                  className="col-lg-6 p-2 store-link"
                   href="https://www.ibs.it/azadi-libro-alessia-piperno/e/9788804777632?gad_source=1&gclid=CjwKCAjw4ri0BhAvEiwA8oo6F7bKPAV8C5pJXWnILjipRG9g2jiDjIQIWicwWzknPH-sZzz1W8pXQRoCy3MQAvD_BwE"
                   target="_blank"
                   rel="nooper"
@@ -81,7 +81,7 @@ function Azadì({ setLanguage }) {
                   ></img>
                 </a>
                 <a
-                  className="col-lg-6 p-5 store-link"
+                  className="col-lg-6 p-2 store-link"
                   href="https://www.lafeltrinelli.it/azadi-libro-alessia-piperno/e/9788804777632?utm_source=tradedoubler&utm_medium=cpa&utm_campaign=2993006&utm_content=affiliazione&tduid=b22274c379e5bf793924ca57d883049d"
                   target="_blank"
                   rel="nooper"

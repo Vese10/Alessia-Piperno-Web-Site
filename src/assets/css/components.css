@@ -312,6 +312,10 @@
     background: linear-gradient(to right, var(--gradient2), var(--main));
   }
 
+  .right-azadì {
+    margin-bottom: 10vh;
+  }
+
   .azadì-image {
     padding: 20px;
     max-width: 50%;
