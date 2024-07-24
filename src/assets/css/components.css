@@ -20,7 +20,7 @@
 
 .main-container-1,
 .main-container-2,
-.standard-container{
+.standard-container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   z-index: 1;
 }
 
@@ -103,8 +103,7 @@
 
 /* Azadì style */
 
-.azadì {
-}
+.azadì {}
 
 .azadì-row {
   overflow: hidden;
@@ -112,6 +111,7 @@
 
 .left-azadì {
   background: linear-gradient(to right, var(--gradient2), var(--main));
+  min-height: 90vh;
 }
 
 .right-azadì {
@@ -135,6 +135,7 @@
 /* Freelancer style */
 
 .freelancer {
+  min-height: 100vh;
 }
 
 .freelancer-image-pc {
@@ -242,7 +243,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .signup-page-btn:hover {
@@ -266,6 +267,12 @@
 
   .background-image-desktop {
     display: none;
+  }
+
+  .main-container-1,
+  .main-container-2,
+  .standard-container {
+    min-height: 70vh;
   }
 
   .main-container-1,
@@ -306,6 +313,10 @@
 
   .azadì-row {
     padding: 0;
+  }
+
+  .left-azadì {
+    min-height: unset;
   }
 
   .center-azadì {
@@ -373,9 +384,7 @@
     right: unset;
   }
 
-  .dropdown-item {
-    
-  }
+  .dropdown-item {}
 
   .nav-lang {
     display: none;

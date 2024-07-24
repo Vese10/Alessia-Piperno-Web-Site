@@ -83,7 +83,7 @@ function SignUp({ setCurrentPage }) {
         <div className="container-fluid standard-container justify-content-start">
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
-              <div className="col-12 text-center bg-white p-4 rounded-4 pb-5 signup-container">
+              <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
                 <p className="container-title mb-0 text-white">{successMessage}</p>
               </div>
             </div>
@@ -103,18 +103,18 @@ function SignUp({ setCurrentPage }) {
       <div className="container-fluid standard-container justify-content-start">
         <div className="container mt-5">
           <div className="row d-flex align-items-center justify-content-center">
-            <div className="col-12 text-center bg-white p-4 rounded-top-4 pb-5 signup-container">
+            <div className="col-12 text-center bg-white p-4 pb-0 rounded-top-4 signup-container">
               <p className="container-title mb-0 text-white">{t('signup.title')}</p>
             </div>
           </div>
           <div className="row">
-            <div className="col-12 mb-4 d-flex flex-column bg-white p-4 pb-5 rounded-bottom-4 signup-container">
+            <div className="col-12 mb-4 d-flex flex-column bg-white p-4 pt-1 rounded-bottom-4 signup-container">
               {errorMessage && (
                 <p className="error-message text-danger">{errorMessage}</p>
               )}
               <form className="d-flex justify-content-around signup-form" onSubmit={handleSubmit}>
                 <div className="signup-form-left">
-                  <p className="container-title text-white">{t('signup.title-1')}</p>
+                  <p className="container-title fs-3 text-white ">{t('signup.title-1')}</p>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="nome" className="form-label m-2 text-white">{t('signup.name-label')}</label>
                     <input
@@ -170,7 +170,7 @@ function SignUp({ setCurrentPage }) {
                 </div>
 
                 <div className="signup-form-right">
-                  <p className="container-title text-white">{t('signup.title-2')}</p>
+                  <p className="container-title fs-3 text-white">{t('signup.title-2')}</p>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="password" className="form-label m-2 text-white">{t('signup.password-label')}</label>
                     <input

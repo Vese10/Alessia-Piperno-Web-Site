@@ -47,7 +47,7 @@ function Login({ setCurrentPage }) {
         <div className="container-fluid standard-container justify-content-start">
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
-              <div className="col-12 bg-white p-4 rounded-top-4 pb-5">
+              <div className="col-12 bg-white p-4 rounded-top-4">
                 <p className="container-title mb-0">{t('login.title-1')}</p>
                 <p className="container-description">
                   {t('login.text-1')}
@@ -55,7 +55,7 @@ function Login({ setCurrentPage }) {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-old pb-5">
+              <div className="col-lg-6 col-12 mb-4 d-flex flex-column bg-white p-4 login-old">
                 <p className="container-title">{t('login.title-2')}</p>
                 <p className="container-description">
                   {t('login.text-2')}
