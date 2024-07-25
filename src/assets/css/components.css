@@ -140,7 +140,6 @@
 
 .freelancer-image-pc {
   position: relative;
-  z-index: -1;
 }
 
 .freelancer-image-mobile {
@@ -150,6 +149,7 @@
 .freelancer-title-top {
   position: absolute;
   font-size: 50px;
+  z-index: 1;
 }
 
 /* Contacts Style*/
@@ -283,6 +283,10 @@
     background-repeat: no-repeat;
   }
 
+  .standard-container {
+    background-image: none;
+  }
+
   .main-container-2 {
     background-image: url(../img/background-mobile-2.png);
     background-position: center;
@@ -340,6 +344,17 @@
     color: white;
   }
 
+  /* Freelancer Style */
+  .freelancer{
+    background: linear-gradient(to right, var(--gradient2), var(--main));
+  }
+
+  .freelancer-title-top,
+  .freelancer-title,
+  .freelancer-description {
+    color: white;
+  }
+  
   /* Contacts Style*/
   .contacts-container {
     background-image: url(../img/background-mobile-1.png);
@@ -430,6 +445,5 @@
   .freelancer-image-mobile {
     display: unset;
     position: relative;
-    z-index: -1;
   }
 }

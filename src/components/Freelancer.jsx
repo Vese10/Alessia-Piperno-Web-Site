@@ -28,13 +28,13 @@ function Freelancer() {
                 alt="Paesaggio montano"
               ></img>
             </div>
-            <div className="container-fluid d-flex flex-column justify-content-center p-4">
+            <div className="container-fluid d-flex flex-column justify-content-center p-4 freelancer-bottom">
               <p className="container-title freelancer-title">{t('freelancer.title-freelancer-1')}</p>
               <p className="container-description freelancer-description">
               {t('freelancer.description-freelancer-1')}
               </p>
             </div>
-            <div className="container-fluid d-flex flex-column justify-content-center p-4">
+            <div className="container-fluid d-flex flex-column justify-content-center p-4 freelancer-bottom">
               <p className="container-title freelancer-title">{t('freelancer.title-freelancer-2')}</p>
               <p className="container-description freelancer-description">
               {t('freelancer.description-freelancer-2')}
