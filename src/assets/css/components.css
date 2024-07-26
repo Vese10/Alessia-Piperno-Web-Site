@@ -217,6 +217,10 @@
   min-height: 100vh;
 }
 
+.login-top {
+  background: linear-gradient(to right, var(--gradient2), var(--main));
+}
+
 .login-old {
   border-bottom-left-radius: 20px;
 }
@@ -417,6 +421,7 @@
   .login {
     background-image: none;
     margin-bottom: 100px;
+    margin-top: -50px;
   }
 
   .login-new,
@@ -428,6 +433,9 @@
 
   .signup {
     margin-bottom: 100px;
+    background: linear-gradient(to right, var(--gradient2), var(--main));
+    margin-top: -50px;
+
   }
 
   .signup-form {
