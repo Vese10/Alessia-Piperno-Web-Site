@@ -50,12 +50,12 @@
 }
 
 .container-title {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
 }
 
 .container-description {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -64,7 +64,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
   z-index: 1;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .label-text {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -103,7 +103,9 @@
 
 /* Azadì style */
 
-.azadì {}
+.azadì {
+  min-height: 100vh;
+}
 
 .azadì-row {
   overflow: hidden;
@@ -111,7 +113,7 @@
 
 .left-azadì {
   background: linear-gradient(to right, var(--gradient2), var(--main));
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .right-azadì {
@@ -148,8 +150,20 @@
 
 .freelancer-title-top {
   position: absolute;
-  font-size: 50px;
+  font-size: 40px;
   z-index: 1;
+}
+
+/* Viaggi Style */
+
+.country,
+.continent {
+  font-size: 30px;
+}
+
+.trip-description,
+.trip-price {
+  font-size: 15px;
 }
 
 /* Contacts Style*/
@@ -204,6 +218,7 @@
 
 .dropdown-item {
   color: white;
+  font-size: 15px;
 }
 
 .flag-img {
@@ -229,16 +244,23 @@
   border-bottom-right-radius: 20px;
 }
 
+.form-label {
+  font-size: 15px;
+}
+
 /* SignUp Style */
 
 .signup {
   min-height: 100vh;
-  margin-bottom: 60px;
 }
 
 .signup-container {
   background: linear-gradient(to right, var(--gradient2), var(--main));
   ;
+}
+
+.form-check-label {
+  font-size: 15px;
 }
 
 .signup-page-btn {
@@ -247,7 +269,7 @@
   border-radius: 20px;
   width: 100%;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .signup-page-btn:hover {
@@ -332,7 +354,7 @@
   }
 
   .right-azadì {
-    margin-bottom: 10vh;
+
   }
 
   .azadì-image {
@@ -403,8 +425,6 @@
     right: unset;
   }
 
-  .dropdown-item {}
-
   .nav-lang {
     display: none;
   }
@@ -432,7 +452,6 @@
   /* SignUp Style */
 
   .signup {
-    margin-bottom: 100px;
     background: linear-gradient(to right, var(--gradient2), var(--main));
     margin-top: -50px;
 

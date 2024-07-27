@@ -15,8 +15,8 @@ function TripCard({ setLanguage }) {
             <p className="country m-2 text-white">Indonesia</p>
           </div>
           <div className="d-flex justify-content-between m-4 p-1 trip-info">
-            <p className="continent m-2 text-white">Descrizione breve</p>
-            <p className="country m-2 text-white">Prezzo $</p>
+            <p className="trip-description m-2 text-white">Descrizione breve</p>
+            <p className="trip-price m-2 text-white">Prezzo $</p>
           </div>
         </div>
       </section>

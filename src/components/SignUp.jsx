@@ -114,7 +114,7 @@ function SignUp({ setCurrentPage }) {
               )}
               <form className="d-flex justify-content-around signup-form" onSubmit={handleSubmit}>
                 <div className="signup-form-left">
-                  <p className="container-title fs-3 text-white ">{t('signup.title-1')}</p>
+                  <p className="container-title fs-4 text-white ">{t('signup.title-1')}</p>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="nome" className="form-label m-2 text-white">{t('signup.name-label')}</label>
                     <input
@@ -170,7 +170,7 @@ function SignUp({ setCurrentPage }) {
                 </div>
 
                 <div className="signup-form-right">
-                  <p className="container-title fs-3 text-white">{t('signup.title-2')}</p>
+                  <p className="container-title fs-4 text-white">{t('signup.title-2')}</p>
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="password" className="form-label m-2 text-white">{t('signup.password-label')}</label>
                     <input

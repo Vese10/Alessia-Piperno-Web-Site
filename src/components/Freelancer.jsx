@@ -14,7 +14,7 @@ function Freelancer() {
         <div className="container-fluid d-flex flex-column align-intems-center justify-content-center p-0">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <div className="d-flex text-center align-items-end freelancer-top">
-              <p className="container-title freelancer-title-top p-4 m-0">
+              <p className="container-title freelancer-title-top p-4 m-0 text-white">
               {t('freelancer.title')}
               </p>
               <img
