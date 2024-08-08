@@ -1,0 +1,12 @@
+// routes/userRoutes.js
+const express = require('express');
+const { createUser, updateUser, getUser } = require('../controllers/userController');
+const auth = require('../middlewares/auth');
+
+const router = express.Router();
+
+router.post('/users', createUser);
+router.put('/me', auth, updateUser);
+router.get('/me', auth, getUser);
+
+module.exports = router;
