@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://alessiapiperno.com",
-  "proxy": "http://localhost:3000",
+  "homepage": "https://alessia-piperno-web-site-1.onrender.com/",
   "scripts": {
     "dev": "vite",
     "start": "vite",
