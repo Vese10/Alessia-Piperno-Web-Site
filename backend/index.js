@@ -11,6 +11,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+console.log('DATABASE_URL:', process.env.DATABASE_URL); // Log database URL
+console.log('JWT_SECRET:', process.env.JWT_SECRET); // Log JWT secret
+
 // Middleware per parsing JSON
 app.use(express.json());
 
@@ -18,7 +21,10 @@ app.use(express.json());
 app.use(cors());
 
 // Connessione a MongoDB
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Errore di connessione al database:'));
