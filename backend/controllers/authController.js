@@ -7,6 +7,8 @@ const login = async (req, res) => {
   const { email, password } = req.body;
   try {
     console.log('Tentativo di login per:', email); // Aggiungi log qui
+    console.log('JWT_SECRET:', process.env.JWT_SECRET); // Verifica se JWT_SECRET è definita
+
     const user = await User.findOne({ email });
     if (!user) {
       console.log('Utente non trovato:', email); // Aggiungi log qui
@@ -20,6 +22,7 @@ const login = async (req, res) => {
     }
 
     const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
+    console.log('Token generato:', token); // Aggiungi log qui
     res.status(200).send({ token, message: 'Login effettuato con successo' });
   } catch (error) {
     console.error('Errore durante il login:', error); // Aggiungi log qui
