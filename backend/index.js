@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('./models/auth'); // Importa il middleware di autenticazione
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware per parsing JSON
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connessione a MongoDB
-mongoose.connect('mongodb+srv://veselinhristov10:serveralessiapiperno@pipernositeserver.x4hgaza.mongodb.net/?retryWrites=true&w=majority&appName=PipernoSiteServer', {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

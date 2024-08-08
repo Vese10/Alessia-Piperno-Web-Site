@@ -21,7 +21,7 @@ function Login({ setCurrentPage }) {
     e.preventDefault();
     setErrorMessage(""); // Resetta il messaggio di errore
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://alessia-piperno-web-site.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ function PersonalInfo() {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://localhost:3000/me', {
+        const response = await axios.get('https://alessia-piperno-web-site.onrender.com/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

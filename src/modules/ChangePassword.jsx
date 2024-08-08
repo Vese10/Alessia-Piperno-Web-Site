@@ -28,7 +28,7 @@ function ChangePassword() {
     try {
       const token = localStorage.getItem("token"); // Assumi che il token sia salvato in localStorage
       const response = await axios.put(
-        "http://localhost:3000/change-password",
+        "https://alessia-piperno-web-site.onrender.com/change-password",
         {
           oldPassword,
           newPassword,
