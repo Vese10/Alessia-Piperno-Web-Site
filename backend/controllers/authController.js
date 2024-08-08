@@ -6,38 +6,23 @@ const jwt = require('jsonwebtoken');
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
+    console.log('Tentativo di login per:', email); // Aggiungi log qui
     const user = await User.findOne({ email });
-    if (user && await bcrypt.compare(password, user.password)) {
-      const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
-      res.status(200).send({ token, message: 'Login effettuato con successo' });
-    } else {
-      res.status(401).send({ message: 'Utente non presente oppure email o password errati' });
-    }
-  } catch (error) {
-    res.status(500).send(error);
-  }
-};
-
-const changePassword = async (req, res) => {
-  const { oldPassword, newPassword } = req.body;
-  const userId = req.userId;
-
-  try {
-    const user = await User.findById(userId);
     if (!user) {
-      return res.status(404).send({ message: 'Utente non trovato' });
+      console.log('Utente non trovato:', email); // Aggiungi log qui
+      return res.status(401).send({ message: 'Utente non presente oppure email o password errati' });
     }
 
-    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(401).send({ message: 'Vecchia password errata' });
+      console.log('Password errata per:', email); // Aggiungi log qui
+      return res.status(401).send({ message: 'Utente non presente oppure email o password errati' });
     }
 
-    user.password = newPassword;
-    await user.save();
-
-    res.status(200).send({ message: '' });
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
+    res.status(200).send({ token, message: 'Login effettuato con successo' });
   } catch (error) {
+    console.error('Errore durante il login:', error); // Aggiungi log qui
     res.status(500).send({ message: 'Errore del server' });
   }
 };
