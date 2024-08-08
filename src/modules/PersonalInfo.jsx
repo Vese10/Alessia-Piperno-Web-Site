@@ -58,7 +58,7 @@ function PersonalInfo() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.put('http://localhost:3000/me', filteredData, {
+      const response = await axios.put('https://alessia-piperno-web-site.onrender.com/me', filteredData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
