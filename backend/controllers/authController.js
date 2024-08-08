@@ -27,6 +27,30 @@ const login = async (req, res) => {
   }
 };
 
+const changePassword = async (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+  const userId = req.userId;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).send({ message: 'Utente non trovato' });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return res.status(401).send({ message: 'Vecchia password errata' });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    res.status(200).send({ message: 'Password cambiata con successo' });
+  } catch (error) {
+    res.status(500).send({ message: 'Errore del server' });
+  }
+};
+
 module.exports = {
   login,
   changePassword
