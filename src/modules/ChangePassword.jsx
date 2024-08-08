@@ -129,7 +129,6 @@ function ChangePassword() {
                   {t('changePassword.btn')}
                 </button>
               </form>
-              {errorMessage}
             </div>
           </div>
         </div>
