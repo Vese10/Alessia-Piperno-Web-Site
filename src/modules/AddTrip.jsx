@@ -25,6 +25,17 @@ function AddTrip({ onAddTrip }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Assicurati che price e maxParticipants siano numeri, e date sia nel formato giusto
+    const formattedData = {
+      ...formData,
+      price: parseFloat(formData.price),
+      maxParticipants: parseInt(formData.maxParticipants, 10),
+      date: new Date(formData.date).toISOString(),
+    };
+  
+    console.log("Dati inviati al backend:", formattedData);
+  
     try {
       const response = await fetch(
         "https://alessia-piperno-web-site.onrender.com/trips",
@@ -34,10 +45,10 @@ function AddTrip({ onAddTrip }) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(formattedData),
         }
       );
-
+  
       if (response.ok) {
         const newTrip = await response.json();
         onAddTrip(newTrip);
@@ -50,6 +61,8 @@ function AddTrip({ onAddTrip }) {
           maxParticipants: "",
         });
       } else {
+        const errorResponse = await response.json();
+        console.error("Errore durante l'aggiunta del viaggio:", errorResponse);
         setErrorMessage("Errore durante l'aggiunta del viaggio");
       }
     } catch (error) {

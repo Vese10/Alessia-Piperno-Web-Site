@@ -2,12 +2,14 @@
 const Trip = require('../models/Trip');
 
 const addTrip = async (req, res) => {
+  console.log("Dati ricevuti dal frontend:", req.body);
   try {
     const trip = new Trip(req.body);
     await trip.save();
     res.status(201).send(trip);
   } catch (error) {
-    res.status(400).send({ message: 'Errore nella creazione del viaggio' });
+    console.error("Errore durante la creazione del viaggio:", error);
+    res.status(400).send({ message: "Errore nella creazione del viaggio" });
   }
 };
 
