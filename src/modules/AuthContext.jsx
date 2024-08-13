@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext } from "react";
 
 const AuthContext = createContext();
 
@@ -11,6 +11,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     setIsAuthenticated(true);
+
+    // Aggiornamento della funzione di login in `AuthContext.js`
+    localStorage.setItem("role", data.role);
   };
 
   const logout = () => {

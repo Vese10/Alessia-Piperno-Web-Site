@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  role: { // Nuovo campo role
+    type: String,
+    enum: ['admin', 'user'],
+    default: 'user',
+  },
 });
 
 // Middleware per hashare la password prima di salvarla
