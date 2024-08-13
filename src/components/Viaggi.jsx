@@ -32,7 +32,6 @@ function Viaggi({ setLanguage }) {
             <TripCard key={index} trip={trip} />
           ))}
         </div>
-        <AddTrip onAddTrip={addTrip} />
       </section>
     </>
   );

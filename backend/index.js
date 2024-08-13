@@ -35,10 +35,12 @@ app.use(express.static(path.join(__dirname, '../../Alessia-Piperno-Web-Site')));
 // Importa le rotte
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const tripRoutes = require('./routes/tripRoutes');
 
 // Usa le rotte
 app.use(authRoutes);
 app.use(userRoutes);
+app.use(tripRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
