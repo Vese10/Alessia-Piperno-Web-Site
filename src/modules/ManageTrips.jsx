@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function ManageTrips() {
   const { t } = useTranslation();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   return (
     <div className="container-fluid">
