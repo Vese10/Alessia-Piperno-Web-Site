@@ -63,7 +63,7 @@ function UserAccount({ setCurrentPage }) {
             {t('useraccount.trips')}
           </button>
           {role === "admin" && (
-            <button className="nav-link" onClick={() => setSection("addTrip")}>Aggiungi Viaggio</button>
+            <button className={`nav-link nav-link-account text-black ${section === "addTrip" ? "selected" : ""}`} onClick={() => setSection("addTrip")}>Aggiungi Viaggio</button>
           )}
           <button className="nav-link nav-link-account text-black" onClick={handleLogout}>
             {t('useraccount.logout')}
