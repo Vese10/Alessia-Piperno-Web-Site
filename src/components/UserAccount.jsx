@@ -1,22 +1,26 @@
-// UserAccount.jsx
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "../modules/AuthContext";
-import AddTrip from "../modules/AddTrip"; // Un componente che permette agli amministratori di aggiungere nuovi viaggi
+import "../assets/css/components.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import PersonalInfo from "../modules/PersonalInfo";
+import ChangePassword from "../modules/ChangePassword";
+import MyTrips from "../modules/MyTrips";
 
 function UserAccount({ setCurrentPage }) {
+  const { t } = useTranslation();
   const { logout } = useAuth();
   const [section, setSection] = useState("personalInfo");
 
-  const role = localStorage.getItem("role");
+  const handleLogout = () => {
+    logout();
+    setCurrentPage("login");
+  };
 
   const renderSection = () => {
-    if (role === "admin" && section === "addTrip") {
-      return <AddTrip />;
-    }
-
     switch (section) {
       case "personalInfo":
-        return <PersonalInfo />;
+        return <PersonalInfo />; // Questo richiede l'importazione di `PersonalInfo`
       case "changePassword":
         return <ChangePassword />;
       case "myTrips":
@@ -29,14 +33,31 @@ function UserAccount({ setCurrentPage }) {
   return (
     <section className="useraccount">
       <div className="container-fluid p-0">
+        <div className="text-white text-center py-3 private-area">
+          <h1>{t('useraccount.title')}</h1>
+        </div>
         <nav className="nav nav-pills nav-fill bg-dark-subtle p-4">
-          <button className="nav-link" onClick={() => setSection("personalInfo")}>Informazioni Personali</button>
-          <button className="nav-link" onClick={() => setSection("changePassword")}>Cambia Password</button>
-          <button className="nav-link" onClick={() => setSection("myTrips")}>I Miei Viaggi</button>
-          {role === "admin" && (
-            <button className="nav-link" onClick={() => setSection("addTrip")}>Aggiungi Viaggio</button>
-          )}
-          <button className="nav-link" onClick={logout}>Logout</button>
+          <button
+            className={`nav-link nav-link-account text-black ${section === "personalInfo" ? "selected" : ""}`}
+            onClick={() => setSection("personalInfo")}
+          >
+            {t('useraccount.info')}
+          </button>
+          <button
+            className={`nav-link nav-link-account text-black ${section === "changePassword" ? "selected" : ""}`}
+            onClick={() => setSection("changePassword")}
+          >
+            {t('useraccount.password')}
+          </button>
+          <button
+            className={`nav-link nav-link-account text-black ${section === "myTrips" ? "selected" : ""}`}
+            onClick={() => setSection("myTrips")}
+          >
+            {t('useraccount.trips')}
+          </button>
+          <button className="nav-link nav-link-account text-black" onClick={handleLogout}>
+            {t('useraccount.logout')}
+          </button>
         </nav>
         <div className="mt-4">{renderSection()}</div>
       </div>
