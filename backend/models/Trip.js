@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const tripSchema = new mongoose.Schema({
-  title: {
+  continente: {
     type: String,
     required: true,
   },
