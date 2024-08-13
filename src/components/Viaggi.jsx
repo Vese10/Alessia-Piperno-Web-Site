@@ -30,11 +30,6 @@ function Viaggi({ setLanguage }) {
     fetchTrips();
   }, []);
 
-  // Funzione per aggiungere un nuovo viaggio alla lista esistente
-  const addTrip = (newTrip) => {
-    setTrips([...trips, newTrip]); // Aggiunge il nuovo viaggio allo stato
-  };
-
   return (
     <section className="d-flex flex-column viaggi-page">
       <div className="d-flex justify-content-between m-4 trips">
@@ -42,7 +37,6 @@ function Viaggi({ setLanguage }) {
           <TripCard key={index} trip={trip} />
         ))}
       </div>
-      <AddTrip onAddTrip={addTrip} /> {/* Passa la funzione addTrip */}
     </section>
   );
 }
