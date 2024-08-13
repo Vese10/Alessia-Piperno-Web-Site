@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function AddTrip() {
   const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -13,6 +14,9 @@ function AddTrip() {
     price: "",
     maxParticipants: "",
   });
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
