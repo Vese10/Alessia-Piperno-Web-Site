@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
 import "./i18n";
 import { AuthProvider } from "./modules/AuthContext";
@@ -17,31 +16,6 @@ import Footer from "./include/footer";
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("it");
-  const history = useHistory();
-
-  useEffect(() => {
-    // Funzione di gestione per l'evento beforeunload
-    const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = "";
-    };
-
-    // Funzione di gestione per la conferma di ricaricamento
-    const handleUnload = () => {
-
-      localStorage.removeItem("token");
-
-      history.push("/login");
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    window.addEventListener("unload", handleUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-      window.removeEventListener("unload", handleUnload);
-    };
-  }, [history]);
 
   const renderPage = () => {
     switch (currentPage) {
