@@ -1,7 +1,7 @@
 // UserAccount.jsx
 import React, { useState } from "react";
 import { useAuth } from "../modules/AuthContext";
-import AddTrip from "./AddTrip"; // Un componente che permette agli amministratori di aggiungere nuovi viaggi
+import AddTrip from "../modules/AddTrip"; // Un componente che permette agli amministratori di aggiungere nuovi viaggi
 
 function UserAccount({ setCurrentPage }) {
   const { logout } = useAuth();
