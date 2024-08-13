@@ -4,6 +4,8 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function TripCard({ trip }) {
+  const isLoggedIn = !!localStorage.getItem("token");
+
   return (
     <div className="card">
       <div className="card-body">
@@ -12,7 +14,9 @@ function TripCard({ trip }) {
         <p className="card-text">Data: {new Date(trip.date).toLocaleDateString()}</p>
         <p className="card-text">Prezzo: {trip.price}€</p>
         <p className="card-text">Partecipanti: {trip.maxParticipants}</p>
-        <button>Iscriviti</button>  
+        {isLoggedIn && (
+          <button>Iscriviti</button>
+        )}  
       </div>
     </div>
   );
