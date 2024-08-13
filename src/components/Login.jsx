@@ -28,22 +28,21 @@ function Login({ setCurrentPage }) {
         },
         body: JSON.stringify({ email, password }),
       });
-      console.log('Response status:', response.status); // Aggiungi log qui
+  
       if (response.ok) {
         const data = await response.json();
-        console.log('Login successo:', data); // Aggiungi log qui
+        console.log('Login successo:', data); // Log per confermare i dati ricevuti
         localStorage.setItem("token", data.token); // Salva il token JWT
-        localStorage.setItem("role", data.role); // Salva il ruolo dell'utente
-        login();
-        setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
+        login(data.role); // Passa il ruolo alla funzione `login`
+        setCurrentPage("useraccount"); // Naviga alla pagina account utente
       } else {
         const errorData = await response.json();
-        console.error('Error data:', errorData); // Aggiungi log qui
-        setErrorMessage(t('login.error'));
+        console.error('Error data:', errorData);
+        setErrorMessage('Email o password errati');
       }
     } catch (error) {
       console.error('Error:', error);
-      setErrorMessage(t('login.error'));
+      setErrorMessage('Errore del server');
     }
   };
 

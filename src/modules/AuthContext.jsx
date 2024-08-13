@@ -9,15 +9,15 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const login = () => {
+  const login = (role) => {
     setIsAuthenticated(true);
-
-    // Aggiornamento della funzione di login in `AuthContext.js`
-    localStorage.setItem("role", data.role);
+    localStorage.setItem("role", role); // Usa `role` passato come argomento
   };
 
   const logout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
   };
 
   return (
