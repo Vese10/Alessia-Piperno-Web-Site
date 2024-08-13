@@ -12,14 +12,13 @@ function ChangePassword() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-
   const handleChangePassword = async () => {
     if (newPassword !== repeatPassword) {
       setErrorMessage(t('changePassword.error-1'));
       return;
     }
 
-    // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
+    // Controlla se la password è lunga almeno 6 caratteri
     if (newPassword.length < 6) {
       setErrorMessage(t('changePassword.error-2'));
       return;
@@ -39,7 +38,7 @@ function ChangePassword() {
           },
         }
       );
-      setErrorMessage(response.data.message);
+      setErrorMessage(""); // Resetta il messaggio di errore
       setSuccessMessage(t('changePassword.success'));
       setOldPassword("");
       setNewPassword("");
@@ -78,7 +77,7 @@ function ChangePassword() {
               <form className="signup-form-right">
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="oldPassword" className="form-label m-2">
-                  {t('changePassword.old-password-label')}
+                    {t('changePassword.old-password-label')}
                   </label>
                   <input
                     type="password"
@@ -93,7 +92,7 @@ function ChangePassword() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="newPassword" className="form-label m-2">
-                  {t('changePassword.new-password-label')}
+                    {t('changePassword.new-password-label')}
                   </label>
                   <input
                     type="password"
@@ -108,7 +107,7 @@ function ChangePassword() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="repeatPassword" className="form-label m-2">
-                  {t('changePassword.repeat-password-label')}
+                    {t('changePassword.repeat-password-label')}
                   </label>
                   <input
                     type="password"
@@ -129,7 +128,9 @@ function ChangePassword() {
                   {t('changePassword.btn')}
                 </button>
               </form>
-              {errorMessage && <p className="mt-3 text-center text-danger">{errorMessage}</p>}
+              {errorMessage && !successMessage && (
+                <p className="mt-3 text-center text-danger">{errorMessage}</p>
+              )}
             </div>
           </div>
         </div>
