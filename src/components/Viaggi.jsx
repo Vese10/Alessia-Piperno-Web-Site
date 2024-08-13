@@ -12,11 +12,20 @@ function Viaggi({ setLanguage }) {
 
   useEffect(() => {
     const fetchTrips = async () => {
-      const response = await fetch("https://alessia-piperno-web-site.onrender.com/trips");
-      const data = await response.json();
-      setTrips(data);
+      try {
+        const response = await fetch("https://alessia-piperno-web-site.onrender.com/trips");
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setTrips(data); // Imposta trips solo se data è un array
+        } else {
+          setTrips([]); // In caso di errore, imposta trips come array vuoto
+        }
+      } catch (error) {
+        console.error("Errore nel caricamento dei viaggi:", error);
+        setTrips([]); // Gestisci l'errore impostando trips come array vuoto
+      }
     };
-
+  
     fetchTrips();
   }, []);
 
@@ -32,6 +41,7 @@ function Viaggi({ setLanguage }) {
             <TripCard key={index} trip={trip} />
           ))}
         </div>
+        <AddTrip onAddTrip={addTrip} />
       </section>
     </>
   );
