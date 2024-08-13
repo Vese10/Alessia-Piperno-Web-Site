@@ -6,11 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PersonalInfo from "../modules/PersonalInfo";
 import ChangePassword from "../modules/ChangePassword";
 import MyTrips from "../modules/MyTrips";
+import AddTrip from "../modules/AddTrip";
 
 function UserAccount({ setCurrentPage }) {
   const { t } = useTranslation();
   const { logout } = useAuth();
   const [section, setSection] = useState("personalInfo");
+
+  const role = localStorage.getItem("role");
 
   const handleLogout = () => {
     logout();
@@ -18,9 +21,13 @@ function UserAccount({ setCurrentPage }) {
   };
 
   const renderSection = () => {
+    if (role === "admin" && section === "addTrip") {
+      return <AddTrip />;
+    }
+
     switch (section) {
       case "personalInfo":
-        return <PersonalInfo />; // Questo richiede l'importazione di `PersonalInfo`
+        return <PersonalInfo />;
       case "changePassword":
         return <ChangePassword />;
       case "myTrips":
@@ -55,6 +62,9 @@ function UserAccount({ setCurrentPage }) {
           >
             {t('useraccount.trips')}
           </button>
+          {role === "admin" && (
+            <button className="nav-link" onClick={() => setSection("addTrip")}>Aggiungi Viaggio</button>
+          )}
           <button className="nav-link nav-link-account text-black" onClick={handleLogout}>
             {t('useraccount.logout')}
           </button>
