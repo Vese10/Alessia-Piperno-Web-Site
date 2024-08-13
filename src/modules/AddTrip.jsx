@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function AddTrip() {
+function AddTrip({ onAddTrip }) {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -39,12 +39,22 @@ function AddTrip() {
       );
 
       if (response.ok) {
-        alert("Viaggio aggiunto con successo");
+        const newTrip = await response.json();
+        onAddTrip(newTrip);
+        setSuccessMessage("Viaggio aggiunto con successo");
+        setFormData({
+          title: "",
+          description: "",
+          date: "",
+          price: "",
+          maxParticipants: "",
+        });
       } else {
-        alert("Errore durante l'aggiunta del viaggio");
+        setErrorMessage("Errore durante l'aggiunta del viaggio");
       }
     } catch (error) {
       console.error("Errore:", error);
+      setErrorMessage("Errore durante l'aggiunta del viaggio");
     }
   };
 
@@ -62,86 +72,88 @@ function AddTrip() {
                 className="signup-form"
                 onSubmit={handleSubmit}
               >
-                <div className="signup-form-left">
-                  <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="continente" className="form-label m-2 text-black">
+                {/* Campi per l'inserimento dei dati */}
+                <div className="mb-3 d-flex align-items-center">
+                  <label htmlFor="continente" className="form-label m-2 text-black">
                     Continente
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="continente"
-                      name="continente"
-                      placeholder="Aggiungi continente"
-                      value={formData.continente}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3 d-flex align-items-center">
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="continente"
+                    name="continente"
+                    placeholder="Aggiungi continente"
+                    value={formData.continente}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="description" className="form-label m-2 text-black">
                     Descrizione
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="description"
-                      name="description"
-                      placeholder="Aggiungi descrizione"
-                      value={formData.description}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="description" className="form-label m-2 text-black">
-                    Data
-                    </label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="description" className="form-label m-2 text-black">
-                    Prezzo
-                    </label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="price"
-                      name="price"
-                      placeholder="Prezzo"
-                      value={formData.price}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="description" className="form-label m-2 text-black">
-                    Parteciparnti
-                    </label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="maxParticipants"
-                      name="maxParticipants"
-                      placeholder="Numero massimo di partecipanti"
-                      value={formData.maxParticipants}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-primary single-page-btn">
-                  Aggiungi Viaggio
-                  </button>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="description"
+                    name="description"
+                    placeholder="Aggiungi descrizione"
+                    value={formData.description}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <label htmlFor="date" className="form-label m-2 text-black">
+                    Data
+                  </label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <label htmlFor="price" className="form-label m-2 text-black">
+                    Prezzo
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="price"
+                    name="price"
+                    placeholder="Prezzo"
+                    value={formData.price}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <label htmlFor="maxParticipants" className="form-label m-2 text-black">
+                    Partecipanti
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="maxParticipants"
+                    name="maxParticipants"
+                    placeholder="Numero massimo di partecipanti"
+                    value={formData.maxParticipants}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary single-page-btn">
+                  Aggiungi Viaggio
+                </button>
               </form>
+              {successMessage && (
+                <p className="text-success mt-3">{successMessage}</p>
+              )}
               {errorMessage && (
                 <p className="error-message text-danger mt-3">{errorMessage}</p>
               )}
