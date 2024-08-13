@@ -15,7 +15,7 @@ const addTrip = async (req, res) => {
 
 const getTrips = async (req, res) => {
   try {
-    const trips = await Trip.find().populate('participants', 'firstName lastName'); // Popola i partecipanti con nome e cognome
+    const trips = await Trip.find().populate('participants', 'name surname'); // Popola i partecipanti con nome e cognome
     res.status(200).send(trips);
   } catch (error) {
     res.status(500).send({ message: 'Errore nel recupero dei viaggi' });

@@ -64,7 +64,7 @@ function ManageTrips() {
                       <ul>
                         {trip.participants.map((user) => (
                           <li key={user._id}>
-                            {user.firstName} {user.lastName}
+                            {user.name} {user.surname}
                           </li>
                         ))}
                       </ul>
