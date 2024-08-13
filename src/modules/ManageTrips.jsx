@@ -15,7 +15,7 @@ function ManageTrips() {
         <div className="col-md-8 offset-md-2">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">{t('usertrips.title')}</h5>
+              <h5 className="card-title">Riepilogo Viaggi</h5>
               {errorMessage && <p className="text-danger">{errorMessage}</p>}
               <ul className="list-group">
                 {trips.length > 0 ? (
