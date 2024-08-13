@@ -33,6 +33,7 @@ function Login({ setCurrentPage }) {
         const data = await response.json();
         console.log('Login successo:', data); // Aggiungi log qui
         localStorage.setItem("token", data.token); // Salva il token JWT
+        localStorage.setItem("role", data.role); // Salva il ruolo dell'utente
         login();
         setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
       } else {

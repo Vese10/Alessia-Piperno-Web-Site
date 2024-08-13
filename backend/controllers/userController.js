@@ -3,7 +3,10 @@ const User = require('../models/User');
 
 const createUser = async (req, res) => {
   try {
-    const user = new User(req.body);
+    const user = new User({
+      ...req.body,
+      role: req.body.role || 'user', // Imposta il ruolo come 'user' se non specificato
+    });
     await user.save();
     res.status(201).send(user);
   } catch (error) {
