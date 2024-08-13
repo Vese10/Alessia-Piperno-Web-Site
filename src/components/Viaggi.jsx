@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import TripCard from "../include/trip-card";
-import AddTrip from "../modules/AddTrip";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Viaggi({ setLanguage }) {
   const { t, i18n } = useTranslation();
-  const [trips, setTrips] = useState([]); // Stato per memorizzare i viaggi
+  const [trips, setTrips] = useState([]);
 
   // Funzione per caricare i viaggi dal backend
   useEffect(() => {
@@ -16,9 +15,6 @@ function Viaggi({ setLanguage }) {
       try {
         const response = await fetch("https://alessia-piperno-web-site.onrender.com/trips", {
           method: "GET",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
         });
         const data = await response.json();
         setTrips(data); // Imposta i viaggi nel tuo stato
