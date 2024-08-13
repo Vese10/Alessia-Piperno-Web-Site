@@ -21,9 +21,10 @@ function ManageTrips() {
                 {trips.length > 0 ? (
                   trips.map((trip) => (
                     <li key={trip._id} className="list-group-item">
-                      <h5>{trip.continente}</h5>
+                      <h5>{trip.nation}</h5>
                       <p>{trip.description}</p>
                       <p>{t('usertrips.date')}: {new Date(trip.date).toLocaleDateString()}</p>
+                      <p>{trip.duration}</p>
                       <p>{t('usertrips.price')}: {trip.price}€</p>
                       <p>{t('usertrips.participants')}: {trip.participants.length}/{trip.maxParticipants}</p>
                     </li>

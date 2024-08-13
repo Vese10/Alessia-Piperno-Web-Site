@@ -8,7 +8,7 @@ function AddTrip() {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
-    continente: "",
+    nation: "",
     description: "",
     date: "",
     price: "",
@@ -51,7 +51,7 @@ function AddTrip() {
       if (response.ok) {
         setSuccessMessage("Viaggio aggiunto con successo");
         setFormData({
-          continente: "",
+          nation: "",
           description: "",
           date: "",
           price: "",
@@ -83,16 +83,16 @@ function AddTrip() {
                 onSubmit={handleSubmit}
               >
                 <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="continente" className="form-label m-2 text-black">
-                    Continente
+                  <label htmlFor="nation" className="form-label m-2 text-black">
+                    nation
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    id="continente"
-                    name="continente"
-                    placeholder="Aggiungi continente"
-                    value={formData.continente}
+                    id="nation"
+                    name="nation"
+                    placeholder="Aggiungi nation"
+                    value={formData.nation}
                     onChange={handleChange}
                     required
                   />
@@ -114,7 +114,7 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="date" className="form-label m-2 text-black">
-                    Data
+                    Data inizio viaggio
                   </label>
                   <input
                     type="date"
@@ -122,6 +122,20 @@ function AddTrip() {
                     id="date"
                     name="date"
                     value={formData.date}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <label htmlFor="duration" className="form-label m-2 text-black">
+                    Durata
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="duration"
+                    name="duration"
+                    value={formData.duration}
                     onChange={handleChange}
                     required
                   />

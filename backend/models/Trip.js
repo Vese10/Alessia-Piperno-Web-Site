@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const tripSchema = new mongoose.Schema({
-  continente: {
+  nation: {
     type: String,
     required: true,
   },
@@ -12,6 +12,10 @@ const tripSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
+    required: true,
+  },
+  duration: {
+    type: Number,
     required: true,
   },
   price: {
