@@ -45,8 +45,20 @@ const getUser = async (req, res) => {
   }
 };
 
+const Trip = require('../models/Trip');
+
+const getUserTrips = async (req, res) => {
+  try {
+    const userTrips = await Trip.find({ participants: req.userId });
+    res.status(200).send(userTrips);
+  } catch (error) {
+    res.status(500).send({ message: 'Errore nel recupero dei viaggi' });
+  }
+};
+
 module.exports = {
   createUser,
   updateUser,
-  getUser
+  getUser,
+  getUserTrips,
 };
