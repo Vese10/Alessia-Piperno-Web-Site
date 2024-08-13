@@ -32,6 +32,10 @@ const joinTrip = async (req, res) => {
       return res.status(404).send({ message: 'Viaggio non trovato' });
     }
 
+    if (trip.participants.includes(userId)) {
+      return res.status(400).send({ message: 'Sei già iscritto a questo viaggio' });
+    }
+
     if (trip.participants.length >= trip.maxParticipants) {
       return res.status(400).send({ message: 'Il viaggio è al completo' });
     }
