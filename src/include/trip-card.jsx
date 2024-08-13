@@ -7,7 +7,7 @@ function TripCard({ trip }) {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">{trip.title}</h5>
+        <h5 className="card-title">{trip.continente}</h5>
         <p className="card-text">{trip.description}</p>
         <p className="card-text">Data: {new Date(trip.date).toLocaleDateString()}</p>
         <p className="card-text">Prezzo: {trip.price}€</p>
