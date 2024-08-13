@@ -32,7 +32,7 @@ function Login({ setCurrentPage }) {
         const data = await response.json();
         localStorage.setItem("token", data.token); // Salva il token JWT
         login();
-        setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di successo
+        setCurrentPage("useraccount"); // Naviga al componente UserAccount in caso di success
       } else {
         setErrorMessage(t('login.error'));
       }
