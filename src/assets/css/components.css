@@ -179,6 +179,7 @@
 
 .viaggi-page {
   background: linear-gradient(to right, var(--gradient2), var(--main));
+  min-height: 100vh;
 }
 
 /* Trip Card Style*/

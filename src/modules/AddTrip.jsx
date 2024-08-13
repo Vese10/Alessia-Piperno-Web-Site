@@ -8,7 +8,7 @@ function AddTrip({ onAddTrip }) {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
-    title: "",
+    continente: "",
     description: "",
     date: "",
     price: "",
@@ -54,7 +54,7 @@ function AddTrip({ onAddTrip }) {
         onAddTrip(newTrip);
         setSuccessMessage("Viaggio aggiunto con successo");
         setFormData({
-          title: "",
+          continente: "",
           description: "",
           date: "",
           price: "",
