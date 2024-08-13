@@ -84,7 +84,7 @@ function AddTrip() {
               >
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="nation" className="form-label m-2 text-black">
-                    nation
+                    Nazione
                   </label>
                   <input
                     type="text"
@@ -135,6 +135,7 @@ function AddTrip() {
                     className="form-control"
                     id="duration"
                     name="duration"
+                    placeholder="Giorni di durata del viaggio"
                     value={formData.duration}
                     onChange={handleChange}
                     required
