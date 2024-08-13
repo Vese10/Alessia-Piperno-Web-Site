@@ -60,10 +60,6 @@ function AddTrip({ onAddTrip }) {
           price: "",
           maxParticipants: "",
         });
-      } else {
-        const errorResponse = await response.json();
-        console.error("Errore durante l'aggiunta del viaggio:", errorResponse);
-        setErrorMessage("Errore durante l'aggiunta del viaggio");
       }
     } catch (error) {
       console.error("Errore:", error);
