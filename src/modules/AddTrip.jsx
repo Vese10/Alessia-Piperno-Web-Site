@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function AddTrip({ onAddTrip }) {
+function AddTrip() {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -26,7 +26,6 @@ function AddTrip({ onAddTrip }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Assicurati che price e maxParticipants siano numeri, e date sia nel formato giusto
     const formattedData = {
       ...formData,
       price: parseFloat(formData.price),
@@ -50,8 +49,6 @@ function AddTrip({ onAddTrip }) {
       );
   
       if (response.ok) {
-        const newTrip = await response.json();
-        onAddTrip(newTrip);
         setSuccessMessage("Viaggio aggiunto con successo");
         setFormData({
           continente: "",
@@ -60,6 +57,10 @@ function AddTrip({ onAddTrip }) {
           price: "",
           maxParticipants: "",
         });
+      } else {
+        const errorResponse = await response.json();
+        console.error("Errore durante l'aggiunta del viaggio:", errorResponse);
+        setErrorMessage("Errore durante l'aggiunta del viaggio");
       }
     } catch (error) {
       console.error("Errore:", error);
@@ -81,7 +82,6 @@ function AddTrip({ onAddTrip }) {
                 className="signup-form"
                 onSubmit={handleSubmit}
               >
-                {/* Campi per l'inserimento dei dati */}
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="continente" className="form-label m-2 text-black">
                     Continente
