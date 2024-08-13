@@ -1,7 +1,11 @@
 // AddTrip.jsx
-import React, { useState } from "react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import "../assets/css/components.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function AddTrip() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
