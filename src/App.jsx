@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "./i18n";
-import { AuthProvider } from "./modules/AuthContext";
+import { AuthProvider, useAuth } from "./modules/AuthContext";
 import Navbar from "./include/navbar";
 import Home from "./components/Home";
 import Azadì from "./components/Azadì";
@@ -12,9 +12,8 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import UserAccount from "./components/UserAccount";
 import Footer from "./include/footer";
-import { useAuth } from "./modules/AuthContext";
 
-function App() {
+function AppContent() { // Componente che usa il contesto
   const { isAuthenticated } = useAuth();
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("it");
@@ -59,15 +58,18 @@ function App() {
 
   return (
     <>
-      <AuthProvider>
-        <Navbar
-          setCurrentPage={setCurrentPage}
-          setLanguage={setLanguage}
-        ></Navbar>
-        {renderPage()}
-        <Footer></Footer>
-      </AuthProvider>
+      <Navbar setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
+      {renderPage()}
+      <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
