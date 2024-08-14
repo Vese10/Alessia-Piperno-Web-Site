@@ -50,6 +50,9 @@ function AddTrip() {
   
       if (response.ok) {
         setSuccessMessage(t('addtrips.success'));
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 3000); // Mostra il messaggio per 3 secondi
         setFormData({
           nation: "",
           description: "",
