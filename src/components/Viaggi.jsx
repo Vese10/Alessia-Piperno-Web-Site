@@ -27,7 +27,7 @@ function Viaggi({ setLanguage }) {
   }, []);
 
   return (
-    <section className="container viaggi-page">
+    <section className="container-fluid p-5 viaggi-page">
       <div className="row">
         {trips.map((trip, index) => (
           <div key={index} className="col-md-6 mb-4">

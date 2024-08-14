@@ -57,22 +57,30 @@ function TripCard({ trip, setCurrentPage }) {
 
   return (
     <div className="card">
-      <div className="card-body">
-        <p className="card-title">{trip.nation}</p>
-        <p className="card-text">{trip.description}</p>
-        <p className="card-text">
-          Data: {new Date(trip.date).toLocaleDateString()}
-        </p>
-        <p className="card-text">Prezzo: {trip.price}€</p>
-        <p className="card-text">Partecipanti: {trip.maxParticipants}</p>
-        {isLoggedIn && <button onClick={handleJoinTrip}>Iscriviti</button>}
-        {successMessage && (
-          <p className="text-success mt-3">{successMessage}</p>
-        )}
-        {errorMessage && (
-          <p className="error-message text-danger mt-3">{errorMessage}</p>
-        )}
+      <div className="card-body d-flex justify-content-between">
+        <div className="left-content">
+          <p className="card-title">{trip.nation}</p>
+          <p className="card-text">{trip.description}</p>
+          <p className="card-text">
+            Data: {new Date(trip.date).toLocaleDateString()}
+          </p>
+        </div>
+        <div className="right-content text-end">
+          <p className="card-text">Prezzo: {trip.price}€</p>
+          <p className="card-text">Partecipanti: {trip.maxParticipants}</p>
+        </div>
       </div>
+      {isLoggedIn && (
+        <div className="card-footer">
+          <button onClick={handleJoinTrip} className="btn signup-page-btn">Iscriviti</button>
+          {successMessage && (
+            <p className="text-success mt-3">{successMessage}</p>
+          )}
+          {errorMessage && (
+            <p className="text-danger mt-3">{errorMessage}</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
