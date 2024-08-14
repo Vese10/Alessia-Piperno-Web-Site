@@ -18,7 +18,6 @@ export const AuthProvider = ({ children }) => {
 
   const login = (role) => {
     setIsAuthenticated(true);
-    sessionStorage.setItem("token", token);
     sessionStorage.setItem("role", role);
   };
 
