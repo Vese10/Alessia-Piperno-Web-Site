@@ -25,7 +25,7 @@ function TripCard({ trip, setCurrentPage }) {
         setSuccessMessage("Iscrizione al viaggio avvenuta con successo!");
         setTimeout(() => {
           setSuccessMessage("");
-          setCurrentPage("userAccount"); // Cambia la pagina corrente a UserAccount dopo il successo
+          setCurrentPage("useraccount"); // Cambia la pagina corrente a UserAccount dopo il successo
         }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();

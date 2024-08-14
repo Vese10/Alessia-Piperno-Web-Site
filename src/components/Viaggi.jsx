@@ -27,10 +27,12 @@ function Viaggi({ setLanguage }) {
   }, []);
 
   return (
-    <section className="d-flex flex-column viaggi-page">
-      <div className="d-flex justify-content-between m-4 trips">
+    <section className="container viaggi-page">
+      <div className="row">
         {trips.map((trip, index) => (
-          <TripCard key={index} trip={trip} />
+          <div key={index} className="col-md-6 mb-4">
+            <TripCard trip={trip} />
+          </div>
         ))}
       </div>
     </section>
