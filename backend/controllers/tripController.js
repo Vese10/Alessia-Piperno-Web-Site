@@ -1,36 +1,16 @@
 // backend/controllers/tripController.js
 const Trip = require('../models/Trip');
-const multer = require('multer');
-const path = require('path');
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
+const addTrip = async (req, res) => {
+  console.log("Dati ricevuti dal frontend:", req.body);
+  try {
+    const trip = new Trip(req.body);
+    await trip.save();
+    res.status(201).send(trip);
+  } catch (error) {
+    console.error("Errore durante la creazione del viaggio:", error);
+    res.status(400).send({ message: "Errore nella creazione del viaggio" });
   }
-});
-
-const upload = multer({ storage: storage }).single('image');
-
-const addTrip = (req, res) => {
-  upload(req, res, async function (err) {
-    if (err) {
-      return res.status(400).send({ message: "Errore nel caricamento dell'immagine" });
-    }
-
-    try {
-      const trip = new Trip({
-        ...req.body,
-        imageUrl: req.file ? req.file.path : null,
-      });
-      await trip.save();
-      res.status(201).send(trip);
-    } catch (error) {
-      res.status(400).send({ message: "Errore nella creazione del viaggio" });
-    }
-  });
 };
 
 const getTrips = async (req, res) => {
