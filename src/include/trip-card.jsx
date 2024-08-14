@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function TripCard({ trip, setCurrentPage }) {
+function TripCard({ trip, setCurrentPage, onDelete }) {
   const { t } = useTranslation();
   const isLoggedIn = !!sessionStorage.getItem("token");
   const role = sessionStorage.getItem("role");
