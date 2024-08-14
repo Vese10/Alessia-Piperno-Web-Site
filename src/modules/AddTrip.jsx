@@ -11,6 +11,7 @@ function AddTrip() {
     nation: "",
     description: "",
     date: "",
+    duration: "",
     price: "",
     maxParticipants: "",
   });
@@ -25,16 +26,16 @@ function AddTrip() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const formattedData = {
       ...formData,
       price: parseFloat(formData.price),
       maxParticipants: parseInt(formData.maxParticipants, 10),
       date: new Date(formData.date).toISOString(),
     };
-  
+
     console.log("Dati inviati al backend:", formattedData);
-  
+
     try {
       const response = await fetch(
         "https://alessia-piperno-web-site.onrender.com/trips",
@@ -47,27 +48,28 @@ function AddTrip() {
           body: JSON.stringify(formattedData),
         }
       );
-  
+
       if (response.ok) {
-        setSuccessMessage(t('addtrips.success'));
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000); // Mostra il messaggio per 3 secondi
+        setSuccessMessage(t("addtrips.success"));
         setFormData({
           nation: "",
           description: "",
           date: "",
+          duration: "",
           price: "",
           maxParticipants: "",
         });
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();
-        console.error(t('addtrips.error'), errorResponse);
-        setErrorMessage(t('addtrips.error'));
+        console.error(t("addtrips.error"), errorResponse);
+        setErrorMessage(t("addtrips.error"));
       }
     } catch (error) {
       console.error("Errore:", error);
-      setErrorMessage(t('addtrips.error'));
+      setErrorMessage(t("addtrips.error"));
     }
   };
 
@@ -78,7 +80,9 @@ function AddTrip() {
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
-                <p className="container-title mb-0 text-white">{successMessage}</p>
+                <p className="container-title mb-0 text-white">
+                  {successMessage}
+                </p>
               </div>
             </div>
           </div>
@@ -94,38 +98,38 @@ function AddTrip() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-              {t('addtrips.title')}
+                {t("addtrips.title")}
               </h5>
-              
-              <form
-                className="signup-form"
-                onSubmit={handleSubmit}
-              >
+
+              <form className="signup-form" onSubmit={handleSubmit}>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="nation" className="form-label m-2 text-black">
-                  {t('addtrips.nation')}
+                    {t("addtrips.nation")}
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     id="nation"
                     name="nation"
-                    placeholder={t('addtrips.nation-input')}
+                    placeholder={t("addtrips.nation-input")}
                     value={formData.nation}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="description" className="form-label m-2 text-black">
-                  {t('addtrips.description')}
+                  <label
+                    htmlFor="description"
+                    className="form-label m-2 text-black"
+                  >
+                    {t("addtrips.description")}
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     id="description"
                     name="description"
-                    placeholder={t('addtrips.description-input')}
+                    placeholder={t("addtrips.description-input")}
                     value={formData.description}
                     onChange={handleChange}
                     required
@@ -133,7 +137,7 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="date" className="form-label m-2 text-black">
-                  {t('addtrips.date')}
+                    {t("addtrips.date")}
                   </label>
                   <input
                     type="date"
@@ -146,15 +150,18 @@ function AddTrip() {
                   />
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="duration" className="form-label m-2 text-black">
-                  {t('addtrips.duration')}
+                  <label
+                    htmlFor="duration"
+                    className="form-label m-2 text-black"
+                  >
+                    {t("addtrips.duration")}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="duration"
                     name="duration"
-                    placeholder={t('addtrips.duration-input')}
+                    placeholder={t("addtrips.duration-input")}
                     value={formData.duration}
                     onChange={handleChange}
                     required
@@ -162,36 +169,42 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="price" className="form-label m-2 text-black">
-                  {t('addtrips.price')}
+                    {t("addtrips.price")}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="price"
                     name="price"
-                    placeholder={t('addtrips.price-input')}
+                    placeholder={t("addtrips.price-input")}
                     value={formData.price}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="maxParticipants" className="form-label m-2 text-black">
-                  {t('addtrips.participants')}
+                  <label
+                    htmlFor="maxParticipants"
+                    className="form-label m-2 text-black"
+                  >
+                    {t("addtrips.participants")}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="maxParticipants"
                     name="maxParticipants"
-                    placeholder={t('addtrips.participants-input')}
+                    placeholder={t("addtrips.participants-input")}
                     value={formData.maxParticipants}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary single-page-btn">
-                {t('addtrips.btn-addTrips')}
+                <button
+                  type="submit"
+                  className="btn btn-primary single-page-btn"
+                >
+                  {t("addtrips.btn-addTrips")}
                 </button>
               </form>
               {successMessage && (
