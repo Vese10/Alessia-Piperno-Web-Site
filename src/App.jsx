@@ -29,15 +29,15 @@ function AppContent() { // Componente che usa il contesto
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return <Home setLanguage={setLanguage} />;
+        return <Home setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "azadì":
-        return <Azadì setLanguage={setLanguage} />;
+        return <Azadì setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "freelancer":
-        return <Freelancer setLanguage={setLanguage} />;
+        return <Freelancer setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "viaggi":
-        return <Viaggi setLanguage={setLanguage} />;
+        return <Viaggi setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "contatti":
-        return <Contatti setLanguage={setLanguage} />;
+        return <Contatti setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "login":
         return (
           <Login setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
