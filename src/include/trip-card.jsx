@@ -25,23 +25,21 @@ function TripCard({ trip, setCurrentPage }) {
       );
 
       if (response.ok) {
-        setSuccessMessage(t('tripcard.success'));
+        setSuccessMessage(t("tripcard.success"));
         setTimeout(() => {
           setSuccessMessage("");
           setCurrentPage("useraccount"); // Cambia la pagina corrente a UserAccount dopo il successo
         }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();
-        setErrorMessage(
-          `t('tripcard.error'): ${errorResponse.message}`
-        );
+        setErrorMessage(t("tripcard.error"));
         setTimeout(() => {
           setErrorMessage("");
         }, 3000); // Mostra il messaggio per 3 secondi
       }
     } catch (error) {
-      console.error(t('tripcard.error'), error);
-      setErrorMessage(t('tripcard.error'));
+      console.error(t("tripcard.error"), error);
+      setErrorMessage(t("tripcard.error"));
     }
   };
 
@@ -59,17 +57,15 @@ function TripCard({ trip, setCurrentPage }) {
       );
 
       if (response.ok) {
-        setSuccessMessage(t('tripcard.delete'));
+        setSuccessMessage(t("tripcard.delete"));
         onDelete(trip._id); // Chiama la funzione onDelete per aggiornare la lista dei viaggi
       } else {
         const errorResponse = await response.json();
-        setErrorMessage(
-          `t('tripcard.error-delete'): ${errorResponse.message}`
-        );
+        setErrorMessage(`t('tripcard.error-delete'): ${errorResponse.message}`);
       }
     } catch (error) {
-      console.error(t('tripcard.error-delete'), error);
-      setErrorMessage(t('tripcard.error-delete'));
+      console.error(t("tripcard.error-delete"), error);
+      setErrorMessage(t("tripcard.error-delete"));
     }
   };
 
@@ -99,13 +95,15 @@ function TripCard({ trip, setCurrentPage }) {
             <p className="card-title m-1">{trip.nation}</p>
             <p className="card-text m-1">{trip.description}</p>
             <p className="card-text m-1">
-            {t('trips.date')}: {new Date(trip.date).toLocaleDateString()}
+              {t("trips.date")}: {new Date(trip.date).toLocaleDateString()}
             </p>
           </div>
           <div className="right-content text-end">
-            <p className="card-text m-1">{t('trips.price')}: {trip.price}€</p>
             <p className="card-text m-1">
-            {t('trips.participants')}: {trip.maxParticipants}
+              {t("trips.price")}: {trip.price}€
+            </p>
+            <p className="card-text m-1">
+              {t("trips.participants")}: {trip.maxParticipants}
             </p>
           </div>
         </div>
@@ -117,14 +115,14 @@ function TripCard({ trip, setCurrentPage }) {
         <div className="card-footer">
           {role === "admin" ? (
             <button onClick={handleDeleteTrip} className="btn btn-danger">
-            {t('trips.btn-delete')}
+              {t("trips.btn-delete")}
             </button>
           ) : (
             <button
               onClick={handleJoinTrip}
               className="btn btn-primary single-page-btn m-1"
             >
-              {t('trips.btn-subscribe')}
+              {t("trips.btn-subscribe")}
             </button>
           )}
           {successMessage && (
