@@ -15,7 +15,7 @@ function MyTrips() {
         const response = await fetch("https://alessia-piperno-web-site.onrender.com/user/trips", {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
         });
 

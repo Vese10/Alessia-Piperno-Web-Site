@@ -4,8 +4,8 @@ import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function TripCard({ trip, setCurrentPage }) {
-  const isLoggedIn = !!localStorage.getItem("token");
-  const role = localStorage.getItem("role");
+  const isLoggedIn = !!sessionStorage.getItem("token");
+  const role = sessionStorage.getItem("role");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -17,7 +17,7 @@ function TripCard({ trip, setCurrentPage }) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
         }
       );
@@ -51,7 +51,7 @@ function TripCard({ trip, setCurrentPage }) {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
         }
       );

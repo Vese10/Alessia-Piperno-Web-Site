@@ -20,7 +20,7 @@ function PersonalInfo() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const token = localStorage.getItem("token");
+        const token = sessionStorage.getItem("token");
         const response = await axios.get('https://alessia-piperno-web-site.onrender.com/me', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function PersonalInfo() {
     };
 
     try {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       const response = await axios.put('https://alessia-piperno-web-site.onrender.com/me', filteredData, {
         headers: {
           Authorization: `Bearer ${token}`,

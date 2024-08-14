@@ -11,13 +11,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = (role) => {
     setIsAuthenticated(true);
-    localStorage.setItem("role", role); // Usa `role` passato come argomento
+    sessionStorage.setItem("role", role); // Usa `role` passato come argomento
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("role");
   };
 
   return (

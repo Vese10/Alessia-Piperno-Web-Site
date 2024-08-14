@@ -32,7 +32,7 @@ function Login({ setCurrentPage }) {
       if (response.ok) {
         const data = await response.json();
         console.log('Login successo:', data); // Log per confermare i dati ricevuti
-        localStorage.setItem("token", data.token); // Salva il token JWT
+        sessionStorage.setItem("token", data.token); // Salva il token JWT
         login(data.role); // Passa il ruolo alla funzione `login`
         setCurrentPage("useraccount"); // Naviga alla pagina account utente
       } else {

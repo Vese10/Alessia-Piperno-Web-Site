@@ -15,7 +15,7 @@ function UserAccount({ setCurrentPage }) {
   const { logout } = useAuth();
   const [section, setSection] = useState("personalInfo");
 
-  const role = localStorage.getItem("role");
+  const role = sessionStorage.getItem("role");
 
   const handleLogout = () => {
     logout();
