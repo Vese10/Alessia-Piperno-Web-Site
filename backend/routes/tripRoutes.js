@@ -1,6 +1,6 @@
 // backend/routes/tripRoutes.js
 const express = require('express');
-const { addTrip, getTrips, joinTrip } = require('../controllers/tripController');
+const { addTrip, getTrips, joinTrip, deleteTrip } = require('../controllers/tripController');
 const auth = require('../middlewares/auth');
 const admin = require('../middlewares/admin');
 
