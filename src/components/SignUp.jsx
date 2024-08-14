@@ -6,14 +6,14 @@ import SignUpBackgroundDesktop from "../assets/img/signup-background-desktop.png
 
 function SignUp({ setCurrentPage }) {
   const { t } = useTranslation();
-  
+
   const [formData, setFormData] = useState({
-    name: '',
-    surname: '',
-    email: '',
-    phone: '',
-    password: '',
-    repeatPassword: '',
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+    password: "",
+    repeatPassword: "",
     privacyAccepted: false,
   });
 
@@ -24,7 +24,7 @@ function SignUp({ setCurrentPage }) {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -34,33 +34,36 @@ function SignUp({ setCurrentPage }) {
 
     // Controlla se le password corrispondono
     if (formData.password !== formData.repeatPassword) {
-      setErrorMessage(t('signup.different-pass'));
+      setErrorMessage(t("signup.different-pass"));
       return;
     }
 
     // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
     if (formData.password.length < 6) {
-      setErrorMessage(t('signup.short-pass'));
+      setErrorMessage(t("signup.short-pass"));
       return;
     }
 
     try {
-      const response = await fetch('https://alessia-piperno-web-site.onrender.com/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://alessia-piperno-web-site.onrender.com/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
-        setSuccessMessage(t('signup.signup-ok'));
+        setSuccessMessage(t("signup.signup-ok"));
         setFormData({
-          name: '',
-          surname: '',
-          email: '',
-          phone: '',
-          password: '',
-          repeatPassword: '',
+          name: "",
+          surname: "",
+          email: "",
+          phone: "",
+          password: "",
+          repeatPassword: "",
           privacyAccepted: false,
         });
         setTimeout(() => {
@@ -68,12 +71,12 @@ function SignUp({ setCurrentPage }) {
           setCurrentPage("login"); // Cambia la pagina corrente a Login dopo il successo
         }, 3000); // Mostra il messaggio per 3 secondi
       } else if (response.status === 409) {
-        setErrorMessage(t('signup.user-exists'));
+        setErrorMessage(t("signup.user-exists"));
       } else {
-        console.error('Error creating user:', response.statusText);
+        console.error("Error creating user:", response.statusText);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -84,7 +87,9 @@ function SignUp({ setCurrentPage }) {
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
-                <p className="container-title mb-0 text-white">{successMessage}</p>
+                <p className="container-title mb-0 text-white">
+                  {successMessage}
+                </p>
               </div>
             </div>
           </div>
@@ -104,64 +109,85 @@ function SignUp({ setCurrentPage }) {
         <div className="container mt-5">
           <div className="row d-flex align-items-center justify-content-center">
             <div className="col-12 text-center bg-white p-4 pb-0 rounded-top-4 signup-container">
-              <p className="container-title mb-0 text-white">{t('signup.title')}</p>
+              <p className="container-title mb-0 text-white">
+                {t("signup.title")}
+              </p>
             </div>
           </div>
           <div className="row">
             <div className="col-12 mb-4 d-flex flex-column bg-white p-4 pt-1 rounded-bottom-4 signup-container">
-              {errorMessage && (
-                <p className="error-message text-danger">{errorMessage}</p>
-              )}
-              <form className="d-flex justify-content-around signup-form" onSubmit={handleSubmit}>
+              <form
+                className="d-flex justify-content-around signup-form"
+                onSubmit={handleSubmit}
+              >
                 <div className="signup-form-left">
-                  <p className="container-title fs-4 text-white ">{t('signup.title-1')}</p>
+                  <p className="container-title fs-4 text-white ">
+                    {t("signup.title-1")}
+                  </p>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="nome" className="form-label m-2 text-white">{t('signup.name-label')}</label>
+                    <label htmlFor="nome" className="form-label m-2 text-white">
+                      {t("signup.name-label")}
+                    </label>
                     <input
                       type="text"
                       className="form-control"
                       id="nome"
                       name="name"
-                      placeholder={t('signup.name-input')}
+                      placeholder={t("signup.name-input")}
                       value={formData.name}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="cognome" className="form-label m-2 text-white">{t('signup.surname-label')}</label>
+                    <label
+                      htmlFor="cognome"
+                      className="form-label m-2 text-white"
+                    >
+                      {t("signup.surname-label")}
+                    </label>
                     <input
                       type="text"
                       className="form-control"
                       id="cognome"
                       name="surname"
-                      placeholder={t('signup.surname-input')}
+                      placeholder={t("signup.surname-input")}
                       value={formData.surname}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="email" className="form-label m-2 text-white">{t('signup.email-label')}</label>
+                    <label
+                      htmlFor="email"
+                      className="form-label m-2 text-white"
+                    >
+                      {t("signup.email-label")}
+                    </label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder={t('signup.email-input')}
+                      placeholder={t("signup.email-input")}
                       value={formData.email}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="telefono" className="form-label m-2 text-white">{t('signup.tel-label')}</label>
+                    <label
+                      htmlFor="telefono"
+                      className="form-label m-2 text-white"
+                    >
+                      {t("signup.tel-label")}
+                    </label>
                     <input
                       type="tel"
                       className="form-control"
                       id="telefono"
                       name="phone"
-                      placeholder={t('signup.tel-input')}
+                      placeholder={t("signup.tel-input")}
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -170,28 +196,40 @@ function SignUp({ setCurrentPage }) {
                 </div>
 
                 <div className="signup-form-right">
-                  <p className="container-title fs-4 text-white">{t('signup.title-2')}</p>
+                  <p className="container-title fs-4 text-white">
+                    {t("signup.title-2")}
+                  </p>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="password" className="form-label m-2 text-white">{t('signup.password-label')}</label>
+                    <label
+                      htmlFor="password"
+                      className="form-label m-2 text-white"
+                    >
+                      {t("signup.password-label")}
+                    </label>
                     <input
                       type="password"
                       className="form-control"
                       id="password"
                       name="password"
-                      placeholder={t('signup.password-input')}
+                      placeholder={t("signup.password-input")}
                       value={formData.password}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="mb-3 d-flex align-items-center">
-                    <label htmlFor="repeat-password" className="form-label m-2 text-white">{t('signup.repeat-pass-label')}</label>
+                    <label
+                      htmlFor="repeat-password"
+                      className="form-label m-2 text-white"
+                    >
+                      {t("signup.repeat-pass-label")}
+                    </label>
                     <input
                       type="password"
                       className="form-control"
                       id="repeatPassword"
                       name="repeatPassword"
-                      placeholder={t('signup.repeat-pass-input')}
+                      placeholder={t("signup.repeat-pass-input")}
                       value={formData.repeatPassword}
                       onChange={handleChange}
                       required
@@ -207,12 +245,22 @@ function SignUp({ setCurrentPage }) {
                       onChange={handleChange}
                       required
                     />
-                    <label htmlFor="privacy" className="form-check-label ms-2 text-white">
-                      {t('signup.checkbox-text')}
-                      <a href="#" target="_blank" className="privacy-check">{t('signup.checkbox-privacy')}</a>
+                    <label
+                      htmlFor="privacy"
+                      className="form-check-label ms-2 text-white"
+                    >
+                      {t("signup.checkbox-text")}
+                      <a href="#" target="_blank" className="privacy-check">
+                        {t("signup.checkbox-privacy")}
+                      </a>
                     </label>
                   </div>
-                  <button type="submit" className="btn signup-page-btn">{t('signup.btn')}</button>
+                  <button type="submit" className="btn signup-page-btn">
+                    {t("signup.btn")}
+                  </button>
+                  {errorMessage && (
+                    <p className="error-message text-danger">{errorMessage}</p>
+                  )}
                 </div>
               </form>
             </div>
