@@ -58,6 +58,9 @@ function TripCard({ trip, setCurrentPage }) {
 
       if (response.ok) {
         setSuccessMessage(t("tripcard.delete"));
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 3000); // Mostra il messaggio per 3 secondi
         onDelete(trip._id); // Chiama la funzione onDelete per aggiornare la lista dei viaggi
       } else {
         const errorResponse = await response.json();
