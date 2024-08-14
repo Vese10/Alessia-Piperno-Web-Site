@@ -32,6 +32,9 @@ function TripCard({ trip, setCurrentPage }) {
         setErrorMessage(
           `Errore durante l'iscrizione: ${errorResponse.message}`
         );
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 3000); // Mostra il messaggio per 3 secondi
       }
     } catch (error) {
       console.error("Errore durante l'iscrizione al viaggio:", error);
