@@ -97,13 +97,13 @@ function TripCard({ trip, setCurrentPage }) {
             <p className="card-title m-1">{trip.nation}</p>
             <p className="card-text m-1">{trip.description}</p>
             <p className="card-text m-1">
-              Data: {new Date(trip.date).toLocaleDateString()}
+            {t('trips.date')}: {new Date(trip.date).toLocaleDateString()}
             </p>
           </div>
           <div className="right-content text-end">
-            <p className="card-text m-1">Prezzo: {trip.price}€</p>
+            <p className="card-text m-1">{t('trips.price')}: {trip.price}€</p>
             <p className="card-text m-1">
-              Partecipanti: {trip.maxParticipants}
+            {t('trips.participants')}: {trip.maxParticipants}
             </p>
           </div>
         </div>
@@ -115,14 +115,14 @@ function TripCard({ trip, setCurrentPage }) {
         <div className="card-footer">
           {role === "admin" ? (
             <button onClick={handleDeleteTrip} className="btn btn-danger">
-              Elimina Viaggio
+            {t('trips.btn-delete')}
             </button>
           ) : (
             <button
               onClick={handleJoinTrip}
               className="btn btn-primary single-page-btn m-1"
             >
-              Iscriviti
+              {t('trips.btn-subscribe')}
             </button>
           )}
           {successMessage && (

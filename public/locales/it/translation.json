@@ -50,6 +50,13 @@
     "title-freelancer-2": "Titolo 2",
     "description-freelancer-2": "Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer"
   },
+  "trips": {
+    "date": "Data inizio viaggio",
+    "price": "Prezzo",
+    "participants": "Partecipanti",
+    "btn-delete": "Elimina viaggio",
+    "btn-subscribe": "Iscriviti al viaggio"
+  },
   "login": {
     "title-1": "Accesso Clienti:",
     "text-1": "Accedi al tuo account oppure creane uno nuovo.",
