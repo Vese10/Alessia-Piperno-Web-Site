@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "./i18n";
-import { useAuth, AuthProvider } from "./modules/AuthContext";
+import { AuthProvider } from "./modules/AuthContext";
 import Navbar from "./include/navbar";
 import Home from "./components/Home";
 import Azadì from "./components/Azadì";
@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import UserAccount from "./components/UserAccount";
 import Footer from "./include/footer";
+import { useAuth } from "./modules/AuthContext";
 
 function App() {
   const { isAuthenticated } = useAuth();
