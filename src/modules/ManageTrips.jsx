@@ -40,7 +40,7 @@ function ManageTrips() {
         <div className="col-md-8 offset-md-2">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Riepilogo Viaggi</h5>
+              <h5 className="card-title"> {t("usertrips.trips")}</h5>
               {errorMessage && <p className="text-danger">{errorMessage}</p>}
               <ul className="list-group">
                 {trips.length > 0 ? (
@@ -52,7 +52,9 @@ function ManageTrips() {
                         {t("usertrips.date")}:{" "}
                         {new Date(trip.date).toLocaleDateString()}
                       </p>
-                      <p>{trip.duration}</p>
+                      <p>
+                        {t("usertrips.duration")}: {trip.duration}
+                      </p>
                       <p>
                         {t("usertrips.price")}: {trip.price}€
                       </p>

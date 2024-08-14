@@ -75,7 +75,7 @@ function AddTrip() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-                Dettagli Nuovo Viaggio
+              {t('addtrips.title')}
               </h5>
               
               <form
@@ -84,14 +84,14 @@ function AddTrip() {
               >
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="nation" className="form-label m-2 text-black">
-                    Nazione
+                  {t('addtrips.nation')}
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     id="nation"
                     name="nation"
-                    placeholder="Aggiungi nation"
+                    placeholder={t('addtrips.nation-input')}
                     value={formData.nation}
                     onChange={handleChange}
                     required
@@ -99,14 +99,14 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="description" className="form-label m-2 text-black">
-                    Descrizione
+                  {t('addtrips.description')}
                   </label>
                   <input
                     type="text"
                     className="form-control"
                     id="description"
                     name="description"
-                    placeholder="Aggiungi descrizione"
+                    placeholder={t('addtrips.description-input')}
                     value={formData.description}
                     onChange={handleChange}
                     required
@@ -114,7 +114,7 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="date" className="form-label m-2 text-black">
-                    Data inizio viaggio
+                  {t('addtrips.date')}
                   </label>
                   <input
                     type="date"
@@ -128,14 +128,14 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="duration" className="form-label m-2 text-black">
-                    Durata
+                  {t('addtrips.duration')}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="duration"
                     name="duration"
-                    placeholder="Giorni di durata del viaggio"
+                    placeholder={t('addtrips.duration-input')}
                     value={formData.duration}
                     onChange={handleChange}
                     required
@@ -143,14 +143,14 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="price" className="form-label m-2 text-black">
-                    Prezzo
+                  {t('addtrips.price')}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="price"
                     name="price"
-                    placeholder="Prezzo"
+                    placeholder={t('addtrips.price-input')}
                     value={formData.price}
                     onChange={handleChange}
                     required
@@ -158,21 +158,21 @@ function AddTrip() {
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                   <label htmlFor="maxParticipants" className="form-label m-2 text-black">
-                    Partecipanti
+                  {t('addtrips.participants')}
                   </label>
                   <input
                     type="number"
                     className="form-control"
                     id="maxParticipants"
                     name="maxParticipants"
-                    placeholder="Numero massimo di partecipanti"
+                    placeholder={t('addtrips.participants-input')}
                     value={formData.maxParticipants}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <button type="submit" className="btn btn-primary single-page-btn">
-                  Aggiungi Viaggio
+                {t('addtrips.btn-addTrips')}
                 </button>
               </form>
               {successMessage && (

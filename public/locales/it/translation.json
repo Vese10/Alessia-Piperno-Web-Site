@@ -93,6 +93,8 @@
     "title": "AREA PRIVATA",
     "info": "Informazioni personali",
     "password": "Modifica password",
+    "manageTrips": "Riepilogo viaggi",
+    "addTrips": "Aggiungi viaggio",
     "trips": "I miei viaggi",
     "logout": "Logout"
   },
@@ -121,7 +123,29 @@
   },
   "usertrips": {
     "title": "I miei viaggi",
-    "text": "Non hai ancora vissuto un'esperienza di viaggio con Alessia, cosa aspetti?"
+    "text": "Non hai ancora vissuto un'esperienza di viaggio con Alessia, cosa aspetti?",
+    "trips": "Riepilogo viaggi",
+    "date": "Giorno della partenza",
+    "duration": "Durata",
+    "price": "Prezzo",
+    "participants": "Numero massimo di partecipanti",
+    "participantsList": "Lista degli iscritti al viaggio",
+    "noTrips": "Nessun viaggio pubblicato"
+  },
+  "addtrips": {
+    "title": "Dettagli nuovo viaggio",
+    "nation": "Nazione",
+    "nation-input": "Destinazione del viaggio",
+    "description": "Descrizione",
+    "description-input": "Aggiungi una breve descrizione del viaggio",
+    "date": "Data inizio viaggio",
+    "duration": "Durata",
+    "duration-input": "Inserisci i giorni di durata del viaggio",
+    "price": "Prezzo",
+    "price-input": "Inserisci il prezzo del viaggio",
+    "participants": "Partecipanti",
+    "participants-input": "Scegli il numero massimo di partecipanti",
+    "btn-addTrips": "Aggiungi viaggio"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Tutti i diritti riservati",
