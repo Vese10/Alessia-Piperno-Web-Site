@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function TripCard({ trip }) {
+function TripCard({ trip, setCurrentPage }) {
   const isLoggedIn = !!localStorage.getItem("token");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,7 +25,7 @@ function TripCard({ trip }) {
         setSuccessMessage("Iscrizione al viaggio avvenuta con successo!");
         setTimeout(() => {
           setSuccessMessage("");
-          setCurrentPage("login"); // Cambia la pagina corrente a Login dopo il successo
+          setCurrentPage("userAccount"); // Cambia la pagina corrente a UserAccount dopo il successo
         }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();
@@ -58,7 +58,7 @@ function TripCard({ trip }) {
   return (
     <div className="card">
       <div className="card-body">
-        <p className="card-title">{trip.continente}</p>
+        <p className="card-title">{trip.nation}</p>
         <p className="card-text">{trip.description}</p>
         <p className="card-text">
           Data: {new Date(trip.date).toLocaleDateString()}
