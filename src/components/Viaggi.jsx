@@ -1,12 +1,10 @@
 // Viaggi.jsx
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import TripCard from "../include/trip-card";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Viaggi({ setLanguage }) {
-  const { t, i18n } = useTranslation();
   const [trips, setTrips] = useState([]);
 
   const handleDeleteTrip = (tripId) => {
