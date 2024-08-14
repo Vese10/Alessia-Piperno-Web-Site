@@ -22,12 +22,14 @@ function AppContent() { // Componente che usa il contesto
     if (isAuthenticated) {
       setCurrentPage("useraccount");
     } else {
-      setCurrentPage("login");
+      setCurrentPage("home");
     }
   }, [isAuthenticated]);
 
   const renderPage = () => {
     switch (currentPage) {
+      case "home":
+        return <Home setLanguage={setLanguage} />;
       case "azadì":
         return <Azadì setLanguage={setLanguage} />;
       case "freelancer":
