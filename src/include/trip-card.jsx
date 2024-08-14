@@ -23,6 +23,10 @@ function TripCard({ trip }) {
 
       if (response.ok) {
         setSuccessMessage("Iscrizione al viaggio avvenuta con successo!");
+        setTimeout(() => {
+          setSuccessMessage("");
+          setCurrentPage("login"); // Cambia la pagina corrente a Login dopo il successo
+        }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();
         setErrorMessage(
@@ -35,10 +39,26 @@ function TripCard({ trip }) {
     }
   };
 
+  if (successMessage) {
+    return (
+      <section className="signup">
+        <div className="container-fluid standard-container justify-content-start">
+          <div className="container mt-5">
+            <div className="row d-flex align-items-center justify-content-center">
+              <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
+                <p className="container-title mb-0 text-white">{successMessage}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">{trip.continente}</h5>
+        <p className="card-title">{trip.continente}</p>
         <p className="card-text">{trip.description}</p>
         <p className="card-text">
           Data: {new Date(trip.date).toLocaleDateString()}
