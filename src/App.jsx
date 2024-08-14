@@ -12,10 +12,8 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import UserAccount from "./components/UserAccount";
 import Footer from "./include/footer";
-import ScrollToTop from "./modules/ScrollToTop";
 
-function AppContent() {
-  // Componente che usa il contesto
+function AppContent() { // Componente che usa il contesto
   const { isAuthenticated } = useAuth();
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("it");
@@ -31,28 +29,15 @@ function AppContent() {
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return (
-          <Home setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
-        );
+        return <Home setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "azadì":
-        return (
-          <Azadì setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
-        );
+        return <Azadì setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "freelancer":
-        return (
-          <Freelancer
-            setCurrentPage={setCurrentPage}
-            setLanguage={setLanguage}
-          />
-        );
+        return <Freelancer setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "viaggi":
-        return (
-          <Viaggi setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
-        );
+        return <Viaggi setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "contatti":
-        return (
-          <Contatti setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
-        );
+        return <Contatti setCurrentPage={setCurrentPage} setLanguage={setLanguage} />;
       case "login":
         return (
           <Login setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
@@ -75,7 +60,6 @@ function AppContent() {
 
   return (
     <>
-      <ScrollToTop />
       <Navbar setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
       {renderPage()}
       <Footer />
