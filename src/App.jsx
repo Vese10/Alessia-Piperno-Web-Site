@@ -26,6 +26,10 @@ function AppContent() { // Componente che usa il contesto
     }
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case "home":
