@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext();
 
@@ -9,9 +9,17 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   const login = (role) => {
     setIsAuthenticated(true);
-    sessionStorage.setItem("role", role); // Usa `role` passato come argomento
+    sessionStorage.setItem("token", token);
+    sessionStorage.setItem("role", role);
   };
 
   const logout = () => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "./i18n";
-import { AuthProvider } from "./modules/AuthContext";
+import { useAuth, AuthProvider } from "./modules/AuthContext";
 import Navbar from "./include/navbar";
 import Home from "./components/Home";
 import Azadì from "./components/Azadì";
@@ -14,8 +14,17 @@ import UserAccount from "./components/UserAccount";
 import Footer from "./include/footer";
 
 function App() {
+  const { isAuthenticated } = useAuth();
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("it");
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setCurrentPage("useraccount");
+    } else {
+      setCurrentPage("login");
+    }
+  }, [isAuthenticated]);
 
   const renderPage = () => {
     switch (currentPage) {
