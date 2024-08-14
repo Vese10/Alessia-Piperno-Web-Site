@@ -25,7 +25,7 @@ function TripCard({ trip, setCurrentPage }) {
       );
 
       if (response.ok) {
-        setSuccessMessage("Iscrizione al viaggio avvenuta con successo!");
+        setSuccessMessage(t('tripcard.success'));
         setTimeout(() => {
           setSuccessMessage("");
           setCurrentPage("useraccount"); // Cambia la pagina corrente a UserAccount dopo il successo
@@ -33,15 +33,15 @@ function TripCard({ trip, setCurrentPage }) {
       } else {
         const errorResponse = await response.json();
         setErrorMessage(
-          `Errore durante l'iscrizione: ${errorResponse.message}`
+          `t('tripcard.error'): ${errorResponse.message}`
         );
         setTimeout(() => {
           setErrorMessage("");
         }, 3000); // Mostra il messaggio per 3 secondi
       }
     } catch (error) {
-      console.error("Errore durante l'iscrizione al viaggio:", error);
-      setErrorMessage("Errore durante l'iscrizione al viaggio.");
+      console.error(t('tripcard.error'), error);
+      setErrorMessage(t('tripcard.error'));
     }
   };
 
@@ -59,17 +59,17 @@ function TripCard({ trip, setCurrentPage }) {
       );
 
       if (response.ok) {
-        setSuccessMessage("Viaggio eliminato con successo!");
+        setSuccessMessage(t('tripcard.delete'));
         onDelete(trip._id); // Chiama la funzione onDelete per aggiornare la lista dei viaggi
       } else {
         const errorResponse = await response.json();
         setErrorMessage(
-          `Errore durante l'eliminazione del viaggio: ${errorResponse.message}`
+          `t('tripcard.error-delete'): ${errorResponse.message}`
         );
       }
     } catch (error) {
-      console.error("Errore durante l'eliminazione del viaggio:", error);
-      setErrorMessage("Errore durante l'eliminazione del viaggio.");
+      console.error(t('tripcard.error-delete'), error);
+      setErrorMessage(t('tripcard.error-delete'));
     }
   };
 

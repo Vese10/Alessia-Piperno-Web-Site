@@ -49,7 +49,7 @@ function AddTrip() {
       );
   
       if (response.ok) {
-        setSuccessMessage("Viaggio aggiunto con successo");
+        setSuccessMessage(t('addtrips.success'));
         setFormData({
           nation: "",
           description: "",
@@ -59,12 +59,12 @@ function AddTrip() {
         });
       } else {
         const errorResponse = await response.json();
-        console.error("Errore durante l'aggiunta del viaggio:", errorResponse);
-        setErrorMessage("Errore durante l'aggiunta del viaggio");
+        console.error(t('addtrips.error'), errorResponse);
+        setErrorMessage(t('addtrips.error'));
       }
     } catch (error) {
       console.error("Errore:", error);
-      setErrorMessage("Errore durante l'aggiunta del viaggio");
+      setErrorMessage(t('addtrips.error'));
     }
   };
 

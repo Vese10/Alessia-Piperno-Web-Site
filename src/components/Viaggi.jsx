@@ -1,10 +1,12 @@
 // Viaggi.jsx
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import TripCard from "../include/trip-card";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Viaggi({ setLanguage }) {
+  const { t } = useTranslation();
   const [trips, setTrips] = useState([]);
 
   const handleDeleteTrip = (tripId) => {
@@ -21,7 +23,7 @@ function Viaggi({ setLanguage }) {
         const data = await response.json();
         setTrips(data); // Imposta i viaggi nel tuo stato
       } catch (error) {
-        console.error("Errore nel caricamento dei viaggi:", error);
+        console.error(t('trips.error'), error);
       }
     };
 

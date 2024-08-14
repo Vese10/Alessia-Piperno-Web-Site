@@ -51,6 +51,7 @@
     "description-freelancer-2": "Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer Approfondimento attività da freelancer"
   },
   "trips": {
+    "error": "Errore nel caricamento dei viaggi:",
     "date": "Data inizio viaggio",
     "price": "Prezzo",
     "participants": "Partecipanti",
@@ -152,7 +153,15 @@
     "price-input": "Inserisci il prezzo del viaggio",
     "participants": "Partecipanti",
     "participants-input": "Scegli il numero massimo di partecipanti",
-    "btn-addTrips": "Aggiungi viaggio"
+    "btn-addTrips": "Aggiungi viaggio",
+    "success": "Viaggio aggiunto con successo",
+    "error": "Errore durante l'aggiunta del viaggio"
+  },
+  "tripcard": {
+    "success": "Iscrizione al viaggio avvenuta con successo!",
+    "error": "Errore durante l'iscrizione al viaggio",
+    "delete": "Viaggio eliminato con successo",
+    "error-delete": "Errore durante l'eliminazione del viaggio"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Tutti i diritti riservati",
