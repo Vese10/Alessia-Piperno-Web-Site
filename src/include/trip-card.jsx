@@ -49,7 +49,9 @@ function TripCard({ trip, setCurrentPage }) {
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
-                <p className="container-title mb-0 text-white">{successMessage}</p>
+                <p className="container-title mb-0 text-white">
+                  {successMessage}
+                </p>
               </div>
             </div>
           </div>
@@ -60,28 +62,33 @@ function TripCard({ trip, setCurrentPage }) {
 
   return (
     <div className="card">
-      <div className="card-body d-flex justify-content-between">
-        <div className="left-content">
-          <p className="card-title">{trip.nation}</p>
-          <p className="card-text">{trip.description}</p>
-          <p className="card-text">
-            Data: {new Date(trip.date).toLocaleDateString()}
-          </p>
+      <div className="card-header">
+        <div className="card-body d-flex justify-content-between">
+          <div className="left-content">
+            <p className="card-title m-1">{trip.nation}</p>
+            <p className="card-text m-1">{trip.description}</p>
+            <p className="card-text m-1">
+              Data: {new Date(trip.date).toLocaleDateString()}
+            </p>
+          </div>
+          <div className="right-content text-end">
+            <p className="card-text m-1">Prezzo: {trip.price}€</p>
+            <p className="card-text m-1">Partecipanti: {trip.maxParticipants}</p>
+          </div>
         </div>
-        <div className="right-content text-end">
-          <p className="card-text">Prezzo: {trip.price}€</p>
-          <p className="card-text">Partecipanti: {trip.maxParticipants}</p>
-        </div>
+      </div>
+      <div className="card-img">
+        <p>Ciaooo</p>
       </div>
       {isLoggedIn && (
         <div className="card-footer">
-          <button onClick={handleJoinTrip} className="btn signup-page-btn">Iscriviti</button>
+          <button onClick={handleJoinTrip} className="btn btn-primary single-page-btn m-1">
+            Iscriviti
+          </button>
           {successMessage && (
             <p className="text-success mt-3">{successMessage}</p>
           )}
-          {errorMessage && (
-            <p className="text-danger mt-3">{errorMessage}</p>
-          )}
+          {errorMessage && <p className="text-danger mt-3">{errorMessage}</p>}
         </div>
       )}
     </div>
