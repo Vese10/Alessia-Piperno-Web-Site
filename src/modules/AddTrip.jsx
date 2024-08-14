@@ -68,6 +68,22 @@ function AddTrip() {
     }
   };
 
+  if (successMessage) {
+    return (
+      <section className="signup">
+        <div className="container-fluid standard-container justify-content-start">
+          <div className="container mt-5">
+            <div className="row d-flex align-items-center justify-content-center">
+              <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
+                <p className="container-title mb-0 text-white">{successMessage}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div className="container-fluid">
       <div className="row">
