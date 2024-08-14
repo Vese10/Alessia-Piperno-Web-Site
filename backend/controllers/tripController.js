@@ -49,8 +49,26 @@ const joinTrip = async (req, res) => {
   }
 };
 
+const deleteTrip = async (req, res) => {
+  const tripId = req.params.id;
+
+  try {
+    const trip = await Trip.findByIdAndDelete(tripId);
+
+    if (!trip) {
+      return res.status(404).send({ message: 'Viaggio non trovato' });
+    }
+
+    res.status(200).send({ message: 'Viaggio eliminato con successo' });
+  } catch (error) {
+    console.error("Errore durante l'eliminazione del viaggio:", error);
+    res.status(500).send({ message: 'Errore durante l\'eliminazione del viaggio' });
+  }
+};
+
 module.exports = {
   addTrip,
   getTrips,
-  joinTrip
+  joinTrip,
+  deleteTrip,
 };

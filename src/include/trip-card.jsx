@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function TripCard({ trip, setCurrentPage }) {
   const isLoggedIn = !!localStorage.getItem("token");
+  const role = localStorage.getItem("role");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -42,6 +43,34 @@ function TripCard({ trip, setCurrentPage }) {
     }
   };
 
+  const handleDeleteTrip = async () => {
+    try {
+      const response = await fetch(
+        `https://alessia-piperno-web-site.onrender.com/trips/${trip._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (response.ok) {
+        setSuccessMessage("Viaggio eliminato con successo!");
+        onDelete(trip._id); // Chiama la funzione onDelete per aggiornare la lista dei viaggi
+      } else {
+        const errorResponse = await response.json();
+        setErrorMessage(
+          `Errore durante l'eliminazione del viaggio: ${errorResponse.message}`
+        );
+      }
+    } catch (error) {
+      console.error("Errore durante l'eliminazione del viaggio:", error);
+      setErrorMessage("Errore durante l'eliminazione del viaggio.");
+    }
+  };
+
   if (successMessage) {
     return (
       <section className="signup">
@@ -73,7 +102,9 @@ function TripCard({ trip, setCurrentPage }) {
           </div>
           <div className="right-content text-end">
             <p className="card-text m-1">Prezzo: {trip.price}€</p>
-            <p className="card-text m-1">Partecipanti: {trip.maxParticipants}</p>
+            <p className="card-text m-1">
+              Partecipanti: {trip.maxParticipants}
+            </p>
           </div>
         </div>
       </div>
@@ -82,9 +113,18 @@ function TripCard({ trip, setCurrentPage }) {
       </div>
       {isLoggedIn && (
         <div className="card-footer">
-          <button onClick={handleJoinTrip} className="btn btn-primary single-page-btn m-1">
-            Iscriviti
-          </button>
+          {role === "admin" ? (
+            <button onClick={handleDeleteTrip} className="btn btn-danger">
+              Elimina Viaggio
+            </button>
+          ) : (
+            <button
+              onClick={handleJoinTrip}
+              className="btn btn-primary single-page-btn m-1"
+            >
+              Iscriviti
+            </button>
+          )}
           {successMessage && (
             <p className="text-success mt-3">{successMessage}</p>
           )}

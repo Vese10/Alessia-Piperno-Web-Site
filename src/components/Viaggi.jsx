@@ -9,6 +9,10 @@ function Viaggi({ setLanguage }) {
   const { t, i18n } = useTranslation();
   const [trips, setTrips] = useState([]);
 
+  const handleDeleteTrip = (tripId) => {
+    setTrips(trips.filter(trip => trip._id !== tripId));
+  };
+
   // Funzione per caricare i viaggi dal backend
   useEffect(() => {
     const fetchTrips = async () => {
@@ -31,7 +35,7 @@ function Viaggi({ setLanguage }) {
       <div className="row">
         {trips.map((trip, index) => (
           <div key={index} className="col-md-6 mb-4">
-            <TripCard trip={trip} />
+            <TripCard trip={trip} onDelete={handleDeleteTrip}/>
           </div>
         ))}
       </div>
