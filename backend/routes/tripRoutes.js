@@ -3,7 +3,7 @@ const express = require('express');
 const { addTrip, getTrips, joinTrip, deleteTrip } = require('../controllers/tripController');
 const auth = require('../middlewares/auth');
 const admin = require('../middlewares/admin');
-const upload = ('../middlewares/uploadMiddleware.js')
+const upload = require('../middlewares/uploadMiddleware.js')
 
 const router = express.Router();
 
