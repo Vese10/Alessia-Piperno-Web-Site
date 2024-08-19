@@ -14,6 +14,8 @@ function AddTrip() {
     duration: "",
     price: "",
     maxParticipants: "",
+    imageUrl: "",
+    imageFile: null,
   });
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -24,15 +26,26 @@ function AddTrip() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, imageFile: e.target.files[0] });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formattedData = {
-      ...formData,
-      price: parseFloat(formData.price),
-      maxParticipants: parseInt(formData.maxParticipants, 10),
-      date: new Date(formData.date).toISOString(),
-    };
+    const formattedData = new FormData();
+    formattedData.append("nation", formData.nation);
+    formattedData.append("description", formData.description);
+    formattedData.append("date", new Date(formData.date).toISOString());
+    formattedData.append("duration", formData.duration);
+    formattedData.append("price", formData.price);
+    formattedData.append("maxParticipants", formData.maxParticipants);
+
+    if (formData.imageFile) {
+      formattedData.append("image", formData.imageFile);
+    } else if (formData.imageUrl) {
+      formattedData.append("image", formData.imageUrl);
+    }
 
     console.log("Dati inviati al backend:", formattedData);
 
@@ -58,6 +71,8 @@ function AddTrip() {
           duration: "",
           price: "",
           maxParticipants: "",
+          imageUrl: "",
+          imageFile: null,
         });
         setTimeout(() => {
           setSuccessMessage("");
@@ -198,6 +213,31 @@ function AddTrip() {
                     value={formData.maxParticipants}
                     onChange={handleChange}
                     required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="imageUrl" className="form-label">
+                    {t("addtrips.image-url")}
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="imageUrl"
+                    name="imageUrl"
+                    value={formData.imageUrl}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="imageFile" className="form-label">
+                    {t("addtrips.image-file")}
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    id="imageFile"
+                    name="imageFile"
+                    onChange={handleFileChange}
                   />
                 </div>
                 <button

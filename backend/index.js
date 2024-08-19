@@ -18,7 +18,9 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET); // Log JWT secret
 app.use(express.json());
 
 // Abilita CORS per tutte le rotte
-app.use(cors());
+app.use(cors({
+  origin: 'https://alessia-piperno-web-site-1.onrender.com'
+}));
 
 // Connessione a MongoDB
 mongoose.connect(process.env.DATABASE_URL);
@@ -28,6 +30,9 @@ db.on('error', console.error.bind(console, 'Errore di connessione al database:')
 db.once('open', () => {
   console.log('Connesso a MongoDB');
 });
+
+// Middleware per servire file statici dalla cartella uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Servire file statici
 app.use(express.static(path.join(__dirname, '../../Alessia-Piperno-Web-Site')));

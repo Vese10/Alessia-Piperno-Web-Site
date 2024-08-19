@@ -112,7 +112,9 @@ function TripCard({ trip, setCurrentPage, onDelete }) {
         </div>
       </div>
       <div className="card-img">
-        <p>Ciaooo</p>
+        {trip.image && (
+          <img src={trip.image} className="card-img-top" alt={trip.nation} />
+        )}
       </div>
       {isLoggedIn && (
         <div className="card-footer">

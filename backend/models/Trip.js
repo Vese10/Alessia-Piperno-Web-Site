@@ -30,6 +30,10 @@ const tripSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   }],
+  image: {
+    type: String, // URL dell'immagine o path se viene caricata dal server
+    required: false,
+  },
 });
 
 const Trip = mongoose.model('Trip', tripSchema);

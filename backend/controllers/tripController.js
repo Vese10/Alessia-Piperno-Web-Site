@@ -5,6 +5,14 @@ const addTrip = async (req, res) => {
   console.log("Dati ricevuti dal frontend:", req.body);
   try {
     const trip = new Trip(req.body);
+
+    // Gestione dell'immagine caricata (URL o path)
+    if (req.file) {
+      trip.image = `/uploads/${req.file.filename}`; // path relativo sul server
+    } else if (req.body.image) {
+      trip.image = req.body.image; // URL dell'immagine
+    }
+
     await trip.save();
     res.status(201).send(trip);
   } catch (error) {
