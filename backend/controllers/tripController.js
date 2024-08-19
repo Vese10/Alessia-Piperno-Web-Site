@@ -2,16 +2,16 @@
 const Trip = require('../models/Trip');
 
 const addTrip = async (req, res) => {
-  console.log("Dati ricevuti dal frontend:", req.body);
   try {
-    const trip = new Trip(req.body);
-
-    // Gestione dell'immagine caricata (URL o path)
-    if (req.file) {
-      trip.image = `/uploads/${req.file.filename}`; // path relativo sul server
-    } else if (req.body.image) {
-      trip.image = req.body.image; // URL dell'immagine
-    }
+    const trip = new Trip({
+      nation: req.body.nation,
+      description: req.body.description,
+      date: req.body.date,
+      duration: req.body.duration,
+      price: req.body.price,
+      maxParticipants: req.body.maxParticipants,
+      image: req.file ? `/uploads/${req.file.filename}` : req.body.image, // Usa l'immagine caricata o il link
+    });
 
     await trip.save();
     res.status(201).send(trip);
