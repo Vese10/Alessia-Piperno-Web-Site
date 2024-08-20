@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function AddTrip() {
+function AddTrip( {setCurrentPage} ) {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -92,6 +92,7 @@ function AddTrip() {
           setIsEditing(false);
           setTripId(null);
           setSuccessMessage("");
+          setCurrentPage("viaggi");
         }, 3000);
       } else {
         const errorResponse = await response.json();
