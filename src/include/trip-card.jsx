@@ -12,8 +12,8 @@ function TripCard({ trip, onDelete, onEdit, setCurrentPage }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleEditTrip = () => {
-    setCurrentPage("addtrip");
     onEdit(trip);
+    setCurrentPage("addtrip");
   };
 
   const handleJoinTrip = async () => {
