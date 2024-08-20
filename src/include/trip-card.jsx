@@ -113,7 +113,7 @@ function TripCard({ trip, setCurrentPage, onDelete }) {
       </div>
       <div className="card-img">
         {trip.image && (
-          <img src={trip.image} className="card-img-top" alt={trip.nation} />
+          <img src={`https://alessia-piperno-web-site.onrender.com${trip.image}`} className="card-img-top" alt={trip.nation} />
         )}
       </div>
       {isLoggedIn && (
