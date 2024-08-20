@@ -167,6 +167,10 @@
   font-size: 30px;
 }
 
+.edit-trip {
+min-height: 100vh;
+}
+
 /* Contacts Style*/
 
 .contatti {

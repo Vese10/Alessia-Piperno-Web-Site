@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function AddTrip( {setCurrentPage} ) {
+function AddTrip({ setCurrentPage }) {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -123,7 +123,9 @@ function AddTrip( {setCurrentPage} ) {
   }
 
   return (
-    <div className="container-fluid">
+    <div
+      className={isEditing ? "container-fluid edit-trip" : "container-fluid"}
+    >
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <div className="card">
