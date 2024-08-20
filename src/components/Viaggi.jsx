@@ -34,7 +34,7 @@ function Viaggi({ setLanguage }) {
     <section className="container-fluid p-5 viaggi-page">
       <div className="row">
         {trips.map((trip, index) => (
-          <div key={index} className="col-md-6 mb-4">
+          <div key={index} className="col-md-6 mb-4 trip-cont">
             <TripCard trip={trip} onDelete={handleDeleteTrip}/>
           </div>
         ))}

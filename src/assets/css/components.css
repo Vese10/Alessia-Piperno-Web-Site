@@ -156,6 +156,10 @@
 
 /* Viaggi Style */
 
+.trip-cont {
+  max-height: 30vh;
+}
+
 .country,
 .continent {
   font-size: 30px;
