@@ -15,7 +15,6 @@ function Viaggi({ setCurrentPage  }) {
 
   const handleEditTrip = (trip) => {
     sessionStorage.setItem("editTrip", JSON.stringify(trip));
-    setCurrentPage("addTrip");
   };
 
   // Funzione per caricare i viaggi dal backend
