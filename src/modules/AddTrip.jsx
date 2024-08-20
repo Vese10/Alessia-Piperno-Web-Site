@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function AddTrip() {
+function AddTrip({ setCurrentPage }) {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -60,7 +60,9 @@ function AddTrip() {
 
     try {
       const response = await fetch(
-        `https://alessia-piperno-web-site.onrender.com/trips/${isEditing ? tripId : ""}`,
+        `https://alessia-piperno-web-site.onrender.com/trips/${
+          isEditing ? tripId : ""
+        }`,
         {
           method: isEditing ? "PUT" : "POST", // Usa PUT per modificare, POST per aggiungere
           headers: {
@@ -72,20 +74,24 @@ function AddTrip() {
       );
 
       if (response.ok) {
-        setSuccessMessage(isEditing ? "Viaggio modificato con successo!" : "Viaggio aggiunto con successo!");
+        setSuccessMessage(
+          isEditing
+            ? "Viaggio modificato con successo!"
+            : "Viaggio aggiunto con successo!"
+        );
         setTimeout(() => {
-        setFormData({
-          nation: "",
-          description: "",
-          date: "",
-          duration: "",
-          price: "",
-          maxParticipants: "",
-          imageUrl: "",
-        });
-        setIsEditing(false);
-        setTripId(null);
-        setSuccessMessage("");
+          setFormData({
+            nation: "",
+            description: "",
+            date: "",
+            duration: "",
+            price: "",
+            maxParticipants: "",
+            imageUrl: "",
+          });
+          setIsEditing(false);
+          setTripId(null);
+          setSuccessMessage("");
           setCurrentPage("useraccount");
         }, 3000);
       } else {
@@ -123,7 +129,7 @@ function AddTrip() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-              {t(isEditing ? "edittrips.title" : "addtrips.title")}
+                {t(isEditing ? "edittrips.title" : "addtrips.title")}
               </h5>
 
               <form className="signup-form" onSubmit={handleSubmit}>
@@ -242,7 +248,11 @@ function AddTrip() {
                   type="submit"
                   className="btn btn-primary single-page-btn"
                 >
-                  {t(isEditing ? "edittrips.btn-editTrips" : "addtrips.btn-addTrips")}
+                  {t(
+                    isEditing
+                      ? "edittrips.btn-editTrips"
+                      : "addtrips.btn-addTrips"
+                  )}
                 </button>
               </form>
               {successMessage && (
