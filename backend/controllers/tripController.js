@@ -3,9 +3,10 @@ const Trip = require('../models/Trip');
 
 const addTrip = async (req, res) => {
   try {
-    console.log("File caricato:", req.file); // Verifica se il file è stato caricato correttamente
-
-    const imagePath = req.file ? `/uploads/${req.file.filename}` : req.body.image;
+    // Verifica se l'URL dell'immagine è fornito
+    if (!req.body.image || !req.body.image.startsWith('http')) {
+      return res.status(400).json({ message: "Un URL valido per l'immagine è richiesto" });
+    }
 
     const trip = new Trip({
       nation: req.body.nation,
@@ -14,7 +15,7 @@ const addTrip = async (req, res) => {
       duration: req.body.duration,
       price: req.body.price,
       maxParticipants: req.body.maxParticipants,
-      image: imagePath,
+      image: req.body.image, // Usa direttamente l'URL fornito
     });
 
     await trip.save();

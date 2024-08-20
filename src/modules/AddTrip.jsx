@@ -15,7 +15,6 @@ function AddTrip() {
     price: "",
     maxParticipants: "",
     imageUrl: "",
-    imageFile: null,
   });
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -40,12 +39,7 @@ function AddTrip() {
     formattedData.append("duration", formData.duration);
     formattedData.append("price", formData.price);
     formattedData.append("maxParticipants", formData.maxParticipants);
-
-    if (formData.imageFile) {
-      formattedData.append("image", formData.imageFile);
-    } else if (formData.imageUrl) {
-      formattedData.append("image", formData.imageUrl);
-    }
+    formattedData.append("image", formData.imageUrl);
 
     console.log("Dati inviati al backend:", formattedData);
 
@@ -71,7 +65,6 @@ function AddTrip() {
           price: "",
           maxParticipants: "",
           imageUrl: "",
-          imageFile: null,
         });
         setTimeout(() => {
           setSuccessMessage("");
@@ -225,18 +218,6 @@ function AddTrip() {
                     name="imageUrl"
                     value={formData.imageUrl}
                     onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="imageFile" className="form-label">
-                    {t("addtrips.image-file")}
-                  </label>
-                  <input
-                    type="file"
-                    className="form-control"
-                    id="imageFile"
-                    name="imageFile"
-                    onChange={handleFileChange}
                   />
                 </div>
                 <button

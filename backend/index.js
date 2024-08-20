@@ -31,9 +31,6 @@ db.once('open', () => {
   console.log('Connesso a MongoDB');
 });
 
-// Middleware per servire file statici dalla cartella uploads
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 // Servire file statici
 app.use(express.static(path.join(__dirname, '../../Alessia-Piperno-Web-Site')));
 
