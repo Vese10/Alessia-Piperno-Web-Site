@@ -56,7 +56,8 @@
     "price": "Prezzo",
     "participants": "Partecipanti",
     "btn-delete": "Elimina viaggio",
-    "btn-subscribe": "Iscriviti al viaggio"
+    "btn-subscribe": "Iscriviti al viaggio",
+    "btn-edit": "Modifica viaggio"
   },
   "login": {
     "title-1": "Accesso Clienti:",
@@ -153,9 +154,15 @@
     "price-input": "Inserisci il prezzo del viaggio",
     "participants": "Partecipanti",
     "participants-input": "Scegli il numero massimo di partecipanti",
+    "image-url": "Immagine",
+    "image-url-input": "Inserisci qui l'url dell'immagine da inserire",
     "btn-addTrips": "Aggiungi viaggio",
     "success": "Viaggio aggiunto con successo",
     "error": "Errore durante l'aggiunta del viaggio"
+  },
+  "edittrips": {
+    "title": "Apporta modifiche al viaggio selezionato",
+    "btn-editTrips": "Modifica viaggio"
   },
   "tripcard": {
     "success": "Iscrizione al viaggio avvenuta con successo!",

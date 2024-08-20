@@ -242,6 +242,7 @@ function AddTrip({ setCurrentPage }) {
                     className="form-control"
                     id="imageUrl"
                     name="imageUrl"
+                    placeholder={t("addtrips.image-url-input")}
                     value={formData.imageUrl}
                     onChange={handleChange}
                   />

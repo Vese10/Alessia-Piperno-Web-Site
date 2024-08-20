@@ -122,7 +122,7 @@ function TripCard({ trip, onDelete, onEdit, setCurrentPage }) {
         )}
       </div>
       {isLoggedIn && (
-        <div className="card-footer">
+        <div className="card-footer d-flex justify-content-between">
           {role === "admin" ? (
             <>
               <button onClick={handleDeleteTrip} className="btn btn-danger">
