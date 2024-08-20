@@ -11,6 +11,10 @@ function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const handleEditTrip = () => {
+    onEdit(trip);
+  };
+
   const handleJoinTrip = async () => {
     try {
       const response = await fetch(
@@ -28,14 +32,14 @@ function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
         setSuccessMessage(t("tripcard.success"));
         setTimeout(() => {
           setSuccessMessage("");
-          setCurrentPage("useraccount"); // Cambia la pagina corrente a UserAccount dopo il successo
-        }, 3000); // Mostra il messaggio per 3 secondi
+          setCurrentPage("useraccount");
+        }, 3000);
       } else {
         const errorResponse = await response.json();
         setErrorMessage(t("tripcard.error"));
         setTimeout(() => {
           setErrorMessage("");
-        }, 3000); // Mostra il messaggio per 3 secondi
+        }, 3000);
       }
     } catch (error) {
       console.error(t("tripcard.error"), error);
@@ -60,8 +64,8 @@ function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
         setSuccessMessage(t("tripcard.delete"));
         setTimeout(() => {
           setSuccessMessage("");
-          onDelete(trip._id); // Chiama la funzione onDelete per aggiornare la lista dei viaggi
-        }, 3000); // Mostra il messaggio per 3 secondi
+          onDelete(trip._id);
+        }, 3000);
       } else {
         const errorResponse = await response.json();
         setErrorMessage(`t('tripcard.error-delete'): ${errorResponse.message}`);
@@ -123,10 +127,7 @@ function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
               <button onClick={handleDeleteTrip} className="btn btn-danger">
                 {t("trips.btn-delete")}
               </button>
-              <button
-                onClick={() => onEdit(trip)}
-                className="btn btn-secondary"
-              >
+              <button onClick={handleEditTrip} className="btn btn-secondary">
                 {t("trips.btn-edit")}
               </button>
             </>
