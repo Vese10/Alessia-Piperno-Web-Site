@@ -5,7 +5,7 @@ import TripCard from "../include/trip-card";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Viaggi({ setLanguage, setCurrentPage  }) {
+function Viaggi({ setCurrentPage  }) {
   const { t } = useTranslation();
   const [trips, setTrips] = useState([]);
 
