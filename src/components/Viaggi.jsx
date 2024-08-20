@@ -5,12 +5,17 @@ import TripCard from "../include/trip-card";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Viaggi({ setLanguage }) {
+function Viaggi({ setLanguage, setCurrentPage  }) {
   const { t } = useTranslation();
   const [trips, setTrips] = useState([]);
 
   const handleDeleteTrip = (tripId) => {
     setTrips(trips.filter(trip => trip._id !== tripId));
+  };
+
+  const handleEditTrip = (trip) => {
+    sessionStorage.setItem("editTrip", JSON.stringify(trip));
+    setCurrentPage("addTrip");
   };
 
   // Funzione per caricare i viaggi dal backend
@@ -35,7 +40,7 @@ function Viaggi({ setLanguage }) {
       <div className="row">
         {trips.map((trip, index) => (
           <div key={index} className="col-md-6 mb-4 trip-cont">
-            <TripCard trip={trip} onDelete={handleDeleteTrip}/>
+            <TripCard trip={trip} onDelete={handleDeleteTrip} onEdit={handleEditTrip}/>
           </div>
         ))}
       </div>

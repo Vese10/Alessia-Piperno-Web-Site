@@ -79,9 +79,27 @@ const deleteTrip = async (req, res) => {
   }
 };
 
+const updateTrip = async (req, res) => {
+  const tripId = req.params.id;
+
+  try {
+    const trip = await Trip.findByIdAndUpdate(tripId, req.body, { new: true });
+
+    if (!trip) {
+      return res.status(404).send({ message: 'Viaggio non trovato' });
+    }
+
+    res.status(200).send(trip);
+  } catch (error) {
+    console.error("Errore durante l'aggiornamento del viaggio:", error);
+    res.status(500).send({ message: 'Errore durante l\'aggiornamento del viaggio' });
+  }
+};
+
 module.exports = {
   addTrip,
   getTrips,
   joinTrip,
   deleteTrip,
+  updateTrip,
 };

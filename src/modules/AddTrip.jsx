@@ -19,6 +19,26 @@ function AddTrip() {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [tripId, setTripId] = useState(null);
+
+  useEffect(() => {
+    const editTrip = JSON.parse(sessionStorage.getItem("editTrip"));
+    if (editTrip) {
+      setFormData({
+        nation: editTrip.nation,
+        description: editTrip.description,
+        date: new Date(editTrip.date).toISOString().split("T")[0],
+        duration: editTrip.duration,
+        price: editTrip.price,
+        maxParticipants: editTrip.maxParticipants,
+        imageUrl: editTrip.image,
+      });
+      setTripId(editTrip._id);
+      setIsEditing(true);
+      sessionStorage.removeItem("editTrip");
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,14 +55,14 @@ function AddTrip() {
       duration: formData.duration,
       price: formData.price,
       maxParticipants: formData.maxParticipants,
-      image: formData.imageUrl, // Questo dovrebbe contenere l'URL dell'immagine
+      image: formData.imageUrl,
     };
 
     try {
       const response = await fetch(
-        "https://alessia-piperno-web-site.onrender.com/trips",
+        `https://alessia-piperno-web-site.onrender.com/trips/${isEditing ? tripId : ""}`,
         {
-          method: "POST",
+          method: isEditing ? "PUT" : "POST", // Usa PUT per modificare, POST per aggiungere
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -52,7 +72,7 @@ function AddTrip() {
       );
 
       if (response.ok) {
-        setSuccessMessage("Viaggio aggiunto con successo!");
+        setSuccessMessage(isEditing ? "Viaggio modificato con successo!" : "Viaggio aggiunto con successo!");
         setFormData({
           nation: "",
           description: "",
@@ -62,12 +82,14 @@ function AddTrip() {
           maxParticipants: "",
           imageUrl: "",
         });
+        setIsEditing(false);
+        setTripId(null);
       } else {
         const errorResponse = await response.json();
         setErrorMessage(errorResponse.message);
       }
     } catch (error) {
-      setErrorMessage("Errore durante l'aggiunta del viaggio");
+      setErrorMessage("Errore durante l'aggiunta/modifica del viaggio");
       console.error("Errore:", error);
     }
   };
@@ -97,7 +119,7 @@ function AddTrip() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-                {t("addtrips.title")}
+              {t(isEditing ? "edittrips.title" : "addtrips.title")}
               </h5>
 
               <form className="signup-form" onSubmit={handleSubmit}>
@@ -216,7 +238,7 @@ function AddTrip() {
                   type="submit"
                   className="btn btn-primary single-page-btn"
                 >
-                  {t("addtrips.btn-addTrips")}
+                  {t(isEditing ? "edittrips.btn-editTrips" : "addtrips.btn-addTrips")}
                 </button>
               </form>
               {successMessage && (

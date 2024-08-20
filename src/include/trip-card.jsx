@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function TripCard({ trip, setCurrentPage, onDelete }) {
+function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
   const { t } = useTranslation();
   const isLoggedIn = !!sessionStorage.getItem("token");
   const role = sessionStorage.getItem("role");
@@ -119,9 +119,17 @@ function TripCard({ trip, setCurrentPage, onDelete }) {
       {isLoggedIn && (
         <div className="card-footer">
           {role === "admin" ? (
-            <button onClick={handleDeleteTrip} className="btn btn-danger">
-              {t("trips.btn-delete")}
-            </button>
+            <>
+              <button onClick={handleDeleteTrip} className="btn btn-danger">
+                {t("trips.btn-delete")}
+              </button>
+              <button
+                onClick={() => onEdit(trip)}
+                className="btn btn-secondary"
+              >
+                {t("trips.btn-edit")}
+              </button>
+            </>
           ) : (
             <button
               onClick={handleJoinTrip}
