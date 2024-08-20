@@ -157,7 +157,9 @@
 /* Viaggi Style */
 
 .card-img-top {
-  max-height: 30vh;
+  max-height: 25vh;
+  object-fit: cover;
+  
 }
 
 .country,
