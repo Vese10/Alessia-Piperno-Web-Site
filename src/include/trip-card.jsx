@@ -12,6 +12,7 @@ function TripCard({ trip, setCurrentPage, onDelete, onEdit }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleEditTrip = () => {
+    setCurrentPage("useraccount");
     onEdit(trip);
   };
 

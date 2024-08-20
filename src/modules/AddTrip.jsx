@@ -92,7 +92,6 @@ function AddTrip({ setCurrentPage }) {
           setIsEditing(false);
           setTripId(null);
           setSuccessMessage("");
-          setCurrentPage("useraccount");
         }, 3000);
       } else {
         const errorResponse = await response.json();
