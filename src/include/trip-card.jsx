@@ -112,10 +112,14 @@ function TripCard({ trip, setCurrentPage, onDelete }) {
         </div>
       </div>
       <div className="card-img">
-        {trip.image && (
-          <img src={`https://alessia-piperno-web-site.onrender.com${trip.image}`} className="card-img-top" alt={trip.nation} />
-        )}
-      </div>
+  {trip.image && (
+    <img 
+      src={trip.image.startsWith('http') ? trip.image : `https://alessia-piperno-web-site.onrender.com${trip.image}`} 
+      className="card-img-top" 
+      alt={trip.nation} 
+    />
+  )}
+</div>
       {isLoggedIn && (
         <div className="card-footer">
           {role === "admin" ? (

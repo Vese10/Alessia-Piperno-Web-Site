@@ -17,7 +17,7 @@ const addTrip = async (req, res) => {
     res.status(201).send(trip);
   } catch (error) {
     console.error("Errore durante la creazione del viaggio:", error);
-    res.status(400).send({ message: "Errore nella creazione del viaggio" });
+    res.status(500).send({ message: "Errore nella creazione del viaggio" });
   }
 };
 
