@@ -40,7 +40,7 @@ function Viaggi({ setCurrentPage  }) {
       <div className="row">
         {trips.map((trip, index) => (
           <div key={index} className="col-md-6 mb-4 trip-cont">
-            <TripCard trip={trip} onDelete={handleDeleteTrip} onEdit={handleEditTrip}/>
+            <TripCard trip={trip} onDelete={handleDeleteTrip} onEdit={handleEditTrip} setCurrentPage={setCurrentPage}/>
           </div>
         ))}
       </div>

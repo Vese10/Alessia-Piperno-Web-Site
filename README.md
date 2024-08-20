@@ -16,7 +16,7 @@ Le competenze utilizzate per creare questo progetto sono:
  - React
  - NodeJS
  - MongoDB
- - Firebase
+ - Onrender
 
  ## Autore e Contatti
 
