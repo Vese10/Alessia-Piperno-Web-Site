@@ -3,6 +3,10 @@ const Trip = require('../models/Trip');
 
 const addTrip = async (req, res) => {
   try {
+    console.log("File caricato:", req.file); // Verifica se il file è stato caricato correttamente
+
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : req.body.image;
+
     const trip = new Trip({
       nation: req.body.nation,
       description: req.body.description,
@@ -10,14 +14,14 @@ const addTrip = async (req, res) => {
       duration: req.body.duration,
       price: req.body.price,
       maxParticipants: req.body.maxParticipants,
-      image: req.file ? `/uploads/${req.file.filename}` : req.body.image, // Usa l'immagine caricata o il link
+      image: imagePath,
     });
 
     await trip.save();
     res.status(201).send(trip);
   } catch (error) {
     console.error("Errore durante la creazione del viaggio:", error);
-    res.status(500).send({ message: "Errore nella creazione del viaggio" });
+    res.status(500).json({ message: "Errore durante la creazione del viaggio", error: error.message });
   }
 };
 
