@@ -25,23 +25,18 @@ function AddTrip() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, imageFile: e.target.files[0] });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formattedData = new FormData();
-    formattedData.append("nation", formData.nation);
-    formattedData.append("description", formData.description);
-    formattedData.append("date", new Date(formData.date).toISOString());
-    formattedData.append("duration", formData.duration);
-    formattedData.append("price", formData.price);
-    formattedData.append("maxParticipants", formData.maxParticipants);
-    formattedData.append("image", formData.imageUrl);
-
-    console.log("Dati inviati al backend:", formattedData);
+    const tripData = {
+      nation: formData.nation,
+      description: formData.description,
+      date: new Date(formData.date).toISOString(),
+      duration: formData.duration,
+      price: formData.price,
+      maxParticipants: formData.maxParticipants,
+      image: formData.imageUrl, // Questo dovrebbe contenere l'URL dell'immagine
+    };
 
     try {
       const response = await fetch(
@@ -49,14 +44,15 @@ function AddTrip() {
         {
           method: "POST",
           headers: {
+            "Content-Type": "application/json",
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
-          body: formattedData,
+          body: JSON.stringify(tripData),
         }
       );
 
       if (response.ok) {
-        setSuccessMessage(t("addtrips.success"));
+        setSuccessMessage("Viaggio aggiunto con successo!");
         setFormData({
           nation: "",
           description: "",
@@ -66,17 +62,13 @@ function AddTrip() {
           maxParticipants: "",
           imageUrl: "",
         });
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000); // Mostra il messaggio per 3 secondi
       } else {
         const errorResponse = await response.json();
-        console.error(t("addtrips.error"), errorResponse);
-        setErrorMessage(t("addtrips.error"));
+        setErrorMessage(errorResponse.message);
       }
     } catch (error) {
+      setErrorMessage("Errore durante l'aggiunta del viaggio");
       console.error("Errore:", error);
-      setErrorMessage(t("addtrips.error"));
     }
   };
 
