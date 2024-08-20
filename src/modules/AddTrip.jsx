@@ -73,6 +73,7 @@ function AddTrip() {
 
       if (response.ok) {
         setSuccessMessage(isEditing ? "Viaggio modificato con successo!" : "Viaggio aggiunto con successo!");
+        setTimeout(() => {
         setFormData({
           nation: "",
           description: "",
@@ -84,6 +85,9 @@ function AddTrip() {
         });
         setIsEditing(false);
         setTripId(null);
+        setSuccessMessage("");
+          setCurrentPage("useraccount");
+        }, 3000);
       } else {
         const errorResponse = await response.json();
         setErrorMessage(errorResponse.message);
