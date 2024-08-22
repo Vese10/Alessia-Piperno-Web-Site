@@ -4,15 +4,15 @@
     "azadì": "Azadì!",
     "freelancer": "Freelancer",
     "travel": "Voyages",
-    "contacts": "Contacts",
+    "contacts": "Contact",
     "login": "Connexion",
-    "account": "Mon compte",
+    "account": "Mon Compte",
     "languages": "Langue"
   },
   "home": {
     "title": "Alessia Piperno",
-    "description": "Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle Présentation Personnelle",
-    "title-azadì": "Azadi!",
+    "description": "Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle Présentation personnelle",
+    "title-azadì": "Azadì!",
     "description-azadì": "Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre Brève description du livre",
     "btn-azadì": "ACHETER",
     "title-freelancer": "FREELANCER",
@@ -22,7 +22,7 @@
     "description-travel": "Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe Introduction aux voyages en groupe",
     "btn-travel": "DÉCOUVRIR",
     "title-contacts": "CONTACTEZ-MOI",
-    "description-contacts": "Pour des informations, des propositions ou toute autre chose, vous pouvez me contacter ici. Je vous répondrai dans les plus brefs délais. Merci!",
+    "description-contacts": "Pour des informations, des propositions ou tout ce qui vous passe par la tête, vous pouvez me contacter ici. Je vous répondrai dès que possible. Merci!",
     "name-label": "Nom*:",
     "name-input": "Entrez votre nom",
     "surname-label": "Prénom*:",
@@ -35,27 +35,36 @@
     "message-input": "Écrivez votre message",
     "btn-contacts": "ENVOYER",
     "btn-contacts-ok": "Envoyé avec succès!",
-    "btn-contacts-ko": "Erreur d'envoi!",
+    "btn-contacts-ko": "Erreur lors de l'envoi!",
     "btn-contacts-try": "Envoi en cours..."
   },
   "azadì": {
-    "title-azadì": "AZADI'",
+    "title-azadì": "AZADÌ",
     "description-azadì": "Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre Description détaillée du livre",
     "buy-azadì": "Achetez le livre ici:"
   },
   "freelancer": {
-    "title": "Mon activité de freelance",
+    "title": "Mon activité de Freelance",
     "title-freelancer-1": "Titre 1",
-    "description-freelancer-1": "Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance",
+    "description-freelancer-1": "Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance",
     "title-freelancer-2": "Titre 2",
-    "description-freelancer-2": "Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance Détails de l'activité de freelance"
+    "description-freelancer-2": "Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance Détails de l'activité freelance"
+  },
+  "trips": {
+    "error": "Erreur lors du chargement des voyages:",
+    "date": "Date de début du voyage",
+    "price": "Prix",
+    "participants": "Participants",
+    "btn-delete": "Supprimer le voyage",
+    "btn-subscribe": "S'inscrire au voyage",
+    "btn-edit": "Modifier le voyage"
   },
   "login": {
-    "title-1": "Connexion Clients:",
+    "title-1": "Connexion des clients:",
     "text-1": "Connectez-vous à votre compte ou créez-en un nouveau.",
-    "title-2": "Clients Enregistrés",
-    "text-2": "Si vous vous êtes déjà inscrit, connectez-vous avec vos identifiants.",
-    "title-3": "Nouveaux Clients",
+    "title-2": "Clients enregistrés",
+    "text-2": "Si vous êtes déjà enregistré, connectez-vous avec vos identifiants.",
+    "title-3": "Nouveaux clients",
     "text-3": "Si vous n'avez pas encore de compte, cliquez sur le bouton ci-dessous pour vous inscrire.",
     "username-label": "Email*:",
     "username-input": "Entrez votre email",
@@ -66,7 +75,7 @@
     "error": "Utilisateur non trouvé ou email ou mot de passe incorrect"
   },
   "signup": {
-    "title": "Inscrivez-vous comme nouveau client",
+    "title": "Inscrivez-vous en tant que nouveau client",
     "title-1": "Informations personnelles:",
     "title-2": "Identifiants:",
     "name-label": "Nom*:",
@@ -80,19 +89,21 @@
     "password-label": "Mot de passe*:",
     "password-input": "Entrez votre mot de passe",
     "repeat-pass-label": "Répétez le mot de passe*:",
-    "repeat-pass-input": "Répétez votre mot de passe",
-    "checkbox-text": "J'accepte les conditions de la ",
+    "repeat-pass-input": "Répétez le mot de passe",
+    "checkbox-text": "J'accepte les termes de la ",
     "checkbox-privacy": "Politique de confidentialité",
     "btn": "Créer un compte",
     "different-pass": "Les mots de passe ne correspondent pas",
     "short-pass": "Le mot de passe doit comporter au moins 6 caractères",
     "signup-ok": "Inscription réussie, veuillez vous connecter",
-    "user-exists": "Utilisateur déjà inscrit"
+    "user-exists": "Utilisateur déjà enregistré"
   },
   "useraccount": {
     "title": "ZONE PRIVÉE",
     "info": "Informations personnelles",
     "password": "Changer le mot de passe",
+    "manageTrips": "Résumé des voyages",
+    "addTrips": "Ajouter un voyage",
     "trips": "Mes voyages",
     "logout": "Déconnexion"
   },
@@ -113,7 +124,7 @@
     "new-password-label": "Nouveau mot de passe*:",
     "new-password-input": "Choisissez un nouveau mot de passe",
     "repeat-password-label": "Répétez le nouveau mot de passe*:",
-    "repeat-password-input": "Répétez votre nouveau mot de passe",
+    "repeat-password-input": "Répétez le nouveau mot de passe",
     "btn": "Confirmer",
     "error-1": "Les nouveaux mots de passe ne correspondent pas",
     "error-2": "Le nouveau mot de passe doit comporter au moins 6 caractères",
@@ -121,11 +132,47 @@
   },
   "usertrips": {
     "title": "Mes voyages",
-    "text": "Vous n'avez pas encore vécu une expérience de voyage avec Alessia, qu'attendez-vous?"
+    "text": "Vous n'avez pas encore vécu une expérience de voyage avec Alessia, qu'attendez-vous?",
+    "trips": "Résumé des voyages",
+    "date": "Date de départ",
+    "duration": "Durée",
+    "price": "Prix",
+    "participants": "Nombre maximum de participants",
+    "participantsList": "Liste des participants au voyage",
+    "noTrips": "Aucun voyage publié"
+  },
+  "addtrips": {
+    "title": "Détails du nouveau voyage",
+    "nation": "Pays",
+    "nation-input": "Destination du voyage",
+    "description": "Description",
+    "description-input": "Ajoutez une brève description du voyage",
+    "date": "Date de début du voyage",
+    "duration": "Durée",
+    "duration-input": "Entrez la durée du voyage en jours",
+    "price": "Prix",
+    "price-input": "Entrez le prix du voyage",
+    "participants": "Participants",
+    "participants-input": "Choisissez le nombre maximum de participants",
+    "image-url": "Image",
+    "image-url-input": "Entrez l'URL de l'image ici",
+    "btn-addTrips": "Ajouter un voyage",
+    "success": "Voyage ajouté avec succès",
+    "error": "Erreur lors de l'ajout du voyage"
+  },
+  "edittrips": {
+    "title": "Apportez des modifications au voyage sélectionné",
+    "btn-editTrips": "Modifier le voyage"
+  },
+  "tripcard": {
+    "success": "Inscription au voyage réussie!",
+    "error": "Erreur lors de l'inscription au voyage",
+    "delete": "Voyage supprimé avec succès",
+    "error-delete": "Erreur lors de la suppression du voyage"
   },
   "footer": {
     "rights": "© 2024 Alessia Piperno. Tous droits réservés",
-    "privacy": "Politique de Confidentialité",
-    "cookie": "Politique des Cookies"
+    "privacy": "Politique de confidentialité",
+    "cookie": "Politique de cookies"
   }
 }
