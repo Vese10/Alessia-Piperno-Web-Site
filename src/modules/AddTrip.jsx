@@ -234,7 +234,10 @@ function AddTrip({ setCurrentPage }) {
                   />
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="imageUrl" className="form-label m-2 text-black">
+                  <label
+                    htmlFor="imageUrl"
+                    className="form-label m-2 text-black"
+                  >
                     {t("addtrips.image-url")}
                   </label>
                   <input

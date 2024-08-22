@@ -8,10 +8,10 @@ function PersonalInfo() {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
-    name: '',
-    surname: '',
-    email: '',
-    phone: '',
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
   });
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -21,15 +21,18 @@ function PersonalInfo() {
     const fetchUserData = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const response = await axios.get('https://alessia-piperno-web-site.onrender.com/me', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://alessia-piperno-web-site.onrender.com/me",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         const { name, surname, email, phone } = response.data;
         setFormData({ name, surname, email, phone });
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
 
@@ -53,23 +56,27 @@ function PersonalInfo() {
       name: formData.name,
       surname: formData.surname,
       email: formData.email,
-      phone: formData.phone
+      phone: formData.phone,
     };
 
     try {
       const token = sessionStorage.getItem("token");
-      const response = await axios.put('https://alessia-piperno-web-site.onrender.com/me', filteredData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setSuccessMessage(t('personalInfo.success'));
+      const response = await axios.put(
+        "https://alessia-piperno-web-site.onrender.com/me",
+        filteredData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setSuccessMessage(t("personalInfo.success"));
       setTimeout(() => {
         setSuccessMessage("");
       }, 3000); // Mostra il messaggio per 3 secondi
     } catch (error) {
-      console.error('Error updating user info:', error);
-      setErrorMessage(t('personalInfo.error'));
+      console.error("Error updating user info:", error);
+      setErrorMessage(t("personalInfo.error"));
     }
   };
 
@@ -80,7 +87,9 @@ function PersonalInfo() {
           <div className="container mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-12 text-center bg-white p-4 rounded-4 pb-5 signup-container">
-                <p className="container-title mb-0 text-white">{successMessage}</p>
+                <p className="container-title mb-0 text-white">
+                  {successMessage}
+                </p>
               </div>
             </div>
           </div>
@@ -96,16 +105,13 @@ function PersonalInfo() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title text-center m-4">
-                {t('personalInfo.title')}
+                {t("personalInfo.title")}
               </h5>
-              <form
-                className="signup-form"
-                onSubmit={handleSubmit}
-              >
+              <form className="signup-form" onSubmit={handleSubmit}>
                 <div className="signup-form-left">
                   <div className="mb-3 d-flex align-items-center">
                     <label htmlFor="name" className="form-label m-2 text-black">
-                    {t('personalInfo.name-label')}
+                      {t("personalInfo.name-label")}
                     </label>
                     <input
                       type="text"
@@ -122,7 +128,7 @@ function PersonalInfo() {
                       htmlFor="surname"
                       className="form-label m-2 text-black"
                     >
-                      {t('personalInfo.surname-label')}
+                      {t("personalInfo.surname-label")}
                     </label>
                     <input
                       type="text"
@@ -139,7 +145,7 @@ function PersonalInfo() {
                       htmlFor="email"
                       className="form-label m-2 text-black"
                     >
-                      {t('personalInfo.email-label')}
+                      {t("personalInfo.email-label")}
                     </label>
                     <input
                       type="email"
@@ -156,7 +162,7 @@ function PersonalInfo() {
                       htmlFor="phone"
                       className="form-label m-2 text-black"
                     >
-                      {t('personalInfo.tel-label')}
+                      {t("personalInfo.tel-label")}
                     </label>
                     <input
                       type="tel"
@@ -167,8 +173,11 @@ function PersonalInfo() {
                       onChange={handleChange}
                     />
                   </div>
-                  <button type="submit" className="btn btn-primary single-page-btn">
-                  {t('personalInfo.btn')}
+                  <button
+                    type="submit"
+                    className="btn btn-primary single-page-btn"
+                  >
+                    {t("personalInfo.btn")}
                   </button>
                 </div>
               </form>

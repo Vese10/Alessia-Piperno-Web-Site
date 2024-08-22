@@ -99,6 +99,7 @@
     "user-exists": "User already registered"
   },
   "useraccount": {
+    "page": "Add Trip",
     "title": "PRIVATE AREA",
     "info": "Personal Information",
     "password": "Change Password",

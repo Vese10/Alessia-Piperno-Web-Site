@@ -38,7 +38,7 @@
 }
 
 .nav-item {
-  cursor:  pointer !important;
+  cursor: pointer !important;
 }
 
 .nav-link {
@@ -129,10 +129,12 @@
 @media (max-width: 992px) {
 
   .navbar-nav {
-    height: calc(100vh - 100px); /* Adatta l'altezza per non coprire la navbar */
+    height: calc(100vh - 100px);
+    /* Adatta l'altezza per non coprire la navbar */
     background: linear-gradient(to right, var(--gradient2), var(--main));
     position: fixed;
-    top: 100px; /* Sposta il menu sotto la navbar */
+    top: 100px;
+    /* Sposta il menu sotto la navbar */
     left: 0;
     width: 100%;
     display: flex;

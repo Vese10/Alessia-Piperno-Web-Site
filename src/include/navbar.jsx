@@ -1,7 +1,7 @@
 // src/components/Navbar.js
 import React, { useState, useRef, useEffect } from "react";
-import { useAuth } from '../modules/AuthContext';
-import { useTranslation } from 'react-i18next';
+import { useAuth } from "../modules/AuthContext";
+import { useTranslation } from "react-i18next";
 import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../assets/img/home.png";
@@ -90,10 +90,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
             <span className="travel-adventure">TRAVEL.</span>
             <span className="travel-adventure">ADVENTURE.</span>FREEDOM
           </a>
-          <div
-            className="central-item"
-            onClick={toggleLanguageMenu}
-          >
+          <div className="central-item" onClick={toggleLanguageMenu}>
             <img
               src={Lingua}
               className="nav-img-lang"
@@ -161,9 +158,16 @@ function Navbar({ setCurrentPage, setLanguage }) {
                   TRAVEL.ADVENTURE.<span className="freedom">FREEDOM</span>
                 </a>
               </div>
-              <a className="nav-item" onClick={() => handleNavClick(isAuthenticated ? "useraccount" : "login")}>
+              <a
+                className="nav-item"
+                onClick={() =>
+                  handleNavClick(isAuthenticated ? "useraccount" : "login")
+                }
+              >
                 <img src={Login} className="nav-img" alt="Login"></img>
-                <p className="nav-link">{isAuthenticated ? t("navbar.account") : t("navbar.login")}</p>
+                <p className="nav-link">
+                  {isAuthenticated ? t("navbar.account") : t("navbar.login")}
+                </p>
               </a>
               <div
                 className="nav-item dropdown nav-lang"

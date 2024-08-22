@@ -1,5 +1,5 @@
 // backend/models/Trip.js
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const tripSchema = new mongoose.Schema({
   nation: {
@@ -26,16 +26,18 @@ const tripSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  participants: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  }],
+  participants: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   image: {
     type: String, // URL dell'immagine o path se viene caricata dal server
     required: false,
   },
 });
 
-const Trip = mongoose.model('Trip', tripSchema);
+const Trip = mongoose.model("Trip", tripSchema);
 
 module.exports = Trip;

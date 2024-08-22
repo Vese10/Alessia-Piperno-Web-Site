@@ -11,14 +11,26 @@ function Footer({ setLanguage }) {
     <>
       <footer className="container-fluid d-flex align-items-center justify-content-between footer">
         <div className="d-flex align-items-center left-footer">
-          <p className="footer-info">{t('footer.rights')}</p>
-          <a href="https://www.instagram.com/travel.adventure.freedom/" target="_blank" rel="noopener noreferrer">
-            <img src={InstaLogo} className="instagram" alt="Instagram logo"></img>
+          <p className="footer-info">{t("footer.rights")}</p>
+          <a
+            href="https://www.instagram.com/travel.adventure.freedom/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={InstaLogo}
+              className="instagram"
+              alt="Instagram logo"
+            ></img>
           </a>
         </div>
         <div className="right-footer">
-          <a href="/privacy-policy" className="privacy">{t('footer.privacy')}</a>
-          <a href="/cookie-policy" className="cookie">{t('footer.cookie')}</a>
+          <a href="/privacy-policy" className="privacy">
+            {t("footer.privacy")}
+          </a>
+          <a href="/cookie-policy" className="cookie">
+            {t("footer.cookie")}
+          </a>
         </div>
       </footer>
     </>

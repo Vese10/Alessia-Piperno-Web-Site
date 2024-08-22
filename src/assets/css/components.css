@@ -159,7 +159,7 @@
 .card-img-top {
   max-height: 25vh;
   object-fit: cover;
-  
+
 }
 
 .country,
@@ -168,8 +168,8 @@
 }
 
 .edit-trip {
-min-height: 100vh;
-padding-top: 100px;
+  min-height: 100vh;
+  padding-top: 100px;
 }
 
 /* Contacts Style*/
@@ -340,9 +340,7 @@ padding-top: 100px;
     background: linear-gradient(to right, var(--gradient2), var(--main));
   }
 
-  .right-azadì {
-
-  }
+  .right-azadì {}
 
   .azadì-image {
     padding: 20px;
@@ -358,7 +356,7 @@ padding-top: 100px;
   }
 
   /* Freelancer Style */
-  .freelancer{
+  .freelancer {
     background: linear-gradient(to right, var(--gradient2), var(--main));
   }
 
@@ -367,7 +365,7 @@ padding-top: 100px;
   .freelancer-description {
     color: white;
   }
-  
+
   /* Contacts Style*/
   .contacts-container {
     background-image: url(../img/background-mobile-1.png);

@@ -84,7 +84,7 @@ function UserAccount({ setCurrentPage }) {
                 }`}
                 onClick={() => setSection("addTrip")}
               >
-                Aggiungi Viaggio
+                {t("useraccount.page")}
               </button>
             </>
           ) : (

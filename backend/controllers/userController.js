@@ -1,17 +1,18 @@
 // controllers/userController.js
-const User = require('../models/User');
+const User = require("../models/User");
 
 const createUser = async (req, res) => {
   try {
     const user = new User({
       ...req.body,
-      role: req.body.role || 'user', // Imposta il ruolo come 'user' se non specificato
+      role: req.body.role || "user", // Imposta il ruolo come 'user' se non specificato
     });
     await user.save();
     res.status(201).send(user);
   } catch (error) {
-    if (error.code === 11000) { // Codice errore per duplicazione chiave
-      res.status(409).send({ message: 'Utente già registrato' }); // Codice 409 per conflitto
+    if (error.code === 11000) {
+      // Codice errore per duplicazione chiave
+      res.status(409).send({ message: "Utente già registrato" }); // Codice 409 per conflitto
     } else {
       res.status(400).send(error);
     }
@@ -20,11 +21,13 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['name', 'surname', 'email', 'phone'];
-  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  const allowedUpdates = ["name", "surname", "email", "phone"];
+  const isValidOperation = updates.every((update) =>
+    allowedUpdates.includes(update)
+  );
 
   if (!isValidOperation) {
-    return res.status(400).send({ message: 'Aggiornamento non valido' });
+    return res.status(400).send({ message: "Aggiornamento non valido" });
   }
 
   try {
@@ -45,14 +48,14 @@ const getUser = async (req, res) => {
   }
 };
 
-const Trip = require('../models/Trip');
+const Trip = require("../models/Trip");
 
 const getUserTrips = async (req, res) => {
   try {
     const userTrips = await Trip.find({ participants: req.userId });
     res.status(200).send(userTrips);
   } catch (error) {
-    res.status(500).send({ message: 'Errore nel recupero dei viaggi' });
+    res.status(500).send({ message: "Errore nel recupero dei viaggi" });
   }
 };
 

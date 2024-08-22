@@ -99,6 +99,7 @@
     "user-exists": "Utilisateur déjà enregistré"
   },
   "useraccount": {
+    "page": "Ajouter un voyage",
     "title": "ZONE PRIVÉE",
     "info": "Informations personnelles",
     "password": "Changer le mot de passe",

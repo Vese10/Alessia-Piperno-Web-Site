@@ -11,7 +11,7 @@ import FeltrinelliLogo from "../assets/img/feltrinelli-logo.png";
 
 function Azadì({ setLanguage }) {
   const { t, i18n } = useTranslation();
-  
+
   return (
     <>
       <section className="azadì">
@@ -21,13 +21,16 @@ function Azadì({ setLanguage }) {
               <img src={BookImage} alt="Home" className="azadì-image"></img>
             </div>
             <div className="col-lg-4 d-flex flex-column align-items-center justify-content-center p-5 center-azadì">
-              <p className="container-title azadì-title">{t('azadì.title-azadì')}</p>
-              <p className="container-description azadì-description">{t('azadì.description-azadì')}
+              <p className="container-title azadì-title">
+                {t("azadì.title-azadì")}
+              </p>
+              <p className="container-description azadì-description">
+                {t("azadì.description-azadì")}
               </p>
             </div>
             <div className="col-lg-4 d-flex flex-column align-items-center justify-content-center right-azadì">
               <p className="container-title text-white">
-              {t('azadì.buy-azadì')}
+                {t("azadì.buy-azadì")}
               </p>
               <a
                 className="store-link"
