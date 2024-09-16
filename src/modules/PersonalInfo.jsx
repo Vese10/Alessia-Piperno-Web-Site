@@ -49,9 +49,8 @@ function PersonalInfo() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); // Resetta il messaggio di errore
+    setErrorMessage("");
 
-    // Filtra solo i campi necessari
     const filteredData = {
       name: formData.name,
       surname: formData.surname,
@@ -73,7 +72,7 @@ function PersonalInfo() {
       setSuccessMessage(t("personalInfo.success"));
       setTimeout(() => {
         setSuccessMessage("");
-      }, 3000); // Mostra il messaggio per 3 secondi
+      }, 3000);
     } catch (error) {
       console.error("Error updating user info:", error);
       setErrorMessage(t("personalInfo.error"));

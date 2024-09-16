@@ -19,7 +19,7 @@ function Login({ setCurrentPage }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); // Resetta il messaggio di errore
+    setErrorMessage("");
     try {
       const response = await fetch(
         "https://alessia-piperno-web-site.onrender.com/login",
@@ -34,10 +34,10 @@ function Login({ setCurrentPage }) {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Login successo:", data); // Log per confermare i dati ricevuti
-        sessionStorage.setItem("token", data.token); // Salva il token JWT
-        login(data.role); // Passa il ruolo alla funzione `login`
-        setCurrentPage("useraccount"); // Naviga alla pagina account utente
+        console.log("Login successo:", data);
+        sessionStorage.setItem("token", data.token);
+        login(data.role);
+        setCurrentPage("useraccount");
       } else {
         const errorData = await response.json();
         console.error("Error data:", errorData);

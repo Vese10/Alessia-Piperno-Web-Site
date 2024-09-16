@@ -18,14 +18,13 @@ function ChangePassword() {
       return;
     }
 
-    // Controlla se la password è lunga almeno 6 caratteri
     if (newPassword.length < 6) {
       setErrorMessage(t("changePassword.error-2"));
       return;
     }
 
     try {
-      const token = sessionStorage.getItem("token"); // Assumi che il token sia salvato in localStorage
+      const token = sessionStorage.getItem("token");
       const response = await axios.put(
         "https://alessia-piperno-web-site.onrender.com/change-password",
         {
@@ -38,14 +37,14 @@ function ChangePassword() {
           },
         }
       );
-      setErrorMessage(""); // Resetta il messaggio di errore
+      setErrorMessage("");
       setSuccessMessage(t("changePassword.success"));
       setOldPassword("");
       setNewPassword("");
       setRepeatPassword("");
       setTimeout(() => {
         setSuccessMessage("");
-      }, 3000); // Mostra il messaggio per 3 secondi
+      }, 3000);
     } catch (error) {
       setErrorMessage(error.response.data.message);
     }

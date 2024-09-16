@@ -4,7 +4,7 @@ import sendEmail from "../modules/SendMail";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Contatti({ setLanguage }) {
+function Contacts({ setLanguage }) {
   const { t, i18n } = useTranslation();
   const [buttonText, setButtonText] = useState(t("home.btn-contacts"));
 
@@ -114,4 +114,4 @@ function Contatti({ setLanguage }) {
   );
 }
 
-export default Contatti;
+export default Contacts;

@@ -26,7 +26,7 @@ function ManageTrips() {
           setErrorMessage(t("usertrips.fetchError"));
         }
       } catch (error) {
-        console.error("Errore nel recupero dei viaggi:", error);
+        console.error("Error in retrieving trips:", error);
         setErrorMessage(t("usertrips.fetchError"));
       }
     };

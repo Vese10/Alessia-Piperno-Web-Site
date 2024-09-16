@@ -2,29 +2,29 @@
 
 🔗PROJECT LINK:[Alessia Piperno]( https://alessia-piperno-web-site-1.onrender.com/ )
 
-## Descrizione del Progetto
+## Project Description
 
-Questo progetto prevede la creazione del sito web per la freelancer Alessia Piperno, scrittrice e travel blogger. Il sito ha lo scopo di presentare l'autrice e avvicinare l'user ai suoi servizi.
+This project involves the creation of a website for freelancer Alessia Piperno, a writer and travel blogger. The website aims to introduce the author and engage users with her services.
 
-## Struttura del Progetto
+## Project Structure
 
-- Single Page Application con varie sezioni (Home, Libri, Freelancer, Viaggi, Contatti, Login e SignUp)
+- Single Page Application with various sections (Home, Books, Freelancer, Travel, Contacts, Login, and SignUp)
 
-## Competenze
+## Skills
 
-Le competenze utilizzate per creare questo progetto sono:
+The skills used to create this project are:
  - React
  - NodeJS
  - MongoDB
  - Onrender
 
- ## Autore e Contatti
+ ## Author and Contacts
 
 Veselin Hristov – [@instagram](https://instagram.com/vese.10?igshid=OGQ5ZDc2ODk2ZA==) – veselin.hristov.10@gmail.com
 
 [https://github.com/Vese10](https://github.com/Vese10)
 
-## Contribuisci
+## Contribute
 
 1. Fork it (<https://github.com/Vese10/Alessia-Piperno-Web-Site.git->)
 2. Create your feature branch (`git checkout -b feature/Alessia-Piperno-Web-Site`)

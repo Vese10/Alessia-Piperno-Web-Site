@@ -139,13 +139,13 @@ function Navbar({ setCurrentPage, setLanguage }) {
                 ></img>
                 <p className="nav-link">{t("navbar.freelancer")}</p>
               </a>
-              <a className="nav-item" onClick={() => handleNavClick("viaggi")}>
+              <a className="nav-item" onClick={() => handleNavClick("trips")}>
                 <img src={Viaggi} className="nav-img" alt="Viaggi"></img>
                 <p className="nav-link">{t("navbar.travel")}</p>
               </a>
               <a
                 className="nav-item"
-                onClick={() => handleNavClick("contatti")}
+                onClick={() => handleNavClick("contacts")}
               >
                 <img src={Contatti} className="nav-img" alt="Contatti"></img>
                 <p className="nav-link">{t("navbar.contacts")}</p>

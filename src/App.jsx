@@ -6,8 +6,8 @@ import Navbar from "./include/navbar";
 import Home from "./components/Home";
 import Azadì from "./components/Azadì";
 import Freelancer from "./components/Freelancer";
-import Viaggi from "./components/Viaggi";
-import Contatti from "./components/Contatti";
+import Trips from "./components/Trips";
+import Contacts from "./components/Contacts";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import UserAccount from "./components/UserAccount";
@@ -15,7 +15,6 @@ import AddTrip from "./modules/AddTrip";
 import Footer from "./include/footer";
 
 function AppContent() {
-  // Componente che usa il contesto
   const { isAuthenticated } = useAuth();
   const [currentPage, setCurrentPage] = useState("home");
   const [language, setLanguage] = useState("it");
@@ -49,13 +48,13 @@ function AppContent() {
             setLanguage={setLanguage}
           />
         );
-      case "viaggi":
+      case "trips":
         return (
-          <Viaggi setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
+          <Trips setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
         );
-      case "contatti":
+      case "contacts":
         return (
-          <Contatti setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
+          <Contacts setCurrentPage={setCurrentPage} setLanguage={setLanguage} />
         );
       case "login":
         return (

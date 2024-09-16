@@ -1,11 +1,11 @@
-// Viaggi.jsx
+// Trips.jsx
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import TripCard from "../include/trip-card";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Viaggi({ setCurrentPage }) {
+function Trips({ setCurrentPage }) {
   const { t } = useTranslation();
   const [trips, setTrips] = useState([]);
 
@@ -17,7 +17,6 @@ function Viaggi({ setCurrentPage }) {
     sessionStorage.setItem("editTrip", JSON.stringify(trip));
   };
 
-  // Funzione per caricare i viaggi dal backend
   useEffect(() => {
     const fetchTrips = async () => {
       try {
@@ -28,7 +27,7 @@ function Viaggi({ setCurrentPage }) {
           }
         );
         const data = await response.json();
-        setTrips(data); // Imposta i viaggi nel tuo stato
+        setTrips(data);
       } catch (error) {
         console.error(t("trips.error"), error);
       }
@@ -55,4 +54,4 @@ function Viaggi({ setCurrentPage }) {
   );
 }
 
-export default Viaggi;
+export default Trips;

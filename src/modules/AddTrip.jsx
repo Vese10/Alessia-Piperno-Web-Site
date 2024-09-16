@@ -64,7 +64,7 @@ function AddTrip({ setCurrentPage }) {
           isEditing ? tripId : ""
         }`,
         {
-          method: isEditing ? "PUT" : "POST", // Usa PUT per modificare, POST per aggiungere
+          method: isEditing ? "PUT" : "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -76,8 +76,8 @@ function AddTrip({ setCurrentPage }) {
       if (response.ok) {
         setSuccessMessage(
           isEditing
-            ? "Viaggio modificato con successo!"
-            : "Viaggio aggiunto con successo!"
+            ? "Trip modified successfully!"
+            : "Trip added successfully!"
         );
         setTimeout(() => {
           setFormData({
@@ -99,8 +99,8 @@ function AddTrip({ setCurrentPage }) {
         setErrorMessage(errorResponse.message);
       }
     } catch (error) {
-      setErrorMessage("Errore durante l'aggiunta/modifica del viaggio");
-      console.error("Errore:", error);
+      setErrorMessage("Error while adding/modifying the trip");
+      console.error("Error:", error);
     }
   };
 

@@ -30,15 +30,13 @@ function SignUp({ setCurrentPage }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); // Resetta il messaggio di errore
+    setErrorMessage("");
 
-    // Controlla se le password corrispondono
     if (formData.password !== formData.repeatPassword) {
       setErrorMessage(t("signup.different-pass"));
       return;
     }
 
-    // Controlla se la password è lunga almeno 6 caratteri(t('signup.different-pass'))
     if (formData.password.length < 6) {
       setErrorMessage(t("signup.short-pass"));
       return;
@@ -68,8 +66,8 @@ function SignUp({ setCurrentPage }) {
         });
         setTimeout(() => {
           setSuccessMessage("");
-          setCurrentPage("login"); // Cambia la pagina corrente a Login dopo il successo
-        }, 3000); // Mostra il messaggio per 3 secondi
+          setCurrentPage("login");
+        }, 3000);
       } else if (response.status === 409) {
         setErrorMessage(t("signup.user-exists"));
       } else {
