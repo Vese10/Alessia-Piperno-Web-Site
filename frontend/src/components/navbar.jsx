@@ -1,6 +1,6 @@
 // src/components/Navbar.js
 import React, { useState, useRef, useEffect } from "react";
-import { useAuth } from "../modules/AuthContext";
+import { useAuth } from "./AuthContext";
 import { useTranslation } from "react-i18next";
 import "../assets/css/navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";

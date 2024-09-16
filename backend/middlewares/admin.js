@@ -5,7 +5,7 @@ const admin = (req, res, next) => {
       .status(403)
       .send({
         message:
-          "Accesso negato. Solo gli amministratori possono eseguire questa azione.",
+          "Access denied. Only administrators can perform this action.",
       });
   }
   next();

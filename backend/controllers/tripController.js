@@ -3,11 +3,10 @@ const Trip = require("../models/Trip");
 
 const addTrip = async (req, res) => {
   try {
-    // Verifica se l'URL dell'immagine è fornito
     if (!req.body.image || !req.body.image.startsWith("http")) {
       return res
         .status(400)
-        .json({ message: "Un URL valido per l'immagine è richiesto" });
+        .json({ message: "A valid URL for the image is required" });
     }
 
     const trip = new Trip({
@@ -17,17 +16,17 @@ const addTrip = async (req, res) => {
       duration: req.body.duration,
       price: req.body.price,
       maxParticipants: req.body.maxParticipants,
-      image: req.body.image, // Usa direttamente l'URL fornito
+      image: req.body.image,
     });
 
     await trip.save();
     res.status(201).send(trip);
   } catch (error) {
-    console.error("Errore durante la creazione del viaggio:", error);
+    console.error("Error during trip creation::", error);
     res
       .status(500)
       .json({
-        message: "Errore durante la creazione del viaggio",
+        message: "Error during trip creation",
         error: error.message,
       });
   }
@@ -35,10 +34,10 @@ const addTrip = async (req, res) => {
 
 const getTrips = async (req, res) => {
   try {
-    const trips = await Trip.find().populate("participants", "name surname"); // Popola i partecipanti con nome e cognome
+    const trips = await Trip.find().populate("participants", "name surname");
     res.status(200).send(trips);
   } catch (error) {
-    res.status(500).send({ message: "Errore nel recupero dei viaggi" });
+    res.status(500).send({ message: "Error retrieving trips" });
   }
 };
 
@@ -49,25 +48,25 @@ const joinTrip = async (req, res) => {
   try {
     const trip = await Trip.findById(tripId);
     if (!trip) {
-      return res.status(404).send({ message: "Viaggio non trovato" });
+      return res.status(404).send({ message: "Trip not found" });
     }
 
     if (trip.participants.includes(userId)) {
       return res
         .status(400)
-        .send({ message: "Sei già iscritto a questo viaggio" });
+        .send({ message: "You are already subscribed at this trip" });
     }
 
     if (trip.participants.length >= trip.maxParticipants) {
-      return res.status(400).send({ message: "Il viaggio è al completo" });
+      return res.status(400).send({ message: "The trip is fully booked" });
     }
 
     trip.participants.push(userId);
     await trip.save();
 
-    res.status(200).send({ message: "Iscritto al viaggio con successo" });
+    res.status(200).send({ message: "Successfully registered for the trip" });
   } catch (error) {
-    res.status(500).send({ message: "Errore durante l'iscrizione al viaggio" });
+    res.status(500).send({ message: "Error during trip registration" });
   }
 };
 
@@ -78,15 +77,15 @@ const deleteTrip = async (req, res) => {
     const trip = await Trip.findByIdAndDelete(tripId);
 
     if (!trip) {
-      return res.status(404).send({ message: "Viaggio non trovato" });
+      return res.status(404).send({ message: "Trip not found" });
     }
 
-    res.status(200).send({ message: "Viaggio eliminato con successo" });
+    res.status(200).send({ message: "Trip deleted successfully" });
   } catch (error) {
-    console.error("Errore durante l'eliminazione del viaggio:", error);
+    console.error("Error during trip deletion:", error);
     res
       .status(500)
-      .send({ message: "Errore durante l'eliminazione del viaggio" });
+      .send({ message: "Error during trip deletion" });
   }
 };
 
@@ -97,15 +96,15 @@ const updateTrip = async (req, res) => {
     const trip = await Trip.findByIdAndUpdate(tripId, req.body, { new: true });
 
     if (!trip) {
-      return res.status(404).send({ message: "Viaggio non trovato" });
+      return res.status(404).send({ message: "Trip not found" });
     }
 
     res.status(200).send(trip);
   } catch (error) {
-    console.error("Errore durante l'aggiornamento del viaggio:", error);
+    console.error("Error during trip update:", error);
     res
       .status(500)
-      .send({ message: "Errore durante l'aggiornamento del viaggio" });
+      .send({ message: "Error during trip update" });
   }
 };
 

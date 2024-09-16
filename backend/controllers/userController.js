@@ -5,14 +5,13 @@ const createUser = async (req, res) => {
   try {
     const user = new User({
       ...req.body,
-      role: req.body.role || "user", // Imposta il ruolo come 'user' se non specificato
+      role: req.body.role || "user",
     });
     await user.save();
     res.status(201).send(user);
   } catch (error) {
     if (error.code === 11000) {
-      // Codice errore per duplicazione chiave
-      res.status(409).send({ message: "Utente già registrato" }); // Codice 409 per conflitto
+      res.status(409).send({ message: "User already signed up" });
     } else {
       res.status(400).send(error);
     }
@@ -27,7 +26,7 @@ const updateUser = async (req, res) => {
   );
 
   if (!isValidOperation) {
-    return res.status(400).send({ message: "Aggiornamento non valido" });
+    return res.status(400).send({ message: "Update not valid" });
   }
 
   try {
@@ -55,7 +54,7 @@ const getUserTrips = async (req, res) => {
     const userTrips = await Trip.find({ participants: req.userId });
     res.status(200).send(userTrips);
   } catch (error) {
-    res.status(500).send({ message: "Errore nel recupero dei viaggi" });
+    res.status(500).send({ message: "Error retrieving trips" });
   }
 };
 

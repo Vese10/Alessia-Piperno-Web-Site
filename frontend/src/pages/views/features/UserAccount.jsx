@@ -1,14 +1,14 @@
 // UserAccount.jsx
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAuth } from "../modules/AuthContext";
+import { useAuth } from "../../../components/AuthContext";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PersonalInfo from "../modules/PersonalInfo";
-import ChangePassword from "../modules/ChangePassword";
-import MyTrips from "../modules/MyTrips";
-import AddTrip from "../modules/AddTrip";
-import ManageTrips from "../modules/ManageTrips";
+import PersonalInfo from "../../../components/PersonalInfo";
+import ChangePassword from "../../../components/ChangePassword";
+import MyTrips from "../../../components/MyTrips";
+import AddTrip from "../../../components/AddTrip";
+import ManageTrips from "../../../components/ManageTrips";
 
 function UserAccount({ setCurrentPage }) {
   const { t } = useTranslation();

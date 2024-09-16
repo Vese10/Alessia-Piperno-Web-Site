@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import sendEmail from "../modules/SendMail";
+import sendEmail from "../../../components/SendMail";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

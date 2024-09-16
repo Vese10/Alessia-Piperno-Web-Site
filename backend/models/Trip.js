@@ -33,7 +33,7 @@ const tripSchema = new mongoose.Schema({
     },
   ],
   image: {
-    type: String, // URL dell'immagine o path se viene caricata dal server
+    type: String,
     required: false,
   },
 });

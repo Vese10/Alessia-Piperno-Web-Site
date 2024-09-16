@@ -28,14 +28,12 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   role: {
-    // Nuovo campo role
     type: String,
     enum: ["admin", "user"],
     default: "user",
   },
 });
 
-// Middleware per hashare la password prima di salvarla
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 8);

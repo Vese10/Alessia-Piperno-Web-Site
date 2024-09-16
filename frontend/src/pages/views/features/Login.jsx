@@ -1,7 +1,7 @@
 // src/components/Login.js
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAuth } from "../modules/AuthContext";
+import { useAuth } from "../../../components/AuthContext";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

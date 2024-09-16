@@ -16,7 +16,7 @@ const auth = async (req, res, next) => {
     req.userId = user._id;
     next();
   } catch (error) {
-    res.status(401).send({ message: "Autenticazione fallita" });
+    res.status(401).send({ message: "Authentication failed" });
   }
 };
 
