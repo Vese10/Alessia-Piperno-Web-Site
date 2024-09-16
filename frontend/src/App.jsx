@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import "./i18n";
-import { AuthProvider, useAuth } from "./modules/AuthContext";
-import Navbar from "./include/navbar";
-import Home from "./components/Home";
-import Azadì from "./components/Azadì";
-import Freelancer from "./components/Freelancer";
-import Trips from "./components/Trips";
-import Contacts from "./components/Contacts";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import UserAccount from "./components/UserAccount";
-import AddTrip from "./modules/AddTrip";
-import Footer from "./include/footer";
+import { AuthProvider, useAuth } from "./components/AuthContext";
+import Navbar from "./components/navbar";
+import Home from "./pages/views/features/Home";
+import Azadì from "./pages/views/features/Azadì";
+import Freelancer from "./pages/views/features/Freelancer";
+import Trips from "./pages/views/features/Trips";
+import Contacts from "./pages/views/features/Contacts";
+import Login from "./pages/views/features/Login";
+import SignUp from "./pages/views/features/SignUp";
+import UserAccount from "./pages/views/features/UserAccount";
+import AddTrip from "./components/AddTrip";
+import Footer from "./components/footer";
 
 function AppContent() {
   const { isAuthenticated } = useAuth();
