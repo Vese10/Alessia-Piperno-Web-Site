@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../../components/AuthContext";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PersonalInfo from "../../../components/PersonalInfo";
 import ChangePassword from "../../../components/ChangePassword";

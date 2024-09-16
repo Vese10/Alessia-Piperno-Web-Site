@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import sendEmail from "../../../components/SendMail";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HomeBackgroundDesktop from "../assets/img/home-background-desktop.png";
-import HomeImage from "../assets/img/home-image.png";
-import AzadìBackgroundDesktop from "../assets/img/azadì-background-desktop.png";
-import AzadìImage from "../assets/img/azadì-image.png";
-import FreelancerBackgroundDesktop from "../assets/img/freelancer-background-desktop.png";
-import ViaggiBackgroundDesktop from "../assets/img/viaggi-background-desktop.png";
-import ViaggiImage from "../assets/img/viaggi-image.png";
-import ContattiBackgroundDesktop from "../assets/img/contatti-background-desktop.png";
+import HomeBackgroundDesktop from "../../../assets/img/home-background-desktop.png";
+import HomeImage from "../../../assets/img/home-image.png";
+import AzadìBackgroundDesktop from "../../../assets/img/azadì-background-desktop.png";
+import AzadìImage from "../../../assets/img/azadì-image.png";
+import FreelancerBackgroundDesktop from "../../../assets/img/freelancer-background-desktop.png";
+import ViaggiBackgroundDesktop from "../../../assets/img/viaggi-background-desktop.png";
+import ViaggiImage from "../../../assets/img/viaggi-image.png";
+import ContattiBackgroundDesktop from "../../../assets/img/contatti-background-desktop.png";
 
 function Home({ setCurrentPage, setLanguage }) {
   const { t, i18n } = useTranslation();

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FreelancerTopPc from "../assets/img/freelancer-top-pc.png";
-import FreelancerTopMobile from "../assets/img/freelancer-top-mobile.png";
+import FreelancerTopPc from "../../../assets/img/freelancer-top-pc.png";
+import FreelancerTopMobile from "../../../assets/img/freelancer-top-mobile.png";
 
 function Freelancer() {
   const { t } = useTranslation();

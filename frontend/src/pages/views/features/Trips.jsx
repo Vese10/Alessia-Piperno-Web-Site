@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import TripCard from "../../../components/trip-card";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Trips({ setCurrentPage }) {

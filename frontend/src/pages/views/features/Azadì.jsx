@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-import BookImage from "../assets/img/book-cover.jpg";
-import MondadoriLogo from "../assets/img/mondadori-logo.png";
-import CoopLogo from "../assets/img/coop-logo.png";
-import AmazonLogo from "../assets/img/amazon-logo.png";
-import IBSLogo from "../assets/img/ibs-logo.png";
-import FeltrinelliLogo from "../assets/img/feltrinelli-logo.png";
+import BookImage from "../../../assets/img/book-cover.jpg";
+import MondadoriLogo from "../../../assets/img/mondadori-logo.png";
+import CoopLogo from "../../../assets/img/coop-logo.png";
+import AmazonLogo from "../../../assets/img/amazon-logo.png";
+import IBSLogo from "../../../assets/img/ibs-logo.png";
+import FeltrinelliLogo from "../../../assets/img/feltrinelli-logo.png";
 
 function Azadì({ setLanguage }) {
   const { t, i18n } = useTranslation();

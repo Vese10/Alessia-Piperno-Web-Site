@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import sendEmail from "../../../components/SendMail";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Contacts({ setLanguage }) {

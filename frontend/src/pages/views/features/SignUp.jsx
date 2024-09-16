@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../assets/css/components.css";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SignUpBackgroundDesktop from "../assets/img/signup-background-desktop.png";
+import SignUpBackgroundDesktop from "../../../assets/img/signup-background-desktop.png";
 
 function SignUp({ setCurrentPage }) {
   const { t } = useTranslation();
