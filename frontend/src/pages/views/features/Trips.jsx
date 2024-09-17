@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Trips({ setCurrentPage }) {
   const { t } = useTranslation();
   const [trips, setTrips] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleDeleteTrip = (tripId) => {
     setTrips(trips.filter((trip) => trip._id !== tripId));
@@ -28,8 +29,10 @@ function Trips({ setCurrentPage }) {
         );
         const data = await response.json();
         setTrips(data);
+        setLoading(false);
       } catch (error) {
         console.error(t("trips.error"), error);
+        setLoading(false);
       }
     };
 
@@ -38,18 +41,26 @@ function Trips({ setCurrentPage }) {
 
   return (
     <section className="container-fluid p-5 trips-page">
-      <div className="row">
-        {trips.map((trip, index) => (
-          <div key={index} className="col-md-6 mb-4 trip-cont">
-            <TripCard
-              trip={trip}
-              onDelete={handleDeleteTrip}
-              onEdit={handleEditTrip}
-              setCurrentPage={setCurrentPage}
-            />
+      {loading ? (
+        <div className="text-center">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="row">
+          {trips.map((trip, index) => (
+            <div key={index} className="col-md-6 mb-4 trip-cont">
+              <TripCard
+                trip={trip}
+                onDelete={handleDeleteTrip}
+                onEdit={handleEditTrip}
+                setCurrentPage={setCurrentPage}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
