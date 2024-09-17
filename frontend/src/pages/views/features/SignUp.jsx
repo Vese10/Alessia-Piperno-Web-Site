@@ -19,6 +19,7 @@ function SignUp({ setCurrentPage }) {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -66,32 +67,43 @@ function SignUp({ setCurrentPage }) {
         });
         setTimeout(() => {
           setSuccessMessage("");
+          setLoading(false);
           setCurrentPage("login");
         }, 3000);
       } else if (response.status === 409) {
         setErrorMessage(t("signup.user-exists"));
+        setLoading(false);
       } else {
         console.error("Error creating user:", response.statusText);
+        setLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
+      setLoading(false);
     }
   };
 
   if (successMessage) {
     return (
       <section className="signup">
-        <div className="container-fluid standard-container justify-content-start">
-          <div className="container mt-5">
-            <div className="row d-flex align-items-center justify-content-center">
-              <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
-                <p className="container-title mb-0 text-white">
-                  {successMessage}
-                </p>
+        {loading ? (
+          <div className="d-flex text-center align-items-center justify-content-center">
+            <div className="spinner-border" role="status"></div>
+            <span>Loading...</span>
+          </div>
+        ) : (
+          <div className="container-fluid standard-container justify-content-start">
+            <div className="container mt-5">
+              <div className="row d-flex align-items-center justify-content-center">
+                <div className="col-12 text-center bg-white p-4 rounded-4 signup-container">
+                  <p className="container-title mb-0 text-white">
+                    {successMessage}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
     );
   }
