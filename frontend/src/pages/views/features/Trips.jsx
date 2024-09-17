@@ -48,8 +48,8 @@ function Trips({ setCurrentPage }) {
       <section className="container-fluid p-5 trips-page">
         {loading ? (
           <div className="d-flex text-center align-items-center justify-content-center flex-column">
-            <div className="spinner-border" role="status"></div>
-            <span>Loading...</span>
+            <div className="spinner-border text-white" role="status"></div>
+            <span className="text-white">Loading...</span>
           </div>
         ) : (
           <div className="row">
