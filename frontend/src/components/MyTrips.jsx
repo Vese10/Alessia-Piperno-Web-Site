@@ -29,7 +29,7 @@ function MyTrips() {
           setErrorMessage(t("usertrips.fetchError"));
         }
       } catch (error) {
-        console.error("Errore nel recupero dei viaggi:", error);
+        console.error("Error retrieving trips:", error);
         setErrorMessage(t("usertrips.fetchError"));
       }
     };

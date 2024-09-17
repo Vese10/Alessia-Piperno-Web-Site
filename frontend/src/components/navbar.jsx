@@ -7,10 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../assets/img/home.png";
 import Azadì from "../assets/img/azadì.png";
 import Freelancer from "../assets/img/freelancer.png";
-import Viaggi from "../assets/img/viaggi.png";
-import Contatti from "../assets/img/contatti.png";
+import Trips from "../assets/img/viaggi.png";
+import Contacts from "../assets/img/contatti.png";
 import Login from "../assets/img/login.png";
-import Lingua from "../assets/img/lingua.png";
+import Language from "../assets/img/lingua.png";
 
 import itFlag from "../assets/img/it.png";
 import ukFlag from "../assets/img/uk.png";
@@ -92,7 +92,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
           </a>
           <div className="central-item" onClick={toggleLanguageMenu}>
             <img
-              src={Lingua}
+              src={Language}
               className="nav-img-lang"
               alt="Language selector"
             ></img>
@@ -140,14 +140,14 @@ function Navbar({ setCurrentPage, setLanguage }) {
                 <p className="nav-link">{t("navbar.freelancer")}</p>
               </a>
               <a className="nav-item" onClick={() => handleNavClick("trips")}>
-                <img src={Viaggi} className="nav-img" alt="Viaggi"></img>
+                <img src={Trips} className="nav-img" alt="Trips"></img>
                 <p className="nav-link">{t("navbar.travel")}</p>
               </a>
               <a
                 className="nav-item"
                 onClick={() => handleNavClick("contacts")}
               >
-                <img src={Contatti} className="nav-img" alt="Contatti"></img>
+                <img src={Contacts} className="nav-img" alt="Contacts"></img>
                 <p className="nav-link">{t("navbar.contacts")}</p>
               </a>
               <div className="logo d-none d-lg-flex justify-content-center align-items-center w-100">
@@ -173,7 +173,7 @@ function Navbar({ setCurrentPage, setLanguage }) {
                 className="nav-item dropdown nav-lang"
                 onClick={toggleLanguageMenu}
               >
-                <img src={Lingua} className="nav-img" alt="Language"></img>
+                <img src={Language} className="nav-img" alt="Language"></img>
                 <p className="nav-link">{t("navbar.languages")}</p>
                 {languageMenuOpen && (
                   <div className="dropdown-menu show">

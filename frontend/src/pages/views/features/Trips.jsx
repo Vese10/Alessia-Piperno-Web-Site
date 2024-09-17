@@ -37,7 +37,7 @@ function Trips({ setCurrentPage }) {
   }, []);
 
   return (
-    <section className="container-fluid p-5 viaggi-page">
+    <section className="container-fluid p-5 trips-page">
       <div className="row">
         {trips.map((trip, index) => (
           <div key={index} className="col-md-6 mb-4 trip-cont">

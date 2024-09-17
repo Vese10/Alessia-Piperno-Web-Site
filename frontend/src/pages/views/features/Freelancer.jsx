@@ -25,7 +25,7 @@ function Freelancer() {
               <img
                 src={FreelancerTopMobile}
                 className="img-fluid freelancer-image-mobile"
-                alt="Paesaggio montano"
+                alt="Mountain Landscape"
               ></img>
             </div>
             <div className="container-fluid d-flex flex-column justify-content-center p-4 freelancer-bottom">

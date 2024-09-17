@@ -34,18 +34,18 @@ function Login({ setCurrentPage }) {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Login successo:", data);
+        console.log("Login success:", data);
         sessionStorage.setItem("token", data.token);
         login(data.role);
         setCurrentPage("useraccount");
       } else {
         const errorData = await response.json();
         console.error("Error data:", errorData);
-        setErrorMessage("Email o password errati");
+        setErrorMessage("Email or password incorrect");
       }
     } catch (error) {
       console.error("Error:", error);
-      setErrorMessage("Errore del server");
+      setErrorMessage("Server error");
     }
   };
 

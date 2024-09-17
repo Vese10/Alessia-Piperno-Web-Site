@@ -101,7 +101,7 @@ function SignUp({ setCurrentPage }) {
       <img
         src={SignUpBackgroundDesktop}
         className="img-fluid background-image-desktop"
-        alt="Paesaggio Machu Pichu"
+        alt="Machu Pichu Landscape"
       />
       <div className="container-fluid standard-container justify-content-start">
         <div className="container mt-5">

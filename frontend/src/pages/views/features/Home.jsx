@@ -8,9 +8,9 @@ import HomeImage from "../../../assets/img/home-image.png";
 import AzadìBackgroundDesktop from "../../../assets/img/azadì-background-desktop.png";
 import AzadìImage from "../../../assets/img/azadì-image.png";
 import FreelancerBackgroundDesktop from "../../../assets/img/freelancer-background-desktop.png";
-import ViaggiBackgroundDesktop from "../../../assets/img/viaggi-background-desktop.png";
-import ViaggiImage from "../../../assets/img/viaggi-image.png";
-import ContattiBackgroundDesktop from "../../../assets/img/contatti-background-desktop.png";
+import TripsBackgroundDesktop from "../../../assets/img/viaggi-background-desktop.png";
+import TripsImage from "../../../assets/img/viaggi-image.png";
+import ContactsBackgroundDesktop from "../../../assets/img/contatti-background-desktop.png";
 
 function Home({ setCurrentPage, setLanguage }) {
   const { t, i18n } = useTranslation();
@@ -30,7 +30,7 @@ function Home({ setCurrentPage, setLanguage }) {
         <img
           src={HomeBackgroundDesktop}
           className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
+          alt="Mountain Landscape"
         />
         <div className="container-fluid d-flex main-container-1 landing-page">
           <div className="container-fluid mt-5">
@@ -55,7 +55,7 @@ function Home({ setCurrentPage, setLanguage }) {
         <img
           src={AzadìBackgroundDesktop}
           className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
+          alt="Mountain Landscape"
         />
         <div className="container-fluid d-flex main-container-2">
           <div className="container-fluid mt-5">
@@ -89,7 +89,7 @@ function Home({ setCurrentPage, setLanguage }) {
         <img
           src={FreelancerBackgroundDesktop}
           className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
+          alt="Mountain Landscape"
         />
         <div className="container-fluid d-flex main-container-1">
           <div className="container-fluid mt-5">
@@ -113,18 +113,18 @@ function Home({ setCurrentPage, setLanguage }) {
         </div>
       </section>
 
-      <section className="viaggi-home">
+      <section className="trips-home">
         <img
-          src={ViaggiBackgroundDesktop}
+          src={TripsBackgroundDesktop}
           className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
+          alt="Mountain Landscape"
         />
         <div className="container-fluid d-flex main-container-2">
           <div className="container-fluid mt-5">
             <div className="row d-flex align-items-center justify-content-center">
               <div className="col-lg-6 col-12 p-4 d-flex justify-content-center align-items-center">
                 <img
-                  src={ViaggiImage}
+                  src={TripsImage}
                   alt="Home"
                   className="img-fluid rounded-circle inside-image"
                 />
@@ -137,7 +137,7 @@ function Home({ setCurrentPage, setLanguage }) {
                 <button
                   type="button"
                   className="btn btn-primary single-page-btn"
-                  onClick={() => handleNavClick("viaggi")}
+                  onClick={() => handleNavClick("trips")}
                 >
                   {t("home.btn-travel")}
                 </button>
@@ -149,9 +149,9 @@ function Home({ setCurrentPage, setLanguage }) {
 
       <section className="contatti-home">
         <img
-          src={ContattiBackgroundDesktop}
+          src={ContactsBackgroundDesktop}
           className="img-fluid background-image-desktop"
-          alt="Paesaggio Montagna"
+          alt="Mountain landscape"
         />
         <div className="container-fluid d-flex main-container-1">
           <div className="container-fluid mt-5">
@@ -236,7 +236,7 @@ function Home({ setCurrentPage, setLanguage }) {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="btn btn-primary mt-1 single-page-btn-contatti"
+                      className="btn btn-primary mt-1 single-page-btn-contacts"
                     >
                       {buttonText}
                     </button>

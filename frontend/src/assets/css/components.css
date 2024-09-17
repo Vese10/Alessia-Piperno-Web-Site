@@ -68,7 +68,7 @@
   z-index: 1;
 }
 
-.single-page-btn-contatti {
+.single-page-btn-contacts {
   background: linear-gradient(to right, var(--gradient2), var(--main));
   border-radius: 20px;
   width: 100%;
@@ -174,7 +174,7 @@
 
 /* Contacts Style*/
 
-.contatti {
+.contacts {
   background-image: url(../img/contatti-page-background-desktop.png);
   position: relative;
   padding-bottom: 20px;
@@ -183,7 +183,7 @@
 
 /* Trips Style*/
 
-.viaggi-page {
+.trips-page {
   background: linear-gradient(to right, var(--gradient2), var(--main));
   min-height: 100vh;
 }
@@ -385,7 +385,7 @@
 
   /* Trips Style*/
 
-  .viaggi-page {
+  .trips-page {
     align-items: center;
   }
 

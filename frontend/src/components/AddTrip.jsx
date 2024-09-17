@@ -92,7 +92,7 @@ function AddTrip({ setCurrentPage }) {
           setIsEditing(false);
           setTripId(null);
           setSuccessMessage("");
-          setCurrentPage("viaggi");
+          setCurrentPage("trips");
         }, 3000);
       } else {
         const errorResponse = await response.json();

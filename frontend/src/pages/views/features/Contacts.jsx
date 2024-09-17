@@ -14,7 +14,7 @@ function Contacts({ setLanguage }) {
 
   return (
     <>
-      <section className="contatti">
+      <section className="contacts">
         <div className="container-fluid d-flex">
           <div className="container mt-5">
             <div className="row">
