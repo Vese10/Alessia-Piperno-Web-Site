@@ -1,6 +1,7 @@
 // AddTrip.jsx
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import "../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -75,9 +76,7 @@ function AddTrip({ setCurrentPage }) {
 
       if (response.ok) {
         setSuccessMessage(
-          isEditing
-            ? "Trip modified successfully!"
-            : "Trip added successfully!"
+          isEditing ? "Trip modified successfully!" : "Trip added successfully!"
         );
         setTimeout(() => {
           setFormData({
@@ -123,155 +122,168 @@ function AddTrip({ setCurrentPage }) {
   }
 
   return (
-    <div
-      className={isEditing ? "container-fluid edit-trip" : "container-fluid"}
-    >
-      <div className="row">
-        <div className="col-md-6 offset-md-3">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title text-center m-4">
-                {t(isEditing ? "edittrips.title" : "addtrips.title")}
-              </h5>
+    <>
+      <Helmet>
+        <title>Alessia Piperno - AddTrip</title>
+      </Helmet>
+      <div
+        className={isEditing ? "container-fluid edit-trip" : "container-fluid"}
+      >
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title text-center m-4">
+                  {t(isEditing ? "edittrips.title" : "addtrips.title")}
+                </h5>
 
-              <form className="signup-form" onSubmit={handleSubmit}>
-                <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="nation" className="form-label m-2 text-black">
-                    {t("addtrips.nation")}
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="nation"
-                    name="nation"
-                    placeholder={t("addtrips.nation-input")}
-                    value={formData.nation}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label
-                    htmlFor="description"
-                    className="form-label m-2 text-black"
+                <form className="signup-form" onSubmit={handleSubmit}>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="nation"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.nation")}
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="nation"
+                      name="nation"
+                      placeholder={t("addtrips.nation-input")}
+                      value={formData.nation}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="description"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.description")}
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="description"
+                      name="description"
+                      placeholder={t("addtrips.description-input")}
+                      value={formData.description}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label htmlFor="date" className="form-label m-2 text-black">
+                      {t("addtrips.date")}
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      id="date"
+                      name="date"
+                      value={formData.date}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="duration"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.duration")}
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="duration"
+                      name="duration"
+                      placeholder={t("addtrips.duration-input")}
+                      value={formData.duration}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="price"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.price")}
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="price"
+                      name="price"
+                      placeholder={t("addtrips.price-input")}
+                      value={formData.price}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="maxParticipants"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.participants")}
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="maxParticipants"
+                      name="maxParticipants"
+                      placeholder={t("addtrips.participants-input")}
+                      value={formData.maxParticipants}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 d-flex align-items-center">
+                    <label
+                      htmlFor="imageUrl"
+                      className="form-label m-2 text-black"
+                    >
+                      {t("addtrips.image-url")}
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="imageUrl"
+                      name="imageUrl"
+                      placeholder={t("addtrips.image-url-input")}
+                      value={formData.imageUrl}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-primary single-page-btn"
                   >
-                    {t("addtrips.description")}
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="description"
-                    name="description"
-                    placeholder={t("addtrips.description-input")}
-                    value={formData.description}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="date" className="form-label m-2 text-black">
-                    {t("addtrips.date")}
-                  </label>
-                  <input
-                    type="date"
-                    className="form-control"
-                    id="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label
-                    htmlFor="duration"
-                    className="form-label m-2 text-black"
-                  >
-                    {t("addtrips.duration")}
-                  </label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="duration"
-                    name="duration"
-                    placeholder={t("addtrips.duration-input")}
-                    value={formData.duration}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label htmlFor="price" className="form-label m-2 text-black">
-                    {t("addtrips.price")}
-                  </label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="price"
-                    name="price"
-                    placeholder={t("addtrips.price-input")}
-                    value={formData.price}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label
-                    htmlFor="maxParticipants"
-                    className="form-label m-2 text-black"
-                  >
-                    {t("addtrips.participants")}
-                  </label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="maxParticipants"
-                    name="maxParticipants"
-                    placeholder={t("addtrips.participants-input")}
-                    value={formData.maxParticipants}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3 d-flex align-items-center">
-                  <label
-                    htmlFor="imageUrl"
-                    className="form-label m-2 text-black"
-                  >
-                    {t("addtrips.image-url")}
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="imageUrl"
-                    name="imageUrl"
-                    placeholder={t("addtrips.image-url-input")}
-                    value={formData.imageUrl}
-                    onChange={handleChange}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary single-page-btn"
-                >
-                  {t(
-                    isEditing
-                      ? "edittrips.btn-editTrips"
-                      : "addtrips.btn-addTrips"
-                  )}
-                </button>
-              </form>
-              {successMessage && (
-                <p className="text-success mt-3">{successMessage}</p>
-              )}
-              {errorMessage && (
-                <p className="error-message text-danger mt-3">{errorMessage}</p>
-              )}
+                    {t(
+                      isEditing
+                        ? "edittrips.btn-editTrips"
+                        : "addtrips.btn-addTrips"
+                    )}
+                  </button>
+                </form>
+                {successMessage && (
+                  <p className="text-success mt-3">{successMessage}</p>
+                )}
+                {errorMessage && (
+                  <p className="error-message text-danger mt-3">
+                    {errorMessage}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
