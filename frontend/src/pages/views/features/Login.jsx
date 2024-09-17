@@ -12,7 +12,7 @@ function Login({ setCurrentPage }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
@@ -21,6 +21,8 @@ function Login({ setCurrentPage }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
+    setLoading(true);
+
     try {
       const response = await fetch(
         "https://alessia-piperno-web-site.onrender.com/login",
@@ -39,18 +41,17 @@ function Login({ setCurrentPage }) {
         sessionStorage.setItem("token", data.token);
         login(data.role);
         setCurrentPage("useraccount");
-        setLoading(false);
       } else {
         const errorData = await response.json();
         console.error("Error data:", errorData);
         setErrorMessage("Email or password incorrect");
-        setLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
       setErrorMessage("Server error");
-      setLoading(false);
     }
+
+    setLoading(false);
   };
 
   return (
