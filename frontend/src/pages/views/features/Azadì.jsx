@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "../../../assets/css/components.css"
+import { Helmet } from "react-helmet";
+import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BookImage from "../../../assets/img/book-cover.jpg";
 import MondadoriLogo from "../../../assets/img/mondadori-logo.png";
@@ -14,6 +15,9 @@ function Azadì({ setLanguage }) {
 
   return (
     <>
+      <Helmet>
+        <title>Alessia Piperno - Azadì</title>
+      </Helmet>
       <section className="azadì">
         <div className="container-fluid d-flex align-intems-center justify-content-center">
           <div className="row azadì-row">

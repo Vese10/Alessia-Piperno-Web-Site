@@ -58,7 +58,7 @@ function Login({ setCurrentPage }) {
     <>
       <section className="login">
         {loading ? (
-          <div className="d-flex text-center align-items-center justify-content-center">
+          <div className="d-flex text-center align-items-center justify-content-center flex-column">
             <div className="spinner-border" role="status"></div>
             <span>Loading...</span>
           </div>
