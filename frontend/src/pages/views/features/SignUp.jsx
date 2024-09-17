@@ -19,7 +19,7 @@ function SignUp({ setCurrentPage }) {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -32,14 +32,17 @@ function SignUp({ setCurrentPage }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
+    setLoading(true);
 
     if (formData.password !== formData.repeatPassword) {
       setErrorMessage(t("signup.different-pass"));
+      setLoading(false);
       return;
     }
 
     if (formData.password.length < 6) {
       setErrorMessage(t("signup.short-pass"));
+      setLoading(false);
       return;
     }
 
@@ -67,20 +70,17 @@ function SignUp({ setCurrentPage }) {
         });
         setTimeout(() => {
           setSuccessMessage("");
-          setLoading(false);
           setCurrentPage("login");
         }, 3000);
       } else if (response.status === 409) {
         setErrorMessage(t("signup.user-exists"));
-        setLoading(false);
       } else {
         console.error("Error creating user:", response.statusText);
-        setLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   if (successMessage) {
