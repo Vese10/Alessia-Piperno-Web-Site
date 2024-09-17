@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FreelancerTopPc from "../../../assets/img/freelancer-top-pc.png";
@@ -10,6 +11,9 @@ function Freelancer() {
 
   return (
     <>
+      <Helmet>
+        <title>Alessia Piperno - Freelancer</title>
+      </Helmet>
       <section className="freelancer">
         <div className="container-fluid d-flex flex-column align-intems-center justify-content-center p-0">
           <div className="d-flex flex-column align-items-center justify-content-center">

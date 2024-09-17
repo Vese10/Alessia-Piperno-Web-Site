@@ -1,6 +1,7 @@
 // src/components/Login.js
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import { useAuth } from "../../../components/AuthContext";
 import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -56,6 +57,9 @@ function Login({ setCurrentPage }) {
 
   return (
     <>
+      <Helmet>
+        <title>Alessia Piperno - Login</title>
+      </Helmet>
       <section className="login">
         {loading ? (
           <div className="d-flex text-center align-items-center justify-content-center flex-column">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import sendEmail from "../../../components/SendMail";
 import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -26,6 +27,9 @@ function Home({ setCurrentPage, setLanguage }) {
 
   return (
     <>
+      <Helmet>
+        <title>Alessia Piperno - Home</title>
+      </Helmet>
       <section className="home">
         <img
           src={HomeBackgroundDesktop}

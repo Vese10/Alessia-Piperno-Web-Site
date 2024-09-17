@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import sendEmail from "../../../components/SendMail";
 import "../../../assets/css/components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,6 +15,9 @@ function Contacts({ setLanguage }) {
 
   return (
     <>
+      <Helmet>
+        <title>Alessia Piperno - Contacts</title>
+      </Helmet>
       <section className="contacts">
         <div className="container-fluid d-flex">
           <div className="container mt-5">
