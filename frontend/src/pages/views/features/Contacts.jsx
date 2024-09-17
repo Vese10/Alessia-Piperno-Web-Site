@@ -102,7 +102,7 @@ function Contacts({ setLanguage }) {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="btn btn-primary single-page-btn-contatti"
+                      className="btn btn-primary single-page-btn-contacts"
                     >
                       {buttonText}
                     </button>
