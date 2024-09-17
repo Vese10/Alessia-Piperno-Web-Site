@@ -72,7 +72,7 @@ Make sure you have the following software installed on your machine:
 
 1. **Navigate to the frontend folder**:
 
-   cd frontend
+   cd Alessia-Piperno-Web-Site
 
 2. **Install frontend dependencies**:
 
